@@ -32,6 +32,44 @@ export default function Hero() {
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[120px] -z-0"></div>
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-[100px] -z-0"></div>
 
+      {/* Floating 3D-effect elements */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <motion.div
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 10, 0],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-[20%] left-[10%] w-64 h-64 bg-primary/10 rounded-full blur-[100px]"
+        />
+        <motion.div
+          animate={{
+            y: [0, 20, 0],
+            rotate: [0, -10, 0],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-secondary/10 rounded-full blur-[120px]"
+        />
+        
+        {/* Animated Grid lines for 3D perspective */}
+        <div className="absolute inset-0 opacity-[0.03]" 
+             style={{ 
+               backgroundImage: `linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)`,
+               backgroundSize: '100px 100px',
+               perspective: '1000px',
+               transform: 'rotateX(60deg) translateY(-200px)'
+             }} 
+        />
+      </div>
+
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-4xl">
           <motion.div 
