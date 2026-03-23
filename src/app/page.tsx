@@ -7,6 +7,7 @@ import Contact from "@/components/Contact";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -28,11 +29,14 @@ export default function Home() {
                 <div className="relative">
                   <div className="absolute -top-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -z-10"></div>
                   <div className="relative z-10 p-4 bg-slate-900 rounded-[3.5rem] shadow-2xl rotate-2">
-                    <img 
-                      src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2070&auto=format&fit=crop" 
-                      alt="Quality Concrete Work" 
-                      className="rounded-[3rem] w-full object-cover grayscale-0 hover:grayscale transition-all duration-700"
-                    />
+                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[3rem]">
+                      <Image 
+                        src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2070&auto=format&fit=crop" 
+                        alt="Quality Concrete Work" 
+                        fill
+                        className="object-cover grayscale-0 hover:grayscale transition-all duration-700"
+                      />
+                    </div>
                     <div className="absolute -bottom-10 -right-10 bg-primary p-8 rounded-3xl shadow-2xl border-4 border-white">
                       <span className="block text-4xl font-black text-white font-outfit tracking-tighter">10+</span>
                       <span className="block text-xs font-bold text-white/80 uppercase tracking-widest mt-1">Years of Mastery</span>
@@ -50,7 +54,7 @@ export default function Home() {
                   <span className="text-primary italic">Better Future.</span>
                 </h3>
                 <p className="text-xl text-slate-600 mb-10 leading-relaxed font-medium">
-                  Led by Héctor Martínez, Regios Concrete LLC is a family-owned powerhouse serving Iowa. We combine old-world craftsmanship with modern technology to deliver concrete that is as beautiful as it is durable.
+                  Led by H&eacute;ctor Mart&iacute;nez, Regios Concrete LLC is a family-owned powerhouse serving Iowa. We combine old-world craftsmanship with modern technology to deliver concrete that is as beautiful as it is durable.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-12 mb-12">

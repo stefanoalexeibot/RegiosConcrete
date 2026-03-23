@@ -13,7 +13,6 @@ export default function Hero() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <section ref={containerRef} className="relative min-h-[110vh] flex items-center pt-20 overflow-hidden bg-slate-950">
@@ -68,7 +67,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-slate-300 mb-12 max-w-2xl leading-relaxed font-medium"
           >
-            Elevate your home with Iowa's premier concrete artisans. We don't just pour concrete; we build foundations for your future.
+            Elevate your home with Iowa&apos;s premier concrete artisans. We don&apos;t just pour concrete; we build foundations for your future.
           </motion.p>
           
           <motion.div 

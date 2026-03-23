@@ -1,4 +1,4 @@
-import { Phone, Mail, Clock, User, Globe } from "lucide-react";
+import { Phone, Mail, User } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -13,7 +13,7 @@ export default function Contact() {
               Ready to Start Your <span className="text-secondary">Project?</span>
             </h3>
             <p className="text-slate-400 text-lg mb-12 max-w-xl">
-              Don't wait to improve your property. Contact Héctor Martínez today for a professional, no-obligation estimate on your next concrete project in Iowa.
+              Don&apos;t wait to improve your property. Contact H&eacute;ctor Mart&iacute;nez today for a professional, no-obligation estimate on your next concrete project in Iowa.
             </p>
 
             <div className="space-y-8">
@@ -78,7 +78,7 @@ export default function Contact() {
             </div>
             
             <h4 className="font-outfit text-3xl font-black mb-2">Request Quote</h4>
-            <p className="text-slate-500 mb-8">Fill out the form and we'll get back to you shortly.</p>
+            <p className="text-slate-500 mb-8">Fill out the form and we&apos;ll get back to you shortly.</p>
             
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -63,7 +63,7 @@ export default function Testimonials() {
                       <Star key={s} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <p className="text-xl text-slate-700 italic mb-6 leading-relaxed">"{t.content}"</p>
+                  <p className="text-xl text-slate-700 italic mb-6 leading-relaxed">&quot;{t.content}&quot;</p>
                   <div>
                     <h4 className="font-outfit text-lg font-black text-slate-900">{t.name}</h4>
                     <p className="text-sm font-bold text-primary uppercase tracking-widest">{t.role}</p>

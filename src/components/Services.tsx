@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ScrollReveal } from "./ScrollReveal";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const services = [
   {
@@ -56,9 +56,10 @@ export default function Services() {
           {services.map((service, index) => (
             <ScrollReveal key={service.title} className={service.size} delay={index * 0.1}>
               <div className="group relative w-full h-full rounded-[2.5rem] overflow-hidden border border-white/5 bg-slate-900 shadow-2xl transition-all hover:border-primary/50">
-                <img 
+                <Image 
                   src={service.image} 
                   alt={service.title} 
+                  fill
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110 opacity-40 group-hover:opacity-60"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
