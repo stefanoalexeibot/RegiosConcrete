@@ -116,16 +116,16 @@ export default function Hero() {
           >
             <Link 
               href="#contact" 
-              className="group bg-primary hover:bg-white hover:text-primary text-white text-xl font-black px-10 py-5 rounded-2xl flex items-center justify-center gap-3 transition-all shadow-2xl shadow-blue-600/30 active:scale-95 ornament-primary"
+              className="group relative bg-gradient-to-b from-primary to-blue-700 text-white text-lg font-bold px-10 py-5 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_40px_-10px_rgba(59,130,246,0.6)] hover:shadow-[0_0_60px_-10px_rgba(59,130,246,0.9)] active:scale-95 border border-blue-400/30 overflow-hidden"
             >
-              Get a Free Estimate
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-500 ease-out"></div>
+              <span className="relative z-10 flex items-center gap-3">Get a Free Estimate <ArrowRight className="inline-block w-5 h-5 group-hover:translate-x-1 transition-transform" /></span>
             </Link>
             <Link 
               href="tel:+15157216852" 
-              className="bg-white/5 hover:bg-white/10 backdrop-blur-md text-white text-xl font-bold px-10 py-5 rounded-2xl border border-white/20 flex items-center justify-center gap-3 transition-all"
+              className="bg-slate-900/50 hover:bg-slate-800/80 backdrop-blur-xl text-white text-lg font-bold px-10 py-5 rounded-2xl border border-white/10 flex items-center justify-center gap-3 transition-all hover:border-white/20 shadow-xl"
             >
-              <Phone className="w-5 h-5" />
+              <Phone className="w-5 h-5 text-blue-400" />
               (515) 721-6852
             </Link>
           </motion.div>
