@@ -33,7 +33,7 @@ export default function Hero() {
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-[100px] -z-0"></div>
 
       {/* Floating 3D-effect elements */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden" style={{ perspective: '1000px' }}>
         <motion.div
           animate={{
             y: [0, -20, 0],

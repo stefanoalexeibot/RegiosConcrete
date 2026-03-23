@@ -13,8 +13,11 @@ const TiltCard = ({ children, className }: { children: React.ReactNode, classNam
   const mouseXSpring = useSpring(x);
   const mouseYSpring = useSpring(y);
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["25deg", "-25deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-25deg", "25deg"]);
+  
+  const glareX = useTransform(mouseXSpring, [-0.5, 0.5], ["0%", "100%"]);
+  const glareY = useTransform(mouseYSpring, [-0.5, 0.5], ["0%", "100%"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -41,9 +44,20 @@ const TiltCard = ({ children, className }: { children: React.ReactNode, classNam
         rotateY,
         rotateX,
         transformStyle: "preserve-3d",
+        perspective: "1000px",
       }}
       className={`relative h-full w-full ${className}`}
     >
+      <motion.div 
+        style={{
+          background: useTransform(
+            [mouseXSpring, mouseYSpring],
+            ([x, y]) => `radial-gradient(circle at ${glareX.get()} ${glareY.get()}, rgba(255,255,255,0.15) 0%, transparent 60%)`
+          ),
+          zIndex: 20,
+        }}
+        className="absolute inset-0 pointer-events-none rounded-[2.5rem]"
+      />
       {children}
     </motion.div>
   );
