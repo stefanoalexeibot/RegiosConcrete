@@ -33,11 +33,11 @@ export default function Home() {
                   <div className="absolute -top-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -z-10"></div>
                   <div className="relative z-10 p-4 bg-slate-900 rounded-[3.5rem] shadow-2xl rotate-2">
                     <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[3rem]">
-                      <Image 
-                        src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2070&auto=format&fit=crop" 
-                        alt="Quality Concrete Work" 
+                      <Image
+                        src="/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.14.07 PM.jpeg"
+                        alt="Regios Concrete — Quality Work"
                         fill
-                        className="object-cover grayscale-0 hover:grayscale transition-all duration-700"
+                        className="object-cover hover:grayscale transition-all duration-700"
                       />
                     </div>
                     <div className="absolute -bottom-10 -right-10 bg-primary p-8 rounded-3xl shadow-2xl border-4 border-white">
