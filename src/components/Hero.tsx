@@ -11,31 +11,45 @@ import MagneticButton from "./MagneticButton";
 function AnimatedCounter({
   to,
   suffix = "",
-  delayMs = 0,
+  staggerMs = 0,
 }: {
   to: number;
   suffix?: string;
-  delayMs?: number;
+  staggerMs?: number;
 }) {
   const [value, setValue] = useState(0);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      const duration = 1600;
-      const startTime = performance.now();
-      const frame = (now: number) => {
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        // ease-out cubic
-        const eased = 1 - Math.pow(1 - progress, 3);
-        setValue(Math.round(eased * to));
-        if (progress < 1) requestAnimationFrame(frame);
-        else setValue(to);
-      };
-      requestAnimationFrame(frame);
-    }, delayMs);
-    return () => clearTimeout(timeout);
-  }, [to, delayMs]);
+    let started = false;
+
+    const start = () => {
+      if (started) return;
+      started = true;
+      setTimeout(() => {
+        const duration = 1600;
+        const startTime = performance.now();
+        const frame = (now: number) => {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          setValue(Math.round(eased * to));
+          if (progress < 1) requestAnimationFrame(frame);
+          else setValue(to);
+        };
+        requestAnimationFrame(frame);
+      }, staggerMs);
+    };
+
+    // Start when the preloader exit animation completes
+    window.addEventListener("preloader-complete", start, { once: true });
+    // Fallback: if the event was already fired before this mounted, start after a short delay
+    const fallback = setTimeout(start, 500);
+
+    return () => {
+      window.removeEventListener("preloader-complete", start);
+      clearTimeout(fallback);
+    };
+  }, [to, staggerMs]);
 
   return (
     <>
@@ -234,7 +248,7 @@ export default function Hero() {
                     <AnimatedCounter
                       to={stat.num as number}
                       suffix={stat.suffix}
-                      delayMs={1300 + i * 130}
+                      staggerMs={i * 130}
                     />
                   )}
                 </span>

@@ -33,7 +33,7 @@ export default function Preloader() {
   }, []);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence onExitComplete={() => window.dispatchEvent(new CustomEvent("preloader-complete"))}>
       {isLoading && (
         <motion.div
           initial={{ y: 0 }}
