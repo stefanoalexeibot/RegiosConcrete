@@ -33,13 +33,13 @@ export default function Hero() {
         style={{ y }}
         className="absolute inset-0 z-0 bg-slate-950"
       >
-        {/* Placeholder for 1920x1080 Landscape Photo */}
+        {/* 1920x1080 AI-Generated Premium Landscape Photo */}
         <Image 
-          src="/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.17.48 PM (1).jpeg" 
-          alt="Hero Concrete Background"
+          src="/images/hero_concrete_landscape.png" 
+          alt="Regios Concrete Hero Showcase"
           fill
           priority
-          className="object-cover opacity-40 mix-blend-screen transition-transform duration-[30s] group-hover:scale-110"
+          className="object-cover opacity-60 mix-blend-screen transition-transform duration-[30s] group-hover:scale-110"
         />
         {/* Massive vignette gradient for text readability and cinematic feel - INCREASED CONTRAST */}
         <div className="absolute inset-0 bg-black/70 z-10"></div>
@@ -145,13 +145,7 @@ export default function Hero() {
             </div>
           </motion.h1>
           
-          <Image 
-            src="/images/gallery/WhatsApp Image 2026-03-23 at 5.58.57 PM.jpeg" 
-            alt="Regios Concrete Details" 
-            fill 
-            className="object-cover"
-            sizes="(max-width: 768px) 192px, 256px"
-          />
+
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
