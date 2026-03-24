@@ -1,72 +1,67 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-50 py-16 border-t border-slate-100">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          <div className="lg:col-span-2">
-             <Link href="/" className="flex flex-col mb-6">
-              <span className="font-outfit font-black text-2xl tracking-tighter text-primary">
-                REGIOS CONCRETE LLC
-              </span>
-              <span className="text-[10px] uppercase font-bold tracking-[0.2em] transform -translate-y-1 text-secondary">
-                Quality & Service
-              </span>
-            </Link>
-            <p className="text-slate-500 max-w-sm mb-8 leading-relaxed">
-              Professional concrete services in Iowa. We take pride in our work and guarantee high-quality craftsmanship for every residential and commercial project.
+    <footer className="relative bg-[#020617] text-white pt-32 pb-10 overflow-hidden border-t border-white/5" id="footer">
+      {/* Background Decor */}
+      <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-[0.05] mix-blend-overlay pointer-events-none" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?q=80&w=2000&auto=format&fit=crop')" }}></div>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-amber-500/5 rounded-[100%] blur-[120px] pointer-events-none"></div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="flex flex-col items-center text-center mb-20 md:mb-32">
+          <h2 className="text-amber-500 font-bold tracking-widest uppercase text-sm mb-6">Start Your Project</h2>
+          <div className="font-outfit text-[18vw] font-black text-white leading-[0.8] tracking-tighter mb-12 w-full overflow-hidden flex flex-col items-center">
+            <span className="block hover:text-amber-500 transition-colors duration-500 cursor-default">LET&apos;S</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-600 hover:scale-105 transition-transform duration-500 cursor-default">BUILD.</span>
+          </div>
+          
+          <Link href="tel:+15157216852" className="group relative bg-white text-black font-black text-xl md:text-2xl px-12 py-6 rounded-full flex items-center gap-4 overflow-hidden transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(255,255,255,0.2)]">
+            <div className="absolute inset-0 bg-amber-500 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-500 ease-out z-0"></div>
+            <span className="relative z-10 italic">Call Us Today</span>
+            <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center relative z-10 group-hover:rotate-45 transition-transform duration-500">
+              <ArrowUpRight className="w-6 h-6" />
+            </div>
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16 border-t border-white/10 pt-16">
+          <div className="md:col-span-4 flex flex-col">
+            <h4 className="font-outfit text-3xl font-black mb-6 tracking-tighter">REGIOS <span className="text-amber-500 italic">CONCRETE</span></h4>
+            <p className="text-slate-400 max-w-sm mb-8 leading-relaxed font-medium">
+              Iowa&apos;s premier concrete artisans. We combine military precision with artistic vision.
             </p>
+          </div>
+          
+          <div className="md:col-span-4">
+            <h4 className="font-outfit text-xl font-bold mb-6 text-white/50 tracking-wide uppercase text-sm">Contact</h4>
+            <ul className="space-y-4">
+              <li><a href="mailto:info@regiosconcrete.com" className="text-white hover:text-amber-500 transition-colors text-lg font-medium">info@regiosconcrete.com</a></li>
+              <li><a href="tel:+15157216852" className="text-white hover:text-amber-500 transition-colors text-lg font-medium">(515) 721-6852</a></li>
+              <li className="text-slate-400 text-lg">Des Moines, IOWA</li>
+            </ul>
+          </div>
+          
+          <div className="md:col-span-4">
+            <h4 className="font-outfit text-xl font-bold mb-6 text-white/50 tracking-wide uppercase text-sm">Socials</h4>
             <div className="flex gap-4">
-              <a href="https://facebook.com/RegiosConcreteLLC" className="w-10 h-10 bg-white border border-slate-200 rounded-full flex items-center justify-center text-primary shadow-sm hover:shadow-md hover:scale-110 transition-all">
-                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
+              <a href="https://facebook.com/RegiosConcreteLLC" className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-amber-500 hover:text-black hover:border-amber-500 transition-all font-bold text-xs uppercase tracking-widest">
+                FB
               </a>
-              <a href="tel:+15157216852" className="w-10 h-10 bg-white border border-slate-200 rounded-full flex items-center justify-center text-primary shadow-sm hover:shadow-md hover:scale-110 transition-all">
-                <Phone className="w-5 h-5" />
+              <a href="#" className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-amber-500 hover:text-black hover:border-amber-500 transition-all font-bold text-xs uppercase tracking-widest">
+                IG
               </a>
             </div>
           </div>
-
-          <div>
-            <h4 className="font-outfit text-lg font-bold text-slate-900 mb-6">Services</h4>
-            <ul className="space-y-4">
-              <li><Link href="#services" className="text-slate-500 hover:text-primary transition-colors">Driveways</Link></li>
-              <li><Link href="#services" className="text-slate-500 hover:text-primary transition-colors">Sidewalks</Link></li>
-              <li><Link href="#services" className="text-slate-500 hover:text-primary transition-colors">Patios</Link></li>
-              <li><Link href="#services" className="text-slate-500 hover:text-primary transition-colors">Stamped Concrete</Link></li>
-              <li><Link href="#services" className="text-slate-500 hover:text-primary transition-colors">Garage Floors</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-outfit text-lg font-bold text-slate-900 mb-6">Company</h4>
-            <ul className="space-y-4">
-              <li className="flex items-center gap-3 text-slate-500">
-                <MapPin className="w-5 h-5 text-primary opacity-50 shrink-0" />
-                Des Moines, IOWA
-              </li>
-              <li className="flex items-center gap-3 text-slate-500">
-                <Phone className="w-5 h-5 text-primary opacity-50 shrink-0" />
-                (515) 721-6852
-              </li>
-              <li className="flex items-center gap-3 text-slate-500">
-                <Mail className="w-5 h-5 text-primary opacity-50 shrink-0 overflow-hidden text-ellipsis" />
-                regiosconcrete@outlook.com
-              </li>
-            </ul>
-          </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400 font-medium">
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500 font-medium">
           <p>© {currentYear} Regios Concrete LLC. All rights reserved.</p>
           <div className="flex gap-8">
-            <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link>
+            <Link href="#" className="hover:text-white transition-colors uppercase tracking-widest text-[10px] font-bold">Privacy Policy</Link>
+            <Link href="#" className="hover:text-white transition-colors uppercase tracking-widest text-[10px] font-bold">Terms of Service</Link>
           </div>
         </div>
       </div>

@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
 
 export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+  const [cursorType, setCursorType] = useState<"default" | "hover" | "view" | "drag">("default");
+  
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
@@ -25,36 +26,34 @@ export default function CustomCursor() {
       if (!isVisible) setIsVisible(true);
     };
 
-    // Hide cursor when leaving window
-    const handleMouseLeave = () => setIsVisible(false);
-    const handleMouseEnter = () => setIsVisible(true);
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target) return;
+      
+      const cursorView = target.closest('[data-cursor="view"]');
+      const cursorDrag = target.closest('[data-cursor="drag"]');
+      const clickable = target.closest('a, button, input, textarea, [role="button"], select');
 
-    // Track when hovering over clickable elements
-    const handleHoverStart = () => setIsHovered(true);
-    const handleHoverEnd = () => setIsHovered(false);
+      if (cursorView) setCursorType("view");
+      else if (cursorDrag) setCursorType("drag");
+      else if (clickable) setCursorType("hover");
+      else setCursorType("default");
+    };
+
+    const handleMouseLeaveWindow = () => setIsVisible(false);
+    const handleMouseEnterWindow = () => setIsVisible(true);
 
     window.addEventListener("mousemove", moveCursor);
-    document.addEventListener("mouseleave", handleMouseLeave);
-    document.addEventListener("mouseenter", handleMouseEnter);
-
-    const interactiveElements = document.querySelectorAll("a, button, input, textarea");
-    interactiveElements.forEach((el) => {
-      el.addEventListener("mouseenter", handleHoverStart);
-      el.addEventListener("mouseleave", handleHoverEnd);
-      // Force hide default cursor on interactive elements too
-      (el as HTMLElement).style.cursor = "none";
-    });
+    document.addEventListener("mouseover", handleMouseOver);
+    document.addEventListener("mouseleave", handleMouseLeaveWindow);
+    document.addEventListener("mouseenter", handleMouseEnterWindow);
 
     return () => {
       document.body.style.cursor = "auto";
       window.removeEventListener("mousemove", moveCursor);
-      document.removeEventListener("mouseleave", handleMouseLeave);
-      document.removeEventListener("mouseenter", handleMouseEnter);
-
-      interactiveElements.forEach((el) => {
-        el.removeEventListener("mouseenter", handleHoverStart);
-        el.removeEventListener("mouseleave", handleHoverEnd);
-      });
+      document.removeEventListener("mouseover", handleMouseOver);
+      document.removeEventListener("mouseleave", handleMouseLeaveWindow);
+      document.removeEventListener("mouseenter", handleMouseEnterWindow);
     };
   }, [cursorX, cursorY, isVisible]);
 
@@ -63,7 +62,7 @@ export default function CustomCursor() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-4 h-4 rounded-full bg-white mix-blend-difference pointer-events-none z-[99999]"
+        className="fixed top-0 left-0 flex items-center justify-center rounded-full pointer-events-none z-[99999] text-black font-black text-[10px] tracking-widest uppercase overflow-hidden"
         style={{
           x: springX,
           y: springY,
@@ -71,13 +70,29 @@ export default function CustomCursor() {
           translateY: "-50%",
         }}
         animate={{
-          scale: isVisible ? (isHovered ? 3 : 1) : 0,
+          width: cursorType === "view" || cursorType === "drag" ? 72 : cursorType === "hover" ? 48 : 16,
+          height: cursorType === "view" || cursorType === "drag" ? 72 : cursorType === "hover" ? 48 : 16,
+          backgroundColor: cursorType === "view" || cursorType === "drag" ? "#f59e0b" : "white",
+          mixBlendMode: cursorType === "view" || cursorType === "drag" ? "normal" : "difference",
           opacity: isVisible ? 1 : 0,
         }}
         transition={{ type: "tween", duration: 0.15 }}
-      />
+      >
+        <AnimatePresence>
+          {(cursorType === "view" || cursorType === "drag") && (
+            <motion.span 
+              initial={{ opacity: 0, scale: 0.5 }} 
+              animate={{ opacity: 1, scale: 1 }} 
+              exit={{ opacity: 0, scale: 0.5 }}
+              className="absolute pointer-events-none select-none"
+            >
+              {cursorType}
+            </motion.span>
+          )}
+        </AnimatePresence>
+      </motion.div>
       <motion.div
-        className="fixed top-0 left-0 w-12 h-12 rounded-full border border-white/30 mix-blend-difference pointer-events-none z-[99998]"
+        className="fixed top-0 left-0 rounded-full border border-white/30 mix-blend-difference pointer-events-none z-[99998]"
         style={{
           x: cursorX, // Immediate track without spring
           y: cursorY, // Immediate track without spring
@@ -85,7 +100,9 @@ export default function CustomCursor() {
           translateY: "-50%",
         }}
         animate={{
-          scale: isVisible ? (isHovered ? 0 : 1) : 0,
+          width: 48,
+          height: 48,
+          scale: isVisible ? (cursorType === "hover" || cursorType === "view" || cursorType === "drag" ? 0 : 1) : 0,
           opacity: isVisible ? 1 : 0,
         }}
         transition={{ type: "tween", duration: 0.1 }}

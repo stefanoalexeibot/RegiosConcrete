@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu } from "lucide-react";
+import MenuOverlay from "./MenuOverlay";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,86 +17,41 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "Services", href: "#services" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
-  ];
-
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-4" : "bg-transparent py-6"
-      }`}
-    >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex justify-between items-center">
-          <Link href="/" className="flex flex-col">
-            <span className={`font-outfit font-bold text-xl md:text-2xl tracking-tighter ${isScrolled ? "text-primary" : "text-white"}`}>
-              REGIOS CONCRETE LLC
-            </span>
-            <span className={`text-[10px] uppercase font-bold tracking-[0.2em] transform -translate-y-1 ${isScrolled ? "text-secondary" : "text-white/80"}`}>
-              Quality & Service
-            </span>
-          </Link>
-
-          {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`font-medium transition-colors hover:text-blue-400 ${
-                  isScrolled ? "text-slate-700" : "text-white"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link
-              href="tel:+15157216852"
-              className="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-full font-bold flex items-center gap-2 shadow-lg shadow-blue-900/20 transition-all"
-            >
-              <Phone className="w-4 h-4" />
-              (515) 721-6852
+    <>
+      <nav
+        className={`fixed w-full z-50 transition-all duration-500 ${
+          isScrolled ? "bg-white/5 backdrop-blur-xl border-b border-white/10 py-4" : "bg-transparent py-6 md:py-8"
+        }`}
+      >
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex justify-between items-center">
+            {/* Logo */}
+            <Link href="/" className="flex flex-col group relative z-50">
+              <span className={`font-outfit font-black text-2xl md:text-3xl tracking-tighter transition-colors ${isScrolled ? "text-white" : "text-white"}`}>
+                REGIOS
+              </span>
+              <span className="text-[9px] uppercase font-bold tracking-[0.3em] text-amber-500 -mt-1 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
+                Premium
+              </span>
             </Link>
-          </div>
 
-          {/* Mobile Toggle */}
-          <div className="md:hidden">
+            {/* Menu Trigger */}
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className={`${isScrolled ? "text-primary" : "text-white"}`}
+              onClick={() => setIsOpen(true)}
+              className="flex items-center gap-3 group relative z-50 overflow-hidden rounded-full bg-white/5 backdrop-blur-md border border-white/10 pr-2 pl-4 py-1.5 hover:bg-white/10 transition-all hover:border-amber-500/50"
             >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+               <span className="text-xs font-bold uppercase tracking-widest text-white group-hover:text-amber-500 transition-colors">Menu</span>
+               <div className="w-8 h-8 bg-amber-500 text-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                 <Menu className="w-4 h-4" />
+               </div>
             </button>
           </div>
         </div>
+      </nav>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl py-6 flex flex-col items-center space-y-6 animate-in slide-in-from-top duration-300">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="text-slate-800 text-lg font-semibold hover:text-primary transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link
-              href="tel:+15157216852"
-              className="bg-primary text-white px-8 py-3 rounded-full font-bold flex items-center gap-2"
-            >
-              <Phone className="w-4 h-4" />
-              Free Estimate
-            </Link>
-          </div>
-        )}
-      </div>
-    </nav>
+      {/* Full Screen Overlay */}
+      <MenuOverlay isOpen={isOpen} onClose={() => setIsOpen(false)} />
+    </>
   );
 }
