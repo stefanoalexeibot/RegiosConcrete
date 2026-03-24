@@ -197,8 +197,8 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
               >
                 <div>
                   <h4 className="text-white/50 text-xs font-bold uppercase tracking-widest mb-4">Contact Info</h4>
-                  <a href="mailto:info@regiosconcrete.com" className="block text-xl md:text-2xl font-medium hover:text-amber-500 transition-colors mb-2">
-                    info@regiosconcrete.com
+                  <a href="mailto:regiosconcrete@outlook.com" className="block text-xl md:text-2xl font-medium hover:text-amber-500 transition-colors mb-2">
+                    regiosconcrete@outlook.com
                   </a>
                   <a href="tel:+15157216852" className="block text-xl md:text-2xl font-medium hover:text-amber-500 transition-colors">
                     (515) 721-6852

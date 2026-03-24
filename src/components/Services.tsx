@@ -68,7 +68,7 @@ const services = [
   {
     title: "Driveways",
     slug: "driveways",
-    size: "col-span-2 row-span-2",
+    size: "col-span-1 row-span-1 md:col-span-2 md:row-span-2",
     description: "Military-grade concrete driveways designed for Iowa winters.",
     image: "/images/gallery/WhatsApp Image 2026-03-23 at 6.09.25 PM.jpeg",
     features: ["Heavy Duty", "Permit Ready"],
@@ -84,7 +84,7 @@ const services = [
   {
     title: "Patios",
     slug: "patios",
-    size: "col-span-1 row-span-2",
+    size: "col-span-1 row-span-1 md:row-span-2",
     description: "Premium outdoor living spaces.",
     image: "/images/gallery/WhatsApp Image 2026-03-23 at 6.09.26 PM.jpeg",
     features: ["Entertainment Ready"],
@@ -127,11 +127,11 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 min-h-[900px]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:min-h-[900px]">
           {services.map((service, index) => (
             <ScrollReveal 
               key={service.title} 
-              className={`${service.size} min-h-[400px]`} 
+              className={`${service.size} min-h-[280px] md:min-h-[400px]`}
               delay={index * 0.1}
             >
               <TiltCard>
