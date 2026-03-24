@@ -33,6 +33,13 @@ const projects = [
     type: "Polished Interior",
     year: "2023",
     image: "/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.14.08 PM (4).jpeg",
+  },
+  {
+    id: 5,
+    title: "The Vertex Driveway",
+    type: "Residential Concrete",
+    year: "2024",
+    image: "/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.16.43 PM (1).jpeg",
   }
 ];
 

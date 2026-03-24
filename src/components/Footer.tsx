@@ -7,8 +7,9 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#020617] text-white pt-32 pb-10 overflow-hidden border-t border-white/5" id="footer">
       {/* Background Decor */}
-      <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-[0.05] mix-blend-overlay pointer-events-none" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?q=80&w=2000&auto=format&fit=crop')" }}></div>
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-amber-500/5 rounded-[100%] blur-[120px] pointer-events-none"></div>
+      <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-overlay pointer-events-none" style={{ backgroundImage: "url('/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.58 AM/WhatsApp Image 2026-03-23 at 6.12.57 PM.jpeg')" }}></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/80 to-transparent z-0 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-amber-500/10 rounded-[100%] blur-[120px] pointer-events-none z-0"></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center text-center mb-20 md:mb-32">
@@ -35,23 +36,35 @@ export default function Footer() {
             </p>
           </div>
           
-          <div className="md:col-span-4">
+          <div className="md:col-span-4 max-w-sm">
             <h4 className="font-outfit text-xl font-bold mb-6 text-white/50 tracking-wide uppercase text-sm">Contact</h4>
-            <ul className="space-y-4">
-              <li><a href="mailto:info@regiosconcrete.com" className="text-white hover:text-amber-500 transition-colors text-lg font-medium">info@regiosconcrete.com</a></li>
+            <ul className="space-y-4 mb-8">
+              <li><a href="mailto:regiosconcrete@outlook.com" className="text-white hover:text-amber-500 transition-colors text-lg font-medium break-all">regiosconcrete@outlook.com</a></li>
               <li><a href="tel:+15157216852" className="text-white hover:text-amber-500 transition-colors text-lg font-medium">(515) 721-6852</a></li>
-              <li className="text-slate-400 text-lg">Des Moines, IOWA</li>
             </ul>
+            
+            {/* Interactive IOWA Map Element */}
+            <div className="relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 p-6 flex items-center justify-center group h-40">
+              <div className="absolute inset-0 bg-black/40 z-0 tracking-widest"></div>
+              <div className="absolute -inset-4 border border-amber-500/20 rounded-full animate-[ping_3s_linear_infinite] pointer-events-none"></div>
+              <div className="absolute -inset-8 border border-amber-500/10 rounded-full animate-[ping_3s_linear_infinite_1s] pointer-events-none"></div>
+              <div className="relative z-10 text-center">
+                <div className="flex justify-center mb-2">
+                  <div className="w-12 h-12 rounded-full bg-amber-500/20 border border-amber-500 flex items-center justify-center">
+                    <div className="w-3 h-3 bg-amber-400 rounded-full animate-pulse shadow-[0_0_15px_rgba(251,191,36,1)]"></div>
+                  </div>
+                </div>
+                <span className="text-4xl font-black font-outfit tracking-widest text-white group-hover:text-amber-500 transition-colors">IOWA</span>
+                <span className="block text-slate-400 text-[10px] tracking-[0.3em] uppercase mt-2 font-bold">Statewide Coverage</span>
+              </div>
+            </div>
           </div>
           
-          <div className="md:col-span-4">
+          <div className="md:col-span-4 flex flex-col items-start md:items-end">
             <h4 className="font-outfit text-xl font-bold mb-6 text-white/50 tracking-wide uppercase text-sm">Socials</h4>
             <div className="flex gap-4">
-              <a href="https://facebook.com/RegiosConcreteLLC" className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-amber-500 hover:text-black hover:border-amber-500 transition-all font-bold text-xs uppercase tracking-widest">
+              <a href="https://facebook.com/RegiosConcreteLLC" target="_blank" rel="noreferrer" className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-all font-bold text-xs uppercase tracking-widest shadow-lg">
                 FB
-              </a>
-              <a href="#" className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-amber-500 hover:text-black hover:border-amber-500 transition-all font-bold text-xs uppercase tracking-widest">
-                IG
               </a>
             </div>
           </div>

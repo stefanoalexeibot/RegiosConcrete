@@ -124,12 +124,12 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
           {/* Header */}
           <div className="container mx-auto px-4 md:px-6 py-6 md:py-8 flex justify-between items-center relative z-10 hidden sm:flex">
             <Link href="/" onClick={onClose} className="flex flex-col">
-              <div className="relative w-32 h-10 md:w-40 md:h-12 overflow-hidden">
+              <div className="relative w-48 h-20 md:w-64 md:h-24" data-cursor="hover">
                 <Image 
                   src="/images/LOGO.png" 
-                  alt="Regios Concrete Logo" 
+                  alt="Regios Concrete" 
                   fill
-                  className="object-contain object-left drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+                  className="object-contain object-left"
                 />
               </div>
             </Link>

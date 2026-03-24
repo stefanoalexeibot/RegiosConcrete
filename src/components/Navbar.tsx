@@ -29,16 +29,17 @@ export default function Navbar() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link href="/" className="flex flex-col group relative z-50">
-              <div className="relative w-32 h-10 md:w-40 md:h-12 overflow-hidden">
-                <Image 
-                  src="/images/LOGO.png" 
-                  alt="Regios Concrete Logo" 
-                  fill
-                  className="object-contain object-left drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
-                />
-              </div>
+            <div className="relative z-50">
+            <Link href="/" className="inline-block relative w-44 h-16 md:w-56 md:h-20" data-cursor="hover">
+              <Image 
+                src="/images/LOGO.png" 
+                alt="Regios Concrete" 
+                fill 
+                className="object-contain object-left"
+                priority
+              />
             </Link>
+          </div>
 
             {/* Menu Trigger */}
             <motion.button
