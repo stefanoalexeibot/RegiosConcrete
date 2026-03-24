@@ -7,29 +7,33 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
-    title: "The Vertex Driveway",
-    type: "Residential Concrete",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1590486803833-2c521674330d?q=80&w=2070&auto=format&fit=crop",
-  },
-  {
-    title: "Aura Stamped Patio",
-    type: "Decorative Hardscape",
+    id: 1,
+    title: "The Iowa Estate",
+    type: "Luxury Driveway",
     year: "2024",
-    image: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.14.08 PM (1).jpeg",
   },
   {
-    title: "Luminary Walkway",
-    type: "Commercial Paving",
+    id: 2,
+    title: "Apex Commercial",
+    type: "Structural Foundation",
     year: "2023",
-    image: "https://images.unsplash.com/photo-1558442086-8ea19a79cd4d?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.14.08 PM (2).jpeg",
   },
   {
-    title: "Obsidian Garage Floor",
-    type: "Epoxy & Surfacing",
+    id: 3,
+    title: "Riverside Resort",
+    type: "Decorative Patio",
     year: "2024",
-    image: "https://images.unsplash.com/photo-1516216628859-9bccecad13fc?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.14.08 PM (3).jpeg",
   },
+  {
+    id: 4,
+    title: "Downtown Modern",
+    type: "Polished Interior",
+    year: "2023",
+    image: "/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.14.08 PM (4).jpeg",
+  }
 ];
 
 export default function Portfolio() {

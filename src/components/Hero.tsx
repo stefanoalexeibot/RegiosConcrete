@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Phone, Award, ShieldCheck, MapPin } from "lucide-react";
 import { useRef } from "react";
+import Image from "next/image";
 import MagneticButton from "./MagneticButton";
 
 export default function Hero() {
@@ -143,6 +144,13 @@ export default function Hero() {
             </div>
           </motion.h1>
           
+          <Image 
+            src="/images/gallery/WhatsApp Image 2026-03-23 at 5.58.57 PM.jpeg" 
+            alt="Regios Concrete Details" 
+            fill 
+            className="object-cover"
+            sizes="(max-width: 768px) 192px, 256px"
+          />
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -163,6 +171,10 @@ export default function Hero() {
                 href="#contact" 
                 className="group relative bg-gradient-to-b from-primary to-blue-700 text-white text-lg font-bold px-10 py-5 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_40px_-10px_rgba(59,130,246,0.6)] hover:shadow-[0_0_60px_-10px_rgba(59,130,246,0.9)] active:scale-95 border border-blue-400/30 overflow-hidden"
               >
+                <div 
+                  className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-overlay transition-transform duration-[20s] ease-linear group-hover:scale-110 pointer-events-none" 
+                  style={{ backgroundImage: "url('/images/gallery/WhatsApp Image 2026-03-23 at 6.10.02 PM.jpeg')" }}
+                ></div>
                 <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-500 ease-out"></div>
                 <span className="relative z-10 flex items-center gap-3">Get a Free Estimate <ArrowRight className="inline-block w-5 h-5 group-hover:translate-x-1 transition-transform" /></span>
               </Link>
