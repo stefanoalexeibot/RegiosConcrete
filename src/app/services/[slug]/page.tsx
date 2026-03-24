@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Phone, Star } from "lucide-react";
 import type { Metadata } from "next";
+import { PageCurtain, HeroFadeUp, FadeUp, ImageWipe } from "@/components/ServicePageTransition";
 
 const services = {
   driveways: {
@@ -158,6 +159,9 @@ export default async function ServicePage({
   return (
     <main className="bg-[#020617] text-white min-h-screen">
 
+      {/* ─── Page entrance curtain ─── */}
+      <PageCurtain />
+
       {/* ─── HERO ─── */}
       <section className="relative min-h-screen flex flex-col justify-end pb-16 md:pb-24 overflow-hidden">
         {/* Background image — brighter */}
@@ -178,16 +182,18 @@ export default async function ServicePage({
 
         <div className="container mx-auto px-4 md:px-6 relative z-10 pt-36">
           {/* Breadcrumb */}
-          <Link
-            href="/#services"
-            className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest mb-12 group"
-          >
-            <ArrowRight className="w-3 h-3 rotate-180 group-hover:-translate-x-1 transition-transform" aria-hidden="true" />
-            All Services
-          </Link>
+          <HeroFadeUp delay={0}>
+            <Link
+              href="/#services"
+              className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest mb-12 group"
+            >
+              <ArrowRight className="w-3 h-3 rotate-180 group-hover:-translate-x-1 transition-transform" aria-hidden="true" />
+              All Services
+            </Link>
+          </HeroFadeUp>
 
           {/* Heading */}
-          <div className="mb-12 md:mb-16">
+          <HeroFadeUp delay={0.1} className="mb-12 md:mb-16">
             <span className="inline-flex items-center gap-2 text-amber-500 font-bold tracking-widest uppercase text-xs mb-6">
               <span className="w-8 h-px bg-amber-500"></span>
               Regios Concrete — Iowa
@@ -203,20 +209,22 @@ export default async function ServicePage({
             <p className="text-slate-300 text-base md:text-xl max-w-xl font-medium leading-relaxed">
               {service.tagline}
             </p>
-          </div>
+          </HeroFadeUp>
 
           {/* Stats bar */}
-          <div className="flex flex-wrap gap-px bg-white/10 rounded-2xl overflow-hidden w-fit">
-            {service.stats.map((stat, i) => (
-              <div key={i} className="bg-white/5 backdrop-blur-sm px-6 py-4 flex flex-col">
-                <span className="font-outfit font-black text-2xl text-white flex items-center gap-1">
-                  {stat.val}
-                  {stat.val === "5.0" && <Star className="w-4 h-4 fill-amber-400 text-amber-400" aria-hidden="true" />}
-                </span>
-                <span className="text-slate-400 text-[10px] font-bold uppercase tracking-widest">{stat.label}</span>
-              </div>
-            ))}
-          </div>
+          <HeroFadeUp delay={0.22}>
+            <div className="flex flex-wrap gap-px bg-white/10 rounded-2xl overflow-hidden w-fit">
+              {service.stats.map((stat, i) => (
+                <div key={i} className="bg-white/5 backdrop-blur-sm px-6 py-4 flex flex-col">
+                  <span className="font-outfit font-black text-2xl text-white flex items-center gap-1">
+                    {stat.val}
+                    {stat.val === "5.0" && <Star className="w-4 h-4 fill-amber-400 text-amber-400" aria-hidden="true" />}
+                  </span>
+                  <span className="text-slate-400 text-[10px] font-bold uppercase tracking-widest">{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          </HeroFadeUp>
         </div>
       </section>
 
@@ -225,7 +233,7 @@ export default async function ServicePage({
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             {/* Left — Text */}
-            <div>
+            <FadeUp>
               <h2 className="font-outfit text-3xl sm:text-5xl font-black text-white tracking-tighter leading-tight mb-6">
                 Precision on every<br />
                 <span className="text-amber-500 italic">square inch.</span>
@@ -249,10 +257,10 @@ export default async function ServicePage({
                   (515) 721-6852
                 </Link>
               </div>
-            </div>
+            </FadeUp>
 
             {/* Right — Second image in frame */}
-            <div className="relative">
+            <ImageWipe className="relative" direction="left">
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
                 <Image
                   src={service.images[1]}
@@ -270,7 +278,7 @@ export default async function ServicePage({
               {/* Decorative ring */}
               <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-white/10 rounded-full" />
               <div className="absolute -top-2 -right-2 w-16 h-16 border border-amber-500/20 rounded-full" />
-            </div>
+            </ImageWipe>
           </div>
         </div>
       </section>
@@ -283,14 +291,15 @@ export default async function ServicePage({
         </div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="mb-14">
+          <FadeUp className="mb-14">
             <span className="text-amber-500 font-bold tracking-widest uppercase text-xs">What&apos;s Included</span>
             <h2 className="font-outfit text-3xl sm:text-5xl font-black text-white tracking-tighter mt-3">
               Every detail,<br />
               <span className="text-white/40">covered.</span>
             </h2>
-          </div>
+          </FadeUp>
 
+          <FadeUp delay={0.1}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-white/10 rounded-3xl overflow-hidden">
             {service.features.map((f, i) => (
               <div
@@ -313,13 +322,14 @@ export default async function ServicePage({
               </div>
             ))}
           </div>
+          </FadeUp>
         </div>
       </section>
 
       {/* ─── GALLERY ─── */}
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex items-end justify-between mb-10 md:mb-14">
+          <FadeUp className="flex items-end justify-between mb-10 md:mb-14">
             <div>
               <span className="text-amber-500 font-bold tracking-widest uppercase text-xs">Our Work</span>
               <h2 className="font-outfit text-3xl sm:text-5xl font-black text-white tracking-tighter mt-3">
@@ -328,9 +338,10 @@ export default async function ServicePage({
               </h2>
             </div>
             <span className="text-white/20 font-outfit font-black text-5xl md:text-7xl">{service.images.length}</span>
-          </div>
+          </FadeUp>
 
           {/* Featured image — full width */}
+          <FadeUp delay={0.1}>
           <div className="relative w-full aspect-[16/7] rounded-3xl overflow-hidden mb-4 md:mb-6 group">
             <Image
               src={service.images[0]}
@@ -345,8 +356,10 @@ export default async function ServicePage({
               <span className="text-white font-bold text-sm uppercase tracking-widest">Featured Project</span>
             </div>
           </div>
+          </FadeUp>
 
           {/* Remaining images grid */}
+          <FadeUp delay={0.15}>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4">
             {service.images.slice(1).map((img, i) => (
               <div
@@ -364,6 +377,7 @@ export default async function ServicePage({
               </div>
             ))}
           </div>
+          </FadeUp>
         </div>
       </section>
 
@@ -380,6 +394,7 @@ export default async function ServicePage({
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50" />
 
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+          <FadeUp>
           <span className="inline-flex items-center gap-2 text-amber-500 font-bold tracking-widest uppercase text-xs mb-6">
             <span className="w-6 h-px bg-amber-500"></span>
             Ready to Start?
@@ -407,12 +422,14 @@ export default async function ServicePage({
               (515) 721-6852
             </Link>
           </div>
+          </FadeUp>
         </div>
       </section>
 
       {/* ─── OTHER SERVICES — Image cards ─── */}
       <section className="py-16 md:py-24 bg-[#030b1a]">
         <div className="container mx-auto px-4 md:px-6">
+          <FadeUp>
           <h3 className="text-white/40 text-xs font-bold uppercase tracking-widest mb-8">Explore Other Services</h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {otherServices.map((s) => (
@@ -443,6 +460,7 @@ export default async function ServicePage({
               </Link>
             ))}
           </div>
+          </FadeUp>
         </div>
       </section>
 
