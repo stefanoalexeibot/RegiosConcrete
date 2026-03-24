@@ -27,12 +27,12 @@ export default function Home() {
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-100 to-transparent"></div>
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
-            <div className="lg:w-1/2">
+            <div className="lg:w-1/2 w-full">
               <ScrollReveal direction="left">
-                <div className="relative">
+                <div className="relative pb-10 md:pb-14">
                   <div className="absolute -top-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -z-10"></div>
-                  <div className="relative z-10 p-4 bg-slate-900 rounded-[3.5rem] shadow-2xl rotate-2">
-                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[3rem]">
+                  <div className="relative z-10 p-3 md:p-4 bg-slate-900 rounded-[2rem] md:rounded-[3.5rem] shadow-2xl rotate-1 md:rotate-2">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] md:rounded-[3rem]">
                       <Image
                         src="/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.14.07 PM.jpeg"
                         alt="Regios Concrete — Quality Work"
@@ -45,6 +45,20 @@ export default function Home() {
                       <span className="block text-xs font-bold text-white/80 uppercase tracking-widest mt-1">Years of Mastery</span>
                     </div>
                   </div>
+                </div>
+
+                {/* Mobile-only mini stats row */}
+                <div className="grid grid-cols-3 gap-3 mt-4 lg:hidden">
+                  {[
+                    { val: "500+", label: "Clients" },
+                    { val: "100%", label: "Success Rate" },
+                    { val: "Iowa", label: "Statewide" },
+                  ].map((s) => (
+                    <div key={s.label} className="bg-slate-50 rounded-2xl p-4 text-center border border-slate-100">
+                      <span className="block font-outfit font-black text-xl text-primary">{s.val}</span>
+                      <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-0.5">{s.label}</span>
+                    </div>
+                  ))}
                 </div>
               </ScrollReveal>
             </div>
@@ -60,7 +74,7 @@ export default function Home() {
                   Led by H&eacute;ctor Mart&iacute;nez, Regios Concrete LLC is a family-owned powerhouse serving Iowa. We combine old-world craftsmanship with modern technology to deliver concrete that is as beautiful as it is durable.
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 mb-8 md:mb-12">
+                <div className="flex flex-row gap-6 sm:gap-12 mb-8 md:mb-12">
                   <div className="flex flex-col gap-2">
                     <span className="text-primary font-black text-3xl md:text-5xl font-outfit tracking-tighter italic">IOWA</span>
                     <span className="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Primary Coverage Area</span>
