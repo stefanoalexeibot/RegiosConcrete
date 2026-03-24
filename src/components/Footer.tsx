@@ -97,7 +97,7 @@ export default function Footer() {
       <div className="relative overflow-hidden py-28 md:py-44">
         {/* Imagen de fondo */}
         <Image
-          src="/images/gallery/WhatsApp Image 2026-03-23 at 6.09.25 PM.jpeg"
+          src="/images/gallery/patio-after-03.jpeg"
           alt=""
           fill
           className="object-cover object-center opacity-30"

@@ -34,7 +34,7 @@ export default function Home() {
                   <div className="relative z-10 p-3 md:p-4 bg-slate-900 rounded-[2rem] md:rounded-[3.5rem] shadow-2xl rotate-1 md:rotate-2">
                     <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] md:rounded-[3rem]">
                       <Image
-                        src="/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.14.07 PM.jpeg"
+                        src="/images/gallery/driveway-after-05.jpeg"
                         alt="Regios Concrete — Quality Work"
                         fill
                         className="object-cover hover:grayscale transition-all duration-700"

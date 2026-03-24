@@ -11,35 +11,35 @@ const projects = [
     title: "The Iowa Estate",
     type: "Luxury Driveway",
     year: "2024",
-    image: "/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.14.08 PM (1).jpeg",
+    image: "/images/gallery/driveway-after-06.jpeg",
   },
   {
     id: 2,
     title: "Apex Commercial",
     type: "Structural Foundation",
     year: "2023",
-    image: "/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.14.08 PM (2).jpeg",
+    image: "/images/gallery/patio-after-06.jpeg",
   },
   {
     id: 3,
     title: "Riverside Resort",
     type: "Decorative Patio",
     year: "2024",
-    image: "/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.14.08 PM (3).jpeg",
+    image: "/images/gallery/patio-after-07.jpeg",
   },
   {
     id: 4,
     title: "Downtown Modern",
     type: "Polished Interior",
     year: "2023",
-    image: "/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.14.08 PM (4).jpeg",
+    image: "/images/gallery/patio-after-08.jpeg",
   },
   {
     id: 5,
     title: "The Vertex Driveway",
     type: "Residential Concrete",
     year: "2024",
-    image: "/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.16.43 PM (1).jpeg",
+    image: "/images/gallery/patio-after-27.jpeg",
   }
 ];
 

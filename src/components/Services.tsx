@@ -70,7 +70,7 @@ const services = [
     slug: "driveways",
     size: "col-span-1 row-span-1 md:col-span-2 md:row-span-2",
     description: "Military-grade concrete driveways designed for Iowa winters.",
-    image: "/images/gallery/WhatsApp Image 2026-03-23 at 6.09.25 PM.jpeg",
+    image: "/images/gallery/driveway-after-01.jpeg",
     features: ["Heavy Duty", "Permit Ready"],
   },
   {
@@ -78,7 +78,7 @@ const services = [
     slug: "stamped",
     size: "col-span-1 row-span-1",
     description: "Exquisite decorative patterns.",
-    image: "/images/gallery/WhatsApp Image 2026-03-23 at 6.09.26 PM (1).jpeg",
+    image: "/images/gallery/stamped-after-01.jpeg",
     features: ["Custom Styles"],
   },
   {
@@ -86,7 +86,7 @@ const services = [
     slug: "patios",
     size: "col-span-1 row-span-1 md:row-span-2",
     description: "Premium outdoor living spaces.",
-    image: "/images/gallery/WhatsApp Image 2026-03-23 at 6.09.26 PM.jpeg",
+    image: "/images/gallery/patio-after-01.jpeg",
     features: ["Entertainment Ready"],
   },
   {
@@ -94,7 +94,7 @@ const services = [
     slug: "commercial",
     size: "col-span-1 row-span-1",
     description: "Military-grade structural concrete.",
-    image: "/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.05.52 PM.jpeg",
+    image: "/images/gallery/commercial-after-01.jpeg",
     features: ["Extreme Durability"],
   },
 ];
