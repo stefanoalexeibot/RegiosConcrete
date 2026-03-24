@@ -3,6 +3,8 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
+import NoiseOverlay from "@/components/NoiseOverlay";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -15,8 +17,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Regios Concrete LLC | Professional Concrete Services in Iowa",
-  description: "Quality concrete services in Iowa. Driveways, Sidewalks, Patios, Stamped Concrete, and more. Contact Héctor Martínez for a free estimate.",
+  title: "Regios Concrete LLC | Ultra-Premium Concrete Services",
+  description: "Iowa's premier concrete artisans. Specialized in high-end residential and commercial flatwork, stamping, and foundations.",
 };
 
 export default function RootLayout({
@@ -25,10 +27,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth dark">
       <body
-        className={`${inter.variable} ${outfit.variable} antialiased min-h-screen flex flex-col font-sans`}
+        className={`${inter.variable} ${outfit.variable} antialiased min-h-screen flex flex-col font-sans relative`}
       >
+        <NoiseOverlay />
+        <CustomCursor />
+        
         <Navbar />
         <main className="flex-grow">
           {children}

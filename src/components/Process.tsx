@@ -2,6 +2,7 @@
 
 import { ScrollReveal } from "./ScrollReveal";
 import { Search, FileText, Hammer, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 
 const steps = [
   {
@@ -53,7 +54,23 @@ export default function Process() {
                 </div>
                 
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 left-24 w-full h-px border-t-2 border-dashed border-slate-200 -z-10"></div>
+                  <div className="hidden lg:block absolute top-[2.4rem] left-24 w-[calc(100%-1.5rem)] h-2 -z-10 overflow-hidden">
+                    <svg width="100%" height="4" preserveAspectRatio="none">
+                      <motion.line
+                        x1="0"
+                        y1="2"
+                        x2="100%"
+                        y2="2"
+                        stroke="#3b82f6"
+                        strokeWidth="3"
+                        strokeDasharray="6 6"
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        whileInView={{ pathLength: 1, opacity: 1 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 1.5, delay: 0.5 + index * 0.2, ease: "easeInOut" }}
+                      />
+                    </svg>
+                  </div>
                 )}
                 
                 <h4 className="font-outfit text-2xl font-black text-slate-900 mb-4">{step.title}</h4>

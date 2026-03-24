@@ -1,9 +1,8 @@
-"use client";
-
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Phone, Award, ShieldCheck, MapPin } from "lucide-react";
 import { useRef } from "react";
+import MagneticButton from "./MagneticButton";
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -16,15 +15,21 @@ export default function Hero() {
 
   return (
     <section ref={containerRef} className="relative min-h-[110vh] flex items-center pt-20 overflow-hidden bg-slate-950">
-      {/* Background with Parallax Overlay */}
+      {/* Cinematic Video Background with Parallax */}
       <motion.div 
-        style={{ 
-          y,
-          backgroundImage: "url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2070&auto=format&fit=crop')",
-        }}
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{ y }}
+        className="absolute inset-0 z-0 bg-slate-950"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-950"></div>
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="w-full h-full object-cover opacity-60 mix-blend-screen"
+        >
+          <source src="https://cdn.pixabay.com/video/2021/08/25/86274-593649987_large.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-[#020617]/40 to-[#020617]"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-transparent to-transparent"></div>
       </motion.div>
 
@@ -112,15 +117,17 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-5"
+            className="flex flex-col sm:flex-row gap-5 relative z-20"
           >
-            <Link 
-              href="#contact" 
-              className="group relative bg-gradient-to-b from-primary to-blue-700 text-white text-lg font-bold px-10 py-5 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_40px_-10px_rgba(59,130,246,0.6)] hover:shadow-[0_0_60px_-10px_rgba(59,130,246,0.9)] active:scale-95 border border-blue-400/30 overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-500 ease-out"></div>
-              <span className="relative z-10 flex items-center gap-3">Get a Free Estimate <ArrowRight className="inline-block w-5 h-5 group-hover:translate-x-1 transition-transform" /></span>
-            </Link>
+            <MagneticButton>
+              <Link 
+                href="#contact" 
+                className="group relative bg-gradient-to-b from-primary to-blue-700 text-white text-lg font-bold px-10 py-5 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_40px_-10px_rgba(59,130,246,0.6)] hover:shadow-[0_0_60px_-10px_rgba(59,130,246,0.9)] active:scale-95 border border-blue-400/30 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-500 ease-out"></div>
+                <span className="relative z-10 flex items-center gap-3">Get a Free Estimate <ArrowRight className="inline-block w-5 h-5 group-hover:translate-x-1 transition-transform" /></span>
+              </Link>
+            </MagneticButton>
             <Link 
               href="tel:+15157216852" 
               className="bg-slate-900/50 hover:bg-slate-800/80 backdrop-blur-xl text-white text-lg font-bold px-10 py-5 rounded-2xl border border-white/10 flex items-center justify-center gap-3 transition-all hover:border-white/20 shadow-xl"
