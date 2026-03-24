@@ -96,14 +96,25 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-32 bg-slate-950">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="services" className="py-32 bg-[#020617] relative overflow-hidden">
+      {/* Concrete Texture Overlay */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-[0.15] mix-blend-overlay pointer-events-none" 
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?q=80&w=2000&auto=format&fit=crop')" }}
+      ></div>
+
+      {/* Brutalist Watermark */}
+      <div className="absolute top-1/4 left-0 w-full overflow-hidden pointer-events-none opacity-[0.02] z-0 flex justify-center">
+        <h2 className="font-outfit text-[22vw] font-black text-white whitespace-nowrap">SERVICES</h2>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-2xl">
-            <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-4">Service Excellence</h2>
+            <h2 className="text-amber-500 font-bold tracking-widest uppercase text-sm mb-4">Service Excellence</h2>
             <h3 className="font-outfit text-5xl md:text-7xl font-black text-white leading-tight tracking-tighter">
               Mastering the <br />
-              <span className="text-blue-400">Hardscape Craft.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-600">Hardscape Craft.</span>
             </h3>
           </div>
           <p className="text-slate-400 text-lg max-w-sm mb-4">
@@ -119,15 +130,15 @@ export default function Services() {
               delay={index * 0.1}
             >
               <TiltCard>
-                <div className="group relative w-full h-full rounded-[2.5rem] overflow-hidden border border-white/10 bg-slate-900 shadow-2xl transition-all hover:border-primary/50">
+                <div className="group relative w-full h-full rounded-[2.5rem] overflow-hidden border border-white/5 bg-[#0f172a] shadow-2xl transition-all hover:border-amber-500/50">
                   <div className="absolute inset-0 z-0">
                     <Image 
                       src={service.image} 
                       alt={service.title} 
                       fill
-                      className="object-cover transition-transform duration-[1.5s] group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                      className="object-cover transition-transform duration-[1.5s] group-hover:scale-110 opacity-50 group-hover:opacity-70 mix-blend-luminosity"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/50 to-transparent"></div>
                   </div>
                   
                   <div className="relative z-10 h-full p-10 flex flex-col justify-end" style={{ transform: "translateZ(50px)" }}>
@@ -139,14 +150,14 @@ export default function Services() {
                         </p>
                         <div className="flex flex-wrap gap-2">
                           {service.features.map(f => (
-                            <span key={f} className="text-[10px] font-black uppercase tracking-widest bg-primary/20 text-blue-300 px-3 py-1 rounded-full border border-primary/20">
+                            <span key={f} className="text-[10px] font-black uppercase tracking-widest bg-amber-500/10 text-amber-400 px-3 py-1 rounded-full border border-amber-500/20">
                               {f}
                             </span>
                           ))}
                         </div>
                       </div>
                       
-                      <button className="w-14 h-14 bg-white/10 backdrop-blur-xl border border-white/10 rounded-full flex items-center justify-center text-white group-hover:bg-primary group-hover:scale-110 transition-all shadow-xl shadow-blue-500/10">
+                      <button className="w-14 h-14 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full flex items-center justify-center text-white group-hover:bg-amber-500 group-hover:text-black group-hover:border-amber-400 group-hover:scale-110 transition-all shadow-xl shadow-amber-500/10">
                         <ArrowUpRight className="w-6 h-6" />
                       </button>
                     </div>

@@ -3,7 +3,6 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CustomCursor from "@/components/CustomCursor";
 import NoiseOverlay from "@/components/NoiseOverlay";
 
 const inter = Inter({
@@ -32,7 +31,6 @@ export default function RootLayout({
         className={`${inter.variable} ${outfit.variable} antialiased min-h-screen flex flex-col font-sans relative`}
       >
         <NoiseOverlay />
-        <CustomCursor />
         
         <Navbar />
         <main className="flex-grow">

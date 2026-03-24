@@ -66,6 +66,18 @@ export default function Hero() {
           className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-secondary/10 rounded-full blur-[120px]"
         />
         
+        {/* Massive Brutalist Concrete Watermark */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0 w-full overflow-hidden flex justify-center opacity-30 mix-blend-overlay">
+           <motion.span 
+             initial={{ y: 50, opacity: 0 }}
+             animate={{ y: 0, opacity: 1 }}
+             transition={{ duration: 1.5 }}
+             className="font-outfit text-[20vw] font-black text-white whitespace-nowrap tracking-tighter"
+           >
+              CONCRETE
+           </motion.span>
+        </div>
+        
         {/* Animated Grid lines for 3D perspective */}
         <div className="absolute inset-0 opacity-[0.03]" 
              style={{ 
@@ -160,8 +172,25 @@ export default function Hero() {
         </div>
       </div>
       
+      {/* Animated Scroll Indicator */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
+      >
+        <span className="text-slate-400 text-xs font-bold uppercase tracking-widest">Scroll to Explore</span>
+        <div className="w-6 h-10 border-2 border-slate-500 rounded-full flex justify-center p-1">
+          <motion.div 
+            animate={{ y: [0, 15, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="w-1.5 h-1.5 bg-blue-400 rounded-full"
+          />
+        </div>
+      </motion.div>
+      
       {/* Decorative Gradient Bottom */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 to-transparent z-10"></div>
     </section>
   );
 }
