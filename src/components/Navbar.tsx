@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu } from "lucide-react";
+import { motion } from "framer-motion";
 import MenuOverlay from "./MenuOverlay";
 
 export default function Navbar() {
@@ -28,16 +30,20 @@ export default function Navbar() {
           <div className="flex justify-between items-center">
             {/* Logo */}
             <Link href="/" className="flex flex-col group relative z-50">
-              <span className={`font-outfit font-black text-2xl md:text-3xl tracking-tighter transition-colors ${isScrolled ? "text-white" : "text-white"}`}>
-                REGIOS
-              </span>
-              <span className="text-[9px] uppercase font-bold tracking-[0.3em] text-amber-500 -mt-1 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
-                Premium
-              </span>
+              <div className="relative w-32 h-10 md:w-40 md:h-12 overflow-hidden">
+                <Image 
+                  src="/images/LOGO.png" 
+                  alt="Regios Concrete Logo" 
+                  fill
+                  className="object-contain object-left drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+                />
+              </div>
             </Link>
 
             {/* Menu Trigger */}
-            <button
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => setIsOpen(true)}
               className="flex items-center gap-3 group relative z-50 overflow-hidden rounded-full bg-white/5 backdrop-blur-md border border-white/10 pr-2 pl-4 py-1.5 hover:bg-white/10 transition-all hover:border-amber-500/50"
             >
@@ -45,7 +51,7 @@ export default function Navbar() {
                <div className="w-8 h-8 bg-amber-500 text-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                  <Menu className="w-4 h-4" />
                </div>
-            </button>
+            </motion.button>
           </div>
         </div>
       </nav>

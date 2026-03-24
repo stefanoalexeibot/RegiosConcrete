@@ -70,15 +70,31 @@ export default function Portfolio() {
               className="group relative w-[80vw] md:w-[60vw] lg:w-[45vw] aspect-[4/3] sm:aspect-[16/9] overflow-hidden rounded-3xl"
             >
               {/* Image Container with Parallax Effect inside card */}
-              <div className="absolute inset-0 z-0 bg-slate-900 overflow-hidden rounded-3xl">
-                <Image 
-                  src={project.image} 
-                  alt={project.title} 
-                  fill 
-                  className="object-cover transition-transform duration-[2s] ease-out group-hover:scale-110" 
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500"></div>
-              </div>
+              <motion.div 
+                initial={{ clipPath: "inset(100% 0 0 0)", filter: "brightness(0.5)" }}
+                whileInView={{ clipPath: "inset(0% 0 0 0)", filter: "brightness(1)" }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
+                className="relative w-full h-[60vh] md:h-[70vh] rounded-2xl overflow-hidden mb-6 group"
+                data-cursor="view"
+              >
+                <motion.div 
+                  initial={{ scale: 1.3 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  className="absolute inset-0 w-full h-full"
+                >
+                  <Image 
+                    src={project.image} 
+                    alt={project.title} 
+                    fill 
+                    className="object-cover transition-transform duration-[2s] group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </motion.div>
+                <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+              </motion.div>
               
               {/* Card Content Overlay */}
               <div className="relative z-10 h-full flex flex-col justify-end p-8 md:p-12">

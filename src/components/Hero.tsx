@@ -13,6 +13,16 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
+  const textVariants = {
+    hidden: { y: "150%", rotate: 5, opacity: 0 },
+    visible: { 
+      y: 0, 
+      rotate: 0,
+      opacity: 1, 
+      transition: { ease: [0.76, 0, 0.24, 1] as [number, number, number, number], duration: 1.2 } 
+    }
+  };
+
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
@@ -108,14 +118,29 @@ export default function Hero() {
           </motion.div>
           
           <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-outfit text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.95] mb-8 tracking-tighter"
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.15, delayChildren: 0.3 } }
+            }}
+            initial="hidden"
+            animate="visible"
+            className="font-outfit text-6xl md:text-8xl lg:text-[11rem] font-black text-white leading-[0.8] mb-12 tracking-tighter"
           >
-            <span className="block italic text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Precision.</span>
-            Crafted for <br />
-            Life.
+            <div className="overflow-hidden pb-4">
+              <motion.span variants={textVariants} className="block italic text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-600">
+                Precision.
+              </motion.span>
+            </div>
+            <div className="overflow-hidden pb-4">
+              <motion.span variants={textVariants} className="block text-white">
+                Crafted for
+              </motion.span>
+            </div>
+            <div className="overflow-hidden">
+              <motion.span variants={textVariants} className="block text-white">
+                Life.
+              </motion.span>
+            </div>
           </motion.h1>
           
           <motion.p 

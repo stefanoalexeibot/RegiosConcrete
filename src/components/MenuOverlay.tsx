@@ -2,8 +2,9 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { X, ArrowUpRight } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface MenuOverlayProps {
   isOpen: boolean;
@@ -11,11 +12,12 @@ interface MenuOverlayProps {
 }
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Services", href: "/#services" },
-  { name: "Portfolio", href: "/#portfolio" },
-  { name: "Process", href: "/#process" },
-  { name: "Contact", href: "/#contact" },
+  { name: "Home", href: "/", bgImage: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2070&auto=format&fit=crop" },
+  { name: "Services", href: "/#services", bgImage: "https://images.unsplash.com/photo-1590486803833-2c521674330d?q=80&w=2070&auto=format&fit=crop" },
+  { name: "Gallery", href: "/gallery", bgImage: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?q=80&w=2070&auto=format&fit=crop" },
+  { name: "Portfolio", href: "/#portfolio", bgImage: "https://images.unsplash.com/photo-1516216628859-9bccecad13fc?q=80&w=2070&auto=format&fit=crop" },
+  { name: "Process", href: "/#process", bgImage: "https://images.unsplash.com/photo-1558442086-8ea19a79cd4d?q=80&w=2070&auto=format&fit=crop" },
+  { name: "Contact", href: "/#contact", bgImage: "https://images.unsplash.com/photo-1533227268428-f9ed0900e0a5?q=80&w=2070&auto=format&fit=crop" },
 ];
 
 const menuVariants = {
@@ -68,7 +70,8 @@ const linkVariants = {
 };
 
 export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
-  
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -91,17 +94,44 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
           className="fixed inset-0 z-[100] bg-[#020617] text-white overflow-hidden flex flex-col"
         >
           {/* Background Overlay Decor */}
+          <div className="absolute inset-0 z-0 bg-[#020617] pointer-events-none transition-colors duration-1000">
+            <AnimatePresence>
+              {hoveredLink && (
+                <motion.div 
+                  key={hoveredLink}
+                  initial={{ opacity: 0, scale: 1.1 }}
+                  animate={{ opacity: 0.3, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="absolute inset-0 z-0"
+                >
+                  <Image 
+                    src={hoveredLink} 
+                    alt="Background" 
+                    fill 
+                    className="object-cover grayscale mix-blend-overlay"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-[#020617]"></div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
           <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-[0.05] mix-blend-overlay pointer-events-none" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?q=80&w=2000&auto=format&fit=crop')" }}></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary/5 font-outfit font-black text-[25vw] pointer-events-none whitespace-nowrap z-0 max-w-full truncate">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary/5 font-outfit font-black text-[25vw] pointer-events-none whitespace-nowrap z-0 max-w-full truncate mix-blend-difference">
             REGIOS
           </div>
 
           {/* Header */}
-          <div className="container mx-auto px-4 md:px-6 py-6 md:py-8 flex justify-between items-center relative z-10">
+          <div className="container mx-auto px-4 md:px-6 py-6 md:py-8 flex justify-between items-center relative z-10 hidden sm:flex">
             <Link href="/" onClick={onClose} className="flex flex-col">
-              <span className="font-outfit font-black text-2xl md:text-3xl tracking-tighter text-white">
-                REGIOS
-              </span>
+              <div className="relative w-32 h-10 md:w-40 md:h-12 overflow-hidden">
+                <Image 
+                  src="/images/LOGO.png" 
+                  alt="Regios Concrete Logo" 
+                  fill
+                  className="object-contain object-left drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+                />
+              </div>
             </Link>
             
             <button 
@@ -132,7 +162,12 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
                     <motion.div variants={linkVariants}>
                       <Link 
                         href={link.href}
-                        onClick={onClose}
+                        onClick={() => {
+                          onClose();
+                          setHoveredLink(null);
+                        }}
+                        onMouseEnter={() => setHoveredLink(link.bgImage)}
+                        onMouseLeave={() => setHoveredLink(null)}
                         className="group flex items-center gap-6 font-outfit text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter hover:text-amber-500 transition-colors"
                       >
                         <span className="text-sm font-mono text-white/30 tracking-widest mb-6 lg:mb-10 w-8">{`0${i + 1}`}</span>
