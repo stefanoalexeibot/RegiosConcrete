@@ -34,17 +34,17 @@ export default function Hero() {
         className="absolute inset-0 z-0 bg-slate-950"
       >
         {/* 1920x1080 AI-Generated Premium Landscape Photo */}
-        <Image 
-          src="/images/hero_concrete_landscape.png" 
+        <Image
+          src="/images/hero_concrete_landscape.png"
           alt="Regios Concrete Hero Showcase"
           fill
           priority
-          className="object-cover opacity-60 mix-blend-screen transition-transform duration-[30s] group-hover:scale-110"
+          className="object-cover opacity-90"
         />
-        {/* Massive vignette gradient for text readability and cinematic feel */}
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/90 to-transparent z-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-transparent to-[#020617] opacity-90 z-10"></div>
+        {/* Vignette — legibilidad del texto sin enterrar la imagen */}
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/50 to-transparent z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/70 via-transparent to-[#020617]/40 z-10"></div>
       </motion.div>
 
       {/* Floating Elements / Decals */}
