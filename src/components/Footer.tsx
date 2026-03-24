@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Phone, Mail } from "lucide-react";
 
 const IowaMap = () => (
@@ -90,15 +91,25 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-[#020617] text-white pt-32 pb-10 overflow-hidden border-t border-white/5" id="footer">
-      {/* Background */}
-      <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-overlay pointer-events-none" style={{ backgroundImage: "url('/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.58 AM/WhatsApp Image 2026-03-23 at 6.12.57 PM.jpeg')" }}></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/80 to-transparent z-0 pointer-events-none"></div>
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-amber-500/10 rounded-[100%] blur-[120px] pointer-events-none z-0"></div>
+    <footer className="relative bg-[#020617] text-white pb-10 border-t border-white/5" id="footer">
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Hero CTA */}
-        <div className="flex flex-col items-center text-center mb-20 md:mb-32">
+      {/* ─── LET'S BUILD. — Hero CTA con imagen ─── */}
+      <div className="relative overflow-hidden py-28 md:py-44">
+        {/* Imagen de fondo */}
+        <Image
+          src="/images/gallery/WhatsApp Image 2026-03-23 at 6.09.25 PM.jpeg"
+          alt=""
+          fill
+          className="object-cover object-center opacity-30"
+          aria-hidden="true"
+        />
+        {/* Gradiente negro — igual que el Hero */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50 z-10" />
+        {/* Glow amber abajo */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-amber-500/10 rounded-[100%] blur-[120px] pointer-events-none z-10" />
+
+        <div className="container mx-auto px-4 md:px-6 relative z-20 flex flex-col items-center text-center">
           <h2 className="text-amber-500 font-bold tracking-widest uppercase text-sm mb-6">Start Your Project</h2>
           <div className="font-outfit text-[18vw] font-black text-white leading-[0.8] tracking-tighter mb-12 w-full overflow-hidden flex flex-col items-center">
             <span className="block hover:text-amber-500 transition-colors duration-500 cursor-default">LET&apos;S</span>
@@ -106,15 +117,18 @@ export default function Footer() {
           </div>
           <Link
             href="tel:+15157216852"
-            className="group relative bg-white text-black font-black text-xl md:text-2xl px-12 py-6 rounded-full flex items-center gap-4 overflow-hidden transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(255,255,255,0.2)]"
+            className="group relative bg-white text-black font-black text-xl md:text-2xl px-12 py-6 rounded-full flex items-center gap-4 overflow-hidden transition-all hover:scale-105 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]"
           >
-            <div className="absolute inset-0 bg-amber-500 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-500 ease-out z-0"></div>
+            <div className="absolute inset-0 bg-amber-500 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-500 ease-out z-0" />
             <span className="relative z-10 italic">Call Us Today</span>
             <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center relative z-10 group-hover:rotate-45 transition-transform duration-500">
               <ArrowUpRight className="w-6 h-6" aria-hidden="true" />
             </div>
           </Link>
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
 
         {/* Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-16 border-t border-white/10 pt-12 md:pt-16">
