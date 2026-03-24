@@ -27,7 +27,7 @@ export default function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
-    <section ref={containerRef} className="relative min-h-[110vh] flex items-center pt-20 overflow-hidden bg-slate-950">
+    <section ref={containerRef} className="relative min-h-[110vh] flex items-center pt-32 lg:pt-48 pb-20 overflow-hidden bg-slate-950">
       {/* Cinematic High-Res Image Background with Massive Parallax & Contrast */}
       <motion.div 
         style={{ y }}
@@ -41,8 +41,8 @@ export default function Hero() {
           priority
           className="object-cover opacity-60 mix-blend-screen transition-transform duration-[30s] group-hover:scale-110"
         />
-        {/* Massive vignette gradient for text readability and cinematic feel - INCREASED CONTRAST */}
-        <div className="absolute inset-0 bg-black/70 z-10"></div>
+        {/* Massive vignette gradient for text readability and cinematic feel */}
+        <div className="absolute inset-0 bg-black/50 z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/90 to-transparent z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-transparent to-[#020617] opacity-90 z-10"></div>
       </motion.div>
@@ -78,18 +78,7 @@ export default function Hero() {
           className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-secondary/10 rounded-full blur-[120px]"
         />
         
-        {/* Massive Brutalist Concrete Watermark */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0 w-full overflow-hidden flex justify-center opacity-30 mix-blend-overlay">
-           <motion.span 
-             initial={{ y: 50, opacity: 0 }}
-             animate={{ y: 0, opacity: 1 }}
-             transition={{ duration: 1.5 }}
-             className="font-outfit text-[20vw] font-black text-white whitespace-nowrap tracking-tighter"
-           >
-              CONCRETE
-           </motion.span>
-        </div>
-        
+
         {/* Animated Grid lines for 3D perspective */}
         <div className="absolute inset-0 opacity-[0.03]" 
              style={{ 
@@ -126,21 +115,16 @@ export default function Hero() {
             }}
             initial="hidden"
             animate="visible"
-            className="font-outfit text-6xl md:text-8xl lg:text-[11rem] font-black text-white leading-[0.8] mb-12 tracking-tighter"
+            className="font-outfit text-[13vw] sm:text-6xl md:text-8xl lg:text-[9.5rem] font-black text-white leading-[0.9] mb-8 tracking-tighter"
           >
-            <div className="overflow-hidden pb-4">
+            <div className="overflow-hidden pb-2 lg:pb-4">
               <motion.span variants={textVariants} className="block italic text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-600">
                 Precision.
               </motion.span>
             </div>
-            <div className="overflow-hidden pb-4">
-              <motion.span variants={textVariants} className="block text-white">
-                Crafted for
-              </motion.span>
-            </div>
             <div className="overflow-hidden">
               <motion.span variants={textVariants} className="block text-white">
-                Life.
+                Crafted for Life.
               </motion.span>
             </div>
           </motion.h1>

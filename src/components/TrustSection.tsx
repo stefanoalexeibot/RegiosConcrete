@@ -98,7 +98,7 @@ export default function TrustSection() {
         <ParallaxText baseVelocity={0.5}>
           {trustItems.map((item, i) => (
             <div key={`reverse-${i}`} className="flex items-center gap-3 px-6">
-              <span className="text-transparent text-stroke-1 text-stroke-white/20 font-outfit font-black text-2xl md:text-4xl uppercase tracking-tighter hover:text-white/40 transition-colors">
+              <span className="text-white/20 md:text-transparent md:text-stroke-1 md:text-stroke-white/20 font-outfit font-black text-2xl md:text-4xl uppercase tracking-tighter hover:text-white/40 transition-colors">
                 {item.text}
               </span>
               <div className="w-2 h-2 rounded-full bg-amber-500/50 mx-4"></div>
