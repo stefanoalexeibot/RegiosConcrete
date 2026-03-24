@@ -33,14 +33,16 @@ export default function Hero() {
         style={{ y }}
         className="absolute inset-0 z-0 bg-slate-950"
       >
+        {/* Placeholder for 1920x1080 Landscape Photo */}
         <Image 
           src="/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.17.48 PM (1).jpeg" 
           alt="Hero Concrete Background"
           fill
           priority
-          className="object-cover opacity-60 mix-blend-screen transition-transform duration-[30s] group-hover:scale-110"
+          className="object-cover opacity-40 mix-blend-screen transition-transform duration-[30s] group-hover:scale-110"
         />
-        {/* Massive vignette gradient for text readability and cinematic feel */}
+        {/* Massive vignette gradient for text readability and cinematic feel - INCREASED CONTRAST */}
+        <div className="absolute inset-0 bg-black/70 z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/90 to-transparent z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-transparent to-[#020617] opacity-90 z-10"></div>
       </motion.div>

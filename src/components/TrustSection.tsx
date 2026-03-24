@@ -81,7 +81,7 @@ export default function TrustSection() {
       ></div>
 
       <div className="relative z-10 w-full overflow-hidden flex flex-col gap-6">
-        <ParallaxText baseVelocity={-2}>
+        <ParallaxText baseVelocity={-0.5}>
           {trustItems.map((item, i) => (
             <div key={i} className="flex items-center gap-3 px-6">
               <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center border border-amber-500/20 shadow-[0_0_15px_-3px_rgba(245,158,11,0.2)]">
@@ -95,7 +95,7 @@ export default function TrustSection() {
         </ParallaxText>
         
         {/* Counter-rotating secondary marquee for more visual impact */}
-        <ParallaxText baseVelocity={2}>
+        <ParallaxText baseVelocity={0.5}>
           {trustItems.map((item, i) => (
             <div key={`reverse-${i}`} className="flex items-center gap-3 px-6">
               <span className="text-transparent text-stroke-1 text-stroke-white/20 font-outfit font-black text-2xl md:text-4xl uppercase tracking-tighter hover:text-white/40 transition-colors">
