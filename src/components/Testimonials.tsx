@@ -48,7 +48,7 @@ export default function Testimonials() {
 
       <div className="container mx-auto px-4 md:px-6 mb-20 text-center">
         <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-4">Referrals</h2>
-        <h3 className="font-outfit text-5xl md:text-7xl font-black text-slate-900 leading-[0.9] tracking-tighter mb-8 max-w-4xl mx-auto">
+        <h3 className="font-outfit text-3xl sm:text-5xl md:text-7xl font-black text-slate-900 leading-[0.9] tracking-tighter mb-8 max-w-4xl mx-auto">
           Built on Trust. <br />
           <span className="text-primary italic">Preferred by Iowans.</span>
         </h3>
@@ -88,7 +88,7 @@ export default function Testimonials() {
           {marqueeItems.map((t, index) => (
             <div
               key={`${t.name}-${index}`}
-              className="w-[400px] flex-shrink-0 bg-slate-50 border border-slate-100 p-10 rounded-[3rem] relative group hover:bg-white hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500"
+              className="w-[88vw] sm:w-[380px] md:w-[400px] flex-shrink-0 bg-slate-50 border border-slate-100 p-7 md:p-10 rounded-[2rem] md:rounded-[3rem] relative group hover:bg-white hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500"
             >
               <Quote className="absolute top-8 right-10 w-16 h-16 text-blue-100/50 group-hover:text-primary/10 transition-colors" />
               <div className="flex gap-1 mb-6">
@@ -96,7 +96,7 @@ export default function Testimonials() {
                   <Star key={s} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <p className="text-xl text-slate-700 font-medium italic mb-8 leading-relaxed whitespace-normal">
+              <p className="text-base md:text-xl text-slate-700 font-medium italic mb-6 md:mb-8 leading-relaxed whitespace-normal">
                 &quot;{t.content}&quot;
               </p>
               <div className="flex items-center gap-4">

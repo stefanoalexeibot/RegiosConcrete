@@ -117,7 +117,7 @@ export default function Footer() {
         </div>
 
         {/* Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16 border-t border-white/10 pt-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-16 border-t border-white/10 pt-12 md:pt-16">
           {/* Brand + Services */}
           <div className="md:col-span-5 flex flex-col gap-10">
             <div>

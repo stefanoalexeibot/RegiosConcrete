@@ -69,10 +69,10 @@ export default function Contact() {
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-30"></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div>
             <h2 className="text-secondary font-bold tracking-widest uppercase text-sm mb-4">Contact Us</h2>
-            <h3 className="font-outfit text-4xl md:text-5xl font-black mb-8 leading-tight tracking-tight">
+            <h3 className="font-outfit text-2xl sm:text-4xl md:text-5xl font-black mb-6 md:mb-8 leading-tight tracking-tight">
               Ready to Start Your <span className="text-secondary">Project?</span>
             </h3>
             <p className="text-slate-400 text-lg mb-12 max-w-xl">
@@ -144,8 +144,8 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="bg-white rounded-[2.5rem] p-10 md:p-12 shadow-2xl text-slate-900 relative">
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-secondary rounded-full flex items-center justify-center text-white font-bold leading-none animate-pulse rotate-12 shadow-xl shadow-secondary/30" aria-hidden="true">
+          <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl text-slate-900 relative">
+            <div className="absolute -top-4 -right-4 md:-top-6 md:-right-6 w-20 h-20 md:w-24 md:h-24 bg-secondary rounded-full flex items-center justify-center text-white font-bold leading-none animate-pulse rotate-12 shadow-xl shadow-secondary/30" aria-hidden="true">
               <div className="text-center">
                 <span className="block text-2xl font-black">Free</span>
                 <span className="block text-xs uppercase tracking-tighter">Estimate</span>

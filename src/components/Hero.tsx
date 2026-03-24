@@ -27,7 +27,7 @@ export default function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
-    <section ref={containerRef} className="relative min-h-[110vh] flex items-center pt-32 lg:pt-48 pb-20 overflow-hidden bg-slate-950">
+    <section ref={containerRef} className="relative min-h-[110vh] flex items-center pt-24 md:pt-32 lg:pt-48 pb-20 overflow-hidden bg-slate-950">
       {/* Cinematic High-Res Image Background with Massive Parallax & Contrast */}
       <motion.div 
         style={{ y }}
@@ -115,7 +115,7 @@ export default function Hero() {
             }}
             initial="hidden"
             animate="visible"
-            className="font-outfit text-[13vw] sm:text-6xl md:text-8xl lg:text-[9.5rem] font-black text-white leading-[0.9] mb-8 tracking-tighter"
+            className="font-outfit text-[11vw] sm:text-6xl md:text-8xl lg:text-[9.5rem] font-black text-white leading-[0.9] mb-6 md:mb-8 tracking-tighter"
           >
             <div className="overflow-hidden pb-2 lg:pb-4">
               <motion.span variants={textVariants} className="block italic text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-600">
@@ -134,7 +134,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl text-slate-300 mb-12 max-w-2xl leading-relaxed font-medium"
+            className="text-base md:text-xl lg:text-2xl text-slate-300 mb-8 md:mb-12 max-w-2xl leading-relaxed font-medium"
           >
             Elevate your home with Iowa&apos;s premier concrete artisans. We don&apos;t just pour concrete; we build foundations for your future.
           </motion.p>
@@ -148,7 +148,7 @@ export default function Hero() {
             <MagneticButton>
               <Link
                 href="#contact"
-                className="group relative bg-gradient-to-b from-primary to-blue-700 text-white text-xl font-black px-12 py-6 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_50px_-10px_rgba(59,130,246,0.7)] hover:shadow-[0_0_70px_-10px_rgba(59,130,246,1)] active:scale-95 border border-blue-400/30 overflow-hidden"
+                className="group relative bg-gradient-to-b from-primary to-blue-700 text-white text-base md:text-xl font-black px-8 md:px-12 py-4 md:py-6 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_50px_-10px_rgba(59,130,246,0.7)] hover:shadow-[0_0_70px_-10px_rgba(59,130,246,1)] active:scale-95 border border-blue-400/30 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-500 ease-out"></div>
                 <span className="relative z-10 flex items-center gap-3">Get a Free Estimate <ArrowRight className="inline-block w-5 h-5 group-hover:translate-x-1 transition-transform" /></span>
@@ -168,7 +168,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.5 }}
             transition={{ duration: 1.5, delay: 1 }}
-            className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
+            className="mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"
           >
             {[
               { label: "Satisfied Clients", val: "500+" },
@@ -177,8 +177,8 @@ export default function Hero() {
               { label: "Service Areas", val: "Iowa Statewide" },
             ].map((stat, i) => (
               <div key={i} className="flex flex-col border-l border-white/10 pl-5">
-                <span className="text-white text-2xl font-black font-outfit">{stat.val}</span>
-                <span className="text-slate-400 text-xs font-bold uppercase tracking-[0.2em] mt-1">{stat.label}</span>
+                <span className="text-white text-lg md:text-2xl font-black font-outfit">{stat.val}</span>
+                <span className="text-slate-400 text-[10px] md:text-xs font-bold uppercase tracking-wider md:tracking-[0.2em] mt-1">{stat.label}</span>
               </div>
             ))}
           </motion.div>

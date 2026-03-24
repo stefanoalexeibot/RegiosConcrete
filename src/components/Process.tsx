@@ -54,13 +54,13 @@ export default function Process() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-3xl mb-24">
           <h2 className="text-amber-500 font-bold tracking-widest uppercase text-sm mb-4">Our Methodology</h2>
-          <h3 className="font-outfit text-5xl md:text-7xl font-black text-white leading-[1.1] tracking-tighter">
+          <h3 className="font-outfit text-3xl sm:text-5xl md:text-7xl font-black text-white leading-[1.1] tracking-tighter">
             Precision in every <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-600 italic">Square Inch.</span>
           </h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12">
           {steps.map((step, index) => (
             <ScrollReveal key={step.title} delay={index * 0.15}>
               <div className="relative group">
@@ -89,7 +89,7 @@ export default function Process() {
                   </div>
                 )}
                 
-                <h4 className="font-outfit text-2xl font-black text-white mb-4">{step.title}</h4>
+                <h4 className="font-outfit text-xl md:text-2xl font-black text-white mb-3 md:mb-4">{step.title}</h4>
                 <p className="text-slate-400 leading-relaxed font-medium">{step.description}</p>
 
                 <div className="mt-5 inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1">

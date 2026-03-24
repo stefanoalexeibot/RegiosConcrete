@@ -46,7 +46,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsOpen(true)}
-              className="flex items-center gap-3 group relative z-50 overflow-hidden rounded-full bg-white/5 backdrop-blur-md border border-white/10 pr-2 pl-4 py-1.5 hover:bg-white/10 transition-all hover:border-amber-500/50"
+              className="flex items-center gap-3 group relative z-50 overflow-hidden rounded-full bg-white/5 backdrop-blur-md border border-white/10 pr-2 pl-4 py-2.5 hover:bg-white/10 transition-all hover:border-amber-500/50"
             >
                <span className="text-xs font-bold uppercase tracking-widest text-white group-hover:text-amber-500 transition-colors">Menu</span>
                <div className="w-8 h-8 bg-amber-500 text-black rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">

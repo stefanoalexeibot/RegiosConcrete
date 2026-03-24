@@ -177,22 +177,22 @@ export default async function ServicePage({
                 Regios Concrete — Iowa
               </span>
               <h1 className="font-outfit font-black tracking-tighter leading-[0.9]">
-                <span className="block text-5xl md:text-7xl lg:text-[7rem] text-white">
+                <span className="block text-3xl sm:text-5xl md:text-7xl lg:text-[7rem] text-white">
                   {service.headline}
                 </span>
-                <span className="block text-5xl md:text-7xl lg:text-[7rem] text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-600 italic">
+                <span className="block text-3xl sm:text-5xl md:text-7xl lg:text-[7rem] text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-600 italic">
                   {service.headlineAccent}
                 </span>
               </h1>
             </div>
 
-            <div className="flex gap-8 shrink-0">
+            <div className="flex gap-6 md:gap-8 shrink-0">
               <div className="border-l border-white/10 pl-6">
-                <span className="block font-outfit font-black text-4xl text-white">{service.stat1.val}</span>
+                <span className="block font-outfit font-black text-2xl md:text-4xl text-white">{service.stat1.val}</span>
                 <span className="block text-slate-400 text-xs font-bold uppercase tracking-widest mt-1">{service.stat1.label}</span>
               </div>
               <div className="border-l border-white/10 pl-6">
-                <span className="block font-outfit font-black text-4xl text-white">{service.stat2.val}</span>
+                <span className="block font-outfit font-black text-2xl md:text-4xl text-white">{service.stat2.val}</span>
                 <span className="block text-slate-400 text-xs font-bold uppercase tracking-widest mt-1">{service.stat2.label}</span>
               </div>
             </div>
@@ -205,7 +205,7 @@ export default async function ServicePage({
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             <div>
-              <h2 className="font-outfit text-4xl md:text-5xl font-black text-white leading-tight tracking-tighter mb-8">
+              <h2 className="font-outfit text-2xl sm:text-4xl md:text-5xl font-black text-white leading-tight tracking-tighter mb-6 md:mb-8">
                 What Makes Our <br />
                 <span className="text-amber-500 italic">{service.title}</span><br />
                 Different
@@ -271,7 +271,7 @@ export default async function ServicePage({
       <section className="py-24 border-t border-white/5">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <span className="text-amber-500 font-bold tracking-widest uppercase text-sm mb-6 block">Ready to Start?</span>
-          <h2 className="font-outfit text-5xl md:text-7xl font-black text-white tracking-tighter leading-[0.9] mb-10">
+          <h2 className="font-outfit text-3xl sm:text-5xl md:text-7xl font-black text-white tracking-tighter leading-[0.9] mb-8 md:mb-10">
             Let&apos;s build your<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-600 italic">
               {service.title.toLowerCase()}.

@@ -89,7 +89,7 @@ export default function Portfolio() {
 
         <motion.div
           style={{ x }}
-          className="flex gap-10 md:gap-20 px-8 md:px-32 relative z-10 mt-20"
+          className="flex gap-6 md:gap-12 lg:gap-20 px-4 md:px-12 lg:px-24 relative z-10 mt-20"
           aria-label="Project portfolio — scroll to explore"
         >
           {projects.map((project, index) => (
@@ -134,7 +134,7 @@ export default function Portfolio() {
                   </div>
 
                   <div className="flex justify-between items-end gap-4">
-                    <h4 className="font-outfit text-4xl md:text-5xl font-black text-white leading-none tracking-tighter">
+                    <h4 className="font-outfit text-2xl md:text-4xl lg:text-5xl font-black text-white leading-none tracking-tighter">
                       {project.title}
                     </h4>
 

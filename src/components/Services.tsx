@@ -117,7 +117,7 @@ export default function Services() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-2xl">
             <h2 className="text-amber-500 font-bold tracking-widest uppercase text-sm mb-4">Service Excellence</h2>
-            <h3 className="font-outfit text-5xl md:text-7xl font-black text-white leading-tight tracking-tighter">
+            <h3 className="font-outfit text-3xl sm:text-5xl md:text-7xl font-black text-white leading-tight tracking-tighter">
               Mastering the <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-600">Hardscape Craft.</span>
             </h3>
@@ -149,7 +149,7 @@ export default function Services() {
                   <div className="relative z-10 h-full p-10 flex flex-col justify-end" style={{ transform: "translateZ(50px)" }}>
                     <div className="flex justify-between items-end">
                       <div>
-                        <h4 className="font-outfit text-3xl font-black text-white mb-3 tracking-tighter uppercase">{service.title}</h4>
+                        <h4 className="font-outfit text-xl md:text-3xl font-black text-white mb-3 tracking-tighter uppercase">{service.title}</h4>
                         <p className="text-slate-300 max-w-xs mb-6 font-medium leading-relaxed group-hover:text-white transition-colors">
                           {service.description}
                         </p>
