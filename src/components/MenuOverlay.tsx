@@ -20,6 +20,13 @@ const navLinks = [
   { name: "Contact", href: "/#contact", bgImage: "https://images.unsplash.com/photo-1533227268428-f9ed0900e0a5?q=80&w=2070&auto=format&fit=crop" },
 ];
 
+const serviceLinks = [
+  { name: "Driveways", href: "/services/driveways" },
+  { name: "Stamped Concrete", href: "/services/stamped" },
+  { name: "Patios", href: "/services/patios" },
+  { name: "Commercial", href: "/services/commercial" },
+];
+
 const menuVariants = {
   initial: {
     y: "-100%",
@@ -122,25 +129,26 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
           </div>
 
           {/* Header */}
-          <div className="container mx-auto px-4 md:px-6 py-6 md:py-8 flex justify-between items-center relative z-10 hidden sm:flex">
-            <Link href="/" onClick={onClose} className="flex flex-col">
-              <div className="relative w-48 h-20 md:w-64 md:h-24" data-cursor="hover">
-                <Image 
-                  src="/images/LOGO.png" 
-                  alt="Regios Concrete" 
+          <div className="container mx-auto px-4 md:px-6 py-5 md:py-8 flex justify-between items-center relative z-10">
+            <Link href="/" onClick={onClose}>
+              <div className="relative w-36 h-12 md:w-56 md:h-20" data-cursor="hover">
+                <Image
+                  src="/images/LOGO.png"
+                  alt="Regios Concrete"
                   fill
                   className="object-contain object-left"
                 />
               </div>
             </Link>
-            
-            <button 
+
+            <button
               onClick={onClose}
+              aria-label="Close menu"
               className="flex items-center gap-2 group hover:text-amber-500 transition-colors"
             >
-              <span className="text-sm font-bold uppercase tracking-widest">Close</span>
-              <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center border border-white/20 group-hover:border-amber-500/50 group-hover:bg-amber-500/10 transition-all">
-                <X className="w-5 h-5" />
+              <span className="hidden sm:block text-sm font-bold uppercase tracking-widest">Close</span>
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-full flex items-center justify-center border border-white/20 group-hover:border-amber-500/50 group-hover:bg-amber-500/10 transition-all">
+                <X className="w-4 h-4 md:w-5 md:h-5" />
               </div>
             </button>
           </div>
@@ -205,12 +213,30 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
                 </div>
 
                 <div>
+                  <h4 className="text-white/50 text-xs font-bold uppercase tracking-widest mb-4">Services</h4>
+                  <ul className="flex flex-col gap-2">
+                    {serviceLinks.map((s) => (
+                      <li key={s.name}>
+                        <Link
+                          href={s.href}
+                          onClick={() => { onClose(); }}
+                          className="text-slate-400 hover:text-amber-500 transition-colors text-base font-medium flex items-center gap-2 group"
+                        >
+                          <span className="w-1 h-1 rounded-full bg-amber-500/40 group-hover:bg-amber-500 transition-colors"></span>
+                          {s.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
                   <h4 className="text-white/50 text-xs font-bold uppercase tracking-widest mb-4">Social</h4>
                   <div className="flex gap-4">
-                    <a href="#" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-amber-500 hover:text-black hover:border-amber-500 transition-all font-bold text-xs uppercase tracking-widest">
+                    <a href="https://instagram.com/regiosconcrete" target="_blank" rel="noreferrer" aria-label="Instagram" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-amber-500 hover:text-black hover:border-amber-500 transition-all font-bold text-xs uppercase tracking-widest">
                       IG
                     </a>
-                    <a href="#" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-amber-500 hover:text-black hover:border-amber-500 transition-all font-bold text-xs uppercase tracking-widest">
+                    <a href="https://facebook.com/RegiosConcreteLLC" target="_blank" rel="noreferrer" aria-label="Facebook" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-amber-500 hover:text-black hover:border-amber-500 transition-all font-bold text-xs uppercase tracking-widest">
                       FB
                     </a>
                   </div>

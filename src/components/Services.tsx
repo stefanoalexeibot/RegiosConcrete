@@ -4,6 +4,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ScrollReveal } from "./ScrollReveal";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const TiltCard = ({ children, className }: { children: React.ReactNode, className?: string }) => {
@@ -66,6 +67,7 @@ const TiltCard = ({ children, className }: { children: React.ReactNode, classNam
 const services = [
   {
     title: "Driveways",
+    slug: "driveways",
     size: "col-span-2 row-span-2",
     description: "Military-grade concrete driveways designed for Iowa winters.",
     image: "/images/gallery/WhatsApp Image 2026-03-23 at 6.09.25 PM.jpeg",
@@ -73,6 +75,7 @@ const services = [
   },
   {
     title: "Stamped",
+    slug: "stamped",
     size: "col-span-1 row-span-1",
     description: "Exquisite decorative patterns.",
     image: "/images/gallery/WhatsApp Image 2026-03-23 at 6.09.26 PM (1).jpeg",
@@ -80,6 +83,7 @@ const services = [
   },
   {
     title: "Patios",
+    slug: "patios",
     size: "col-span-1 row-span-2",
     description: "Premium outdoor living spaces.",
     image: "/images/gallery/WhatsApp Image 2026-03-23 at 6.09.26 PM.jpeg",
@@ -87,6 +91,7 @@ const services = [
   },
   {
     title: "Commercial",
+    slug: "commercial",
     size: "col-span-1 row-span-1",
     description: "Military-grade structural concrete.",
     image: "/images/gallery/WhatsApp Unknown 2026-03-24 at 10.10.50 AM/WhatsApp Image 2026-03-23 at 8.05.52 PM.jpeg",
@@ -157,9 +162,13 @@ export default function Services() {
                         </div>
                       </div>
                       
-                      <button className="w-14 h-14 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full flex items-center justify-center text-white group-hover:bg-amber-500 group-hover:text-black group-hover:border-amber-400 group-hover:scale-110 transition-all shadow-xl shadow-amber-500/10">
-                        <ArrowUpRight className="w-6 h-6" />
-                      </button>
+                      <Link
+                        href={`/services/${service.slug}`}
+                        aria-label={`View ${service.title} service details`}
+                        className="w-14 h-14 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full flex items-center justify-center text-white group-hover:bg-amber-500 group-hover:text-black group-hover:border-amber-400 group-hover:scale-110 transition-all shadow-xl shadow-amber-500/10"
+                      >
+                        <ArrowUpRight className="w-6 h-6" aria-hidden="true" />
+                      </Link>
                     </div>
                   </div>
                 </div>
