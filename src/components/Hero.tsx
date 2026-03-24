@@ -12,44 +12,32 @@ function AnimatedCounter({
   to,
   suffix = "",
   staggerMs = 0,
+  isReady,
 }: {
   to: number;
   suffix?: string;
   staggerMs?: number;
+  isReady: boolean;
 }) {
   const [value, setValue] = useState(0);
 
   useEffect(() => {
-    let started = false;
-
-    const start = () => {
-      if (started) return;
-      started = true;
-      setTimeout(() => {
-        const duration = 1600;
-        const startTime = performance.now();
-        const frame = (now: number) => {
-          const elapsed = now - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          setValue(Math.round(eased * to));
-          if (progress < 1) requestAnimationFrame(frame);
-          else setValue(to);
-        };
-        requestAnimationFrame(frame);
-      }, staggerMs);
-    };
-
-    // Start when the preloader exit animation completes
-    window.addEventListener("preloader-complete", start, { once: true });
-    // Fallback: if the event was already fired before this mounted, start after a short delay
-    const fallback = setTimeout(start, 500);
-
-    return () => {
-      window.removeEventListener("preloader-complete", start);
-      clearTimeout(fallback);
-    };
-  }, [to, staggerMs]);
+    if (!isReady) return;
+    const timeout = setTimeout(() => {
+      const duration = 1600;
+      const startTime = performance.now();
+      const frame = (now: number) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setValue(Math.round(eased * to));
+        if (progress < 1) requestAnimationFrame(frame);
+        else setValue(to);
+      };
+      requestAnimationFrame(frame);
+    }, staggerMs);
+    return () => clearTimeout(timeout);
+  }, [isReady, to, staggerMs]);
 
   return (
     <>
@@ -73,6 +61,20 @@ export default function Hero() {
     target: containerRef,
     offset: ["start start", "end start"],
   });
+
+  // ─── Gate all animations behind the preloader-complete event ─────────────
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setIsReady(true);
+    window.addEventListener("preloader-complete", handler, { once: true });
+    // Fallback: if event never fires (e.g. fast reload edge case), start after 6s
+    const fallback = setTimeout(() => setIsReady(true), 6000);
+    return () => {
+      window.removeEventListener("preloader-complete", handler);
+      clearTimeout(fallback);
+    };
+  }, []);
 
   const textVariants = {
     hidden: { y: "150%", rotate: 5, opacity: 0 },
@@ -101,7 +103,6 @@ export default function Hero() {
           className="object-cover opacity-90"
         />
         <div className="absolute inset-0 bg-black/30 z-10" />
-        {/* Reduced via opacity so image stays visible */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/35 to-transparent z-10" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/70 via-transparent to-[#020617]/40 z-10" />
       </motion.div>
@@ -140,7 +141,7 @@ export default function Hero() {
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            animate={isReady ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-xl border border-white/10 text-blue-100 px-5 py-2.5 rounded-full text-sm font-bold mb-8"
           >
@@ -162,10 +163,10 @@ export default function Hero() {
           <motion.h1
             variants={{
               hidden: {},
-              visible: { transition: { staggerChildren: 0.15, delayChildren: 0.3 } },
+              visible: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } },
             }}
             initial="hidden"
-            animate="visible"
+            animate={isReady ? "visible" : "hidden"}
             className="font-outfit text-[11vw] sm:text-6xl md:text-8xl lg:text-[9.5rem] font-black text-white leading-[0.9] mb-6 md:mb-8 tracking-tighter"
           >
             <div className="overflow-hidden pb-2 lg:pb-4">
@@ -186,7 +187,7 @@ export default function Hero() {
           {/* Paragraph */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={isReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-base md:text-xl lg:text-2xl text-slate-300 mb-8 md:mb-12 max-w-2xl leading-relaxed font-medium"
           >
@@ -196,8 +197,8 @@ export default function Hero() {
 
           {/* CTAs */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={isReady ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.5, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 relative z-20"
           >
@@ -228,8 +229,8 @@ export default function Hero() {
       {/* ─── Stats bar — pinned to bottom, above gradient ─── */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1.1 }}
+        animate={isReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
         className="absolute bottom-0 left-0 right-0 z-20 pb-5 md:pb-7"
       >
         <div className="container mx-auto px-4 md:px-6">
@@ -239,7 +240,6 @@ export default function Hero() {
                 key={stat.label}
                 className="bg-[#020617]/90 backdrop-blur-md px-4 py-4 md:px-7 md:py-5 flex flex-col"
               >
-                {/* Amber accent line */}
                 <span className="block w-6 h-[2px] bg-amber-500/60 mb-3" />
                 <span className="font-outfit font-black text-xl md:text-3xl text-amber-400 leading-none tracking-tight">
                   {stat.text != null ? (
@@ -248,7 +248,8 @@ export default function Hero() {
                     <AnimatedCounter
                       to={stat.num as number}
                       suffix={stat.suffix}
-                      staggerMs={i * 130}
+                      staggerMs={i * 150}
+                      isReady={isReady}
                     />
                   )}
                 </span>
@@ -261,7 +262,7 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      {/* Bottom gradient — behind stats bar (z-10 < z-20) */}
+      {/* Bottom gradient — behind stats bar */}
       <div className="absolute bottom-0 left-0 w-full h-44 bg-gradient-to-t from-[#020617] to-transparent z-10 pointer-events-none" />
     </section>
   );
