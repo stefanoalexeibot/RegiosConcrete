@@ -22,6 +22,36 @@ export const metadata: Metadata = {
   description: "Iowa's premier concrete artisans. Specialized in high-end residential and commercial flatwork, stamping, and foundations.",
 };
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Regios Concrete LLC",
+  "description": "Iowa's premier concrete artisans. Specialized in high-end residential and commercial flatwork, stamping, and foundations.",
+  "telephone": "+15157216852",
+  "email": "regiosconcrete@outlook.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "IA",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Iowa"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Concrete Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Driveway Installation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Stamped Concrete" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Patio Construction" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Concrete" } }
+    ]
+  },
+  "priceRange": "$$",
+  "sameAs": ["https://facebook.com/RegiosConcreteLLC"]
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,6 +59,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${outfit.variable} antialiased min-h-screen flex flex-col font-sans relative`}
       >

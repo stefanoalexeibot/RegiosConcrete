@@ -10,24 +10,28 @@ const steps = [
     description: "Héctor Martínez visits your property for a precision measurement and professional evaluation.",
     icon: Search,
     color: "bg-blue-500",
+    duration: "Within 24–48 hrs",
   },
   {
     title: "Custom Planning",
     description: "We select the perfect mix and finish, from standard driveways to exquisite stamped designs.",
     icon: FileText,
     color: "bg-primary",
+    duration: "1–3 days",
   },
   {
     title: "Expert Pouring",
     description: "Our team executes with military precision, focusing on levels, durability, and aesthetics.",
     icon: Hammer,
     color: "bg-secondary",
+    duration: "1–3 days",
   },
   {
     title: "Perfect Finish",
     description: "Curing and sealing to ensure your investment stays beautiful in the Iowa climate.",
     icon: Sparkles,
     color: "bg-blue-300",
+    duration: "7 days curing",
   },
 ];
 
@@ -87,8 +91,13 @@ export default function Process() {
                 
                 <h4 className="font-outfit text-2xl font-black text-white mb-4">{step.title}</h4>
                 <p className="text-slate-400 leading-relaxed font-medium">{step.description}</p>
-                
-                <div className="mt-6 flex items-center gap-2 text-amber-500 font-black text-sm uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+
+                <div className="mt-5 inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-3 py-1">
+                  <div className="w-1.5 h-1.5 rounded-full bg-amber-400"></div>
+                  <span className="text-amber-400 text-xs font-bold tracking-wide">{step.duration}</span>
+                </div>
+
+                <div className="mt-4 flex items-center gap-2 text-amber-500 font-black text-sm uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
                   <span>Step {index + 1}</span>
                   <div className="w-10 h-px bg-amber-500"></div>
                 </div>

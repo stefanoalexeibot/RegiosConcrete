@@ -63,8 +63,23 @@ export default function Footer() {
           <div className="md:col-span-4 flex flex-col items-start md:items-end">
             <h4 className="font-outfit text-xl font-bold mb-6 text-white/50 tracking-wide uppercase text-sm">Socials</h4>
             <div className="flex gap-4">
-              <a href="https://facebook.com/RegiosConcreteLLC" target="_blank" rel="noreferrer" className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-all font-bold text-xs uppercase tracking-widest shadow-lg">
+              <a
+                href="https://facebook.com/RegiosConcreteLLC"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Regios Concrete on Facebook"
+                className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-all font-bold text-xs uppercase tracking-widest shadow-lg"
+              >
                 FB
+              </a>
+              <a
+                href="https://instagram.com/regiosconcrete"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Regios Concrete on Instagram"
+                className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 hover:border-transparent transition-all font-bold text-xs uppercase tracking-widest shadow-lg"
+              >
+                IG
               </a>
             </div>
           </div>

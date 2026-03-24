@@ -139,26 +139,27 @@ export default function Hero() {
             Elevate your home with Iowa&apos;s premier concrete artisans. We don&apos;t just pour concrete; we build foundations for your future.
           </motion.p>
           
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-5 relative z-20"
+            className="flex flex-col sm:flex-row gap-4 relative z-20"
           >
             <MagneticButton>
-              <Link 
-                href="#contact" 
-                className="group relative bg-gradient-to-b from-primary to-blue-700 text-white text-lg font-bold px-10 py-5 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_40px_-10px_rgba(59,130,246,0.6)] hover:shadow-[0_0_60px_-10px_rgba(59,130,246,0.9)] active:scale-95 border border-blue-400/30 overflow-hidden"
+              <Link
+                href="#contact"
+                className="group relative bg-gradient-to-b from-primary to-blue-700 text-white text-xl font-black px-12 py-6 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_50px_-10px_rgba(59,130,246,0.7)] hover:shadow-[0_0_70px_-10px_rgba(59,130,246,1)] active:scale-95 border border-blue-400/30 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-500 ease-out"></div>
                 <span className="relative z-10 flex items-center gap-3">Get a Free Estimate <ArrowRight className="inline-block w-5 h-5 group-hover:translate-x-1 transition-transform" /></span>
               </Link>
             </MagneticButton>
-            <Link 
-              href="tel:+15157216852" 
-              className="bg-slate-900/50 hover:bg-slate-800/80 backdrop-blur-xl text-white text-lg font-bold px-10 py-5 rounded-2xl border border-white/10 flex items-center justify-center gap-3 transition-all hover:border-white/20 shadow-xl"
+            <Link
+              href="tel:+15157216852"
+              aria-label="Call us at (515) 721-6852"
+              className="bg-slate-900/50 hover:bg-slate-800/80 backdrop-blur-xl text-white text-base font-bold px-8 py-4 rounded-2xl border border-white/10 flex items-center justify-center gap-3 transition-all hover:border-white/20 shadow-xl self-center"
             >
-              <Phone className="w-5 h-5 text-blue-400" />
+              <Phone className="w-4 h-4 text-blue-400" aria-hidden="true" />
               (515) 721-6852
             </Link>
           </motion.div>

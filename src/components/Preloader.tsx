@@ -55,25 +55,32 @@ export default function Preloader() {
           />
 
           <div className="relative z-10 flex flex-col items-center">
-            <motion.div 
-               initial={{ opacity: 0, y: 20 }}
-               animate={{ opacity: 1, y: 0 }}
-               className="font-outfit text-white font-black text-6xl md:text-8xl tracking-tighter mb-6 drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex flex-col items-center mb-6"
             >
-              REGIOS
+              <div className="font-outfit text-white font-black text-6xl md:text-8xl tracking-tighter drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                REGIOS
+              </div>
+              <div className="flex items-center gap-3 mt-2">
+                <div className="h-px w-8 bg-amber-500/60"></div>
+                <span className="text-amber-500/80 font-bold uppercase tracking-[0.3em] text-xs">Concrete LLC</span>
+                <div className="h-px w-8 bg-amber-500/60"></div>
+              </div>
             </motion.div>
             <div className="h-[2px] w-64 bg-white/10 overflow-hidden relative mb-4 rounded-full">
-              <motion.div 
-                className="absolute top-0 left-0 h-full bg-gradient-to-r from-blue-500 to-primary"
+              <motion.div
+                className="absolute top-0 left-0 h-full bg-gradient-to-r from-amber-500 to-primary"
                 initial={{ width: "0%" }}
                 animate={{ width: `${progress}%` }}
                 transition={{ duration: 0.2 }}
               />
             </div>
-            <motion.div 
-               initial={{ opacity: 0 }}
-               animate={{ opacity: 1 }}
-               className="text-white/50 font-mono text-sm tracking-[0.2em]"
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-white/50 font-mono text-sm tracking-[0.2em]"
             >
               {progress === 100 ? "READY" : `${progress}%`}
             </motion.div>

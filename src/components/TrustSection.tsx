@@ -74,13 +74,20 @@ function ParallaxText({ children, baseVelocity = 10 }: ParallaxTextProps) {
 export default function TrustSection() {
   return (
     <section className="py-12 bg-[#020617] relative border-y border-white/5 overflow-hidden">
+      {/* Screen-reader summary of trust badges */}
+      <ul className="sr-only">
+        {trustItems.map((item) => (
+          <li key={item.text}>{item.text}</li>
+        ))}
+      </ul>
+
       {/* Concrete Texture Overlay */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-overlay pointer-events-none" 
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-overlay pointer-events-none"
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?q=80&w=2000&auto=format&fit=crop')" }}
       ></div>
 
-      <div className="relative z-10 w-full overflow-hidden flex flex-col gap-6">
+      <div className="relative z-10 w-full overflow-hidden flex flex-col gap-6" aria-hidden="true">
         <ParallaxText baseVelocity={-0.5}>
           {trustItems.map((item, i) => (
             <div key={i} className="flex items-center gap-3 px-6">
@@ -93,8 +100,8 @@ export default function TrustSection() {
             </div>
           ))}
         </ParallaxText>
-        
-        {/* Counter-rotating secondary marquee for more visual impact */}
+
+        {/* Counter-rotating secondary marquee */}
         <ParallaxText baseVelocity={0.5}>
           {trustItems.map((item, i) => (
             <div key={`reverse-${i}`} className="flex items-center gap-3 px-6">
@@ -106,7 +113,7 @@ export default function TrustSection() {
           ))}
         </ParallaxText>
       </div>
-      
+
       {/* Gradient masks for edges */}
       <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#020617] to-transparent z-20 pointer-events-none"></div>
       <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#020617] to-transparent z-20 pointer-events-none"></div>
