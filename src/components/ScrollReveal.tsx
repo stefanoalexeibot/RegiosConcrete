@@ -26,9 +26,9 @@ export const ScrollReveal = ({
   };
 
   return (
-    <div style={{ position: "relative", width, overflow: "visible" }} className={`${className} ${className?.includes('h-') ? 'h-full' : ''}`}>
+    <div style={{ position: "relative", width, overflow: "visible" }} className={`${className} h-full`}>
       <motion.div
-        className={className?.includes('h-') ? 'h-full' : ''}
+        className="w-full h-full"
         variants={{
           hidden: { 
             opacity: 0, 

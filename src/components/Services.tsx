@@ -126,17 +126,17 @@ export default function Services() {
           {services.map((service, index) => (
             <ScrollReveal 
               key={service.title} 
-              className={`${service.size} h-[400px] md:h-auto`} 
+              className={`${service.size} min-h-[400px]`} 
               delay={index * 0.1}
             >
               <TiltCard>
                 <div className="group relative w-full h-full rounded-[2.5rem] overflow-hidden border border-white/5 bg-[#0f172a] shadow-2xl transition-all hover:border-amber-500/50">
-                  <div className="absolute inset-0 z-0">
+                  <div className="absolute inset-0 z-0 bg-slate-900">
                     <Image 
                       src={service.image} 
                       alt={service.title} 
                       fill
-                      className="object-cover transition-transform duration-[1.5s] group-hover:scale-110 opacity-50 group-hover:opacity-70 mix-blend-luminosity"
+                      className="object-cover transition-transform duration-[1.5s] group-hover:scale-110 opacity-50 group-hover:opacity-80"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/50 to-transparent"></div>
                   </div>
