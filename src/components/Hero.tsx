@@ -1,5 +1,6 @@
+"use client";
+
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Phone, Award, ShieldCheck, MapPin } from "lucide-react";
 import { useRef } from "react";
 import MagneticButton from "./MagneticButton";
