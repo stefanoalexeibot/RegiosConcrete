@@ -9,6 +9,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
 export default function Home() {
   return (
@@ -32,12 +33,10 @@ export default function Home() {
                 <div className="relative pb-10 md:pb-14">
                   <div className="absolute -top-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -z-10"></div>
                   <div className="relative z-10 p-3 md:p-4 bg-slate-900 rounded-[2rem] md:rounded-[3.5rem] shadow-2xl rotate-1 md:rotate-2">
-                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] md:rounded-[3rem]">
-                      <Image
-                        src="/images/gallery/driveway-after-05.jpeg"
-                        alt="Regios Concrete — Quality Work"
-                        fill
-                        className="object-cover hover:grayscale transition-all duration-700"
+                    <div className="w-full overflow-hidden rounded-[1.5rem] md:rounded-[3rem]">
+                      <BeforeAfterSlider
+                        beforeSrc="/images/gallery/driveway-before-01.jpeg"
+                        afterSrc="/images/gallery/driveway-after-12.jpeg"
                       />
                     </div>
                     <div className="absolute -bottom-8 -right-8 md:-bottom-10 md:-right-10 bg-primary p-5 md:p-8 rounded-3xl shadow-2xl border-4 border-white">
