@@ -12,12 +12,12 @@ export default function WhatsAppButton() {
   const [dismissed, setDismissed] = useState(false);
   const [visible, setVisible] = useState(false);
 
-  // Show button after 2s, bubble after 5s
+  // Show button after 2s, bubble after 20s
   useEffect(() => {
     const t1 = setTimeout(() => setVisible(true), 2000);
     const t2 = setTimeout(() => {
       if (!dismissed) setShowBubble(true);
-    }, 5000);
+    }, 20000);
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, [dismissed]);
 

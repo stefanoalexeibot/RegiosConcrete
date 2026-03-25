@@ -32,13 +32,13 @@ export default function SocialProofToast() {
     setCurrent(index);
     setVisible(true);
 
-    // Hide after 5s, then show next after another 5s pause (10s total cycle)
+    // Hide after 5s, then show next after another 10s pause (15s total cycle)
     const hideTimer = setTimeout(() => {
       setVisible(false);
       const nextTimer = setTimeout(() => {
         const nextIndex = (index + 1) % notifications.length;
         showNext(nextIndex);
-      }, 5000);
+      }, 10000);
       return () => clearTimeout(nextTimer);
     }, 5000);
 
