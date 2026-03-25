@@ -7,35 +7,11 @@ import { ArrowUpRight, ChevronRight } from "lucide-react";
 
 const projects = [
   {
-    id: 1,
-    title: "The Iowa Estate",
-    type: "Luxury Driveway",
-    year: "2024",
-    image: "/images/gallery/driveway-after-06.jpeg",
-    video: null,
-  },
-  {
     id: 2,
     title: "Apex Commercial",
     type: "Structural Foundation",
     year: "2023",
     image: "/images/gallery/commercial-after-01.jpeg",
-    video: null,
-  },
-  {
-    id: 3,
-    title: "Riverside Resort",
-    type: "Decorative Patio",
-    year: "2024",
-    image: "/images/gallery/patio-after-07.jpeg",
-    video: null,
-  },
-  {
-    id: 4,
-    title: "Downtown Modern",
-    type: "Polished Interior",
-    year: "2023",
-    image: "/images/gallery/patio-after-08.jpeg",
     video: null,
   },
   {
@@ -80,7 +56,7 @@ export default function Portfolio() {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-87%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-78%"]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const index = Math.min(
@@ -93,7 +69,7 @@ export default function Portfolio() {
   return (
     <section
       ref={targetRef}
-      className="relative h-[700vh] bg-[#020617]"
+      className="relative h-[500vh] bg-[#020617]"
       id="portfolio"
     >
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
