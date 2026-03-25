@@ -2,90 +2,49 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, Phone, Mail } from "lucide-react";
 
-const IowaMap = () => (
-  <div className="relative w-full rounded-3xl bg-[#030a18] border border-amber-500/20 overflow-hidden" style={{ aspectRatio: "16/10" }}>
-    {/* Scanline grid */}
-    <div
-      className="absolute inset-0 opacity-[0.04] pointer-events-none"
-      style={{
-        backgroundImage:
-          "linear-gradient(to right, #f59e0b 1px, transparent 1px), linear-gradient(to bottom, #f59e0b 1px, transparent 1px)",
-        backgroundSize: "18px 18px",
-      }}
-    />
+const CoverageBlock = () => {
+  const cities = [
+    "Des Moines", "Cedar Rapids", "Davenport",
+    "Sioux City", "Iowa City", "Waterloo",
+    "Ames", "Council Bluffs", "Ankeny",
+  ];
+  return (
+    <div className="flex flex-col gap-6">
+      {/* Big IOWA stamp */}
+      <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] px-6 py-5 flex items-end justify-between">
+        <div>
+          <span className="block font-outfit font-black text-[4.5rem] leading-none tracking-tighter text-white/5 select-none absolute inset-0 flex items-center px-4 pointer-events-none text-[9rem]">
+            IA
+          </span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-amber-500/60 block mb-2">Serving</span>
+          <span className="font-outfit font-black text-4xl text-white leading-none tracking-tight">All of<br /><span className="text-amber-400">Iowa</span></span>
+        </div>
+        <div className="text-right">
+          <span className="block font-outfit font-black text-5xl text-amber-400 leading-none">500+</span>
+          <span className="block text-white/30 text-[10px] font-bold uppercase tracking-widest mt-1">Projects done</span>
+        </div>
+      </div>
 
-    {/* Iowa SVG map */}
-    <svg viewBox="0 0 300 188" className="absolute inset-0 w-full h-full p-5" aria-label="Iowa statewide coverage map">
-      <defs>
-        <filter id="glow-state">
-          <feGaussianBlur stdDeviation="2.5" result="blur" />
-          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-        </filter>
-        <filter id="glow-dot">
-          <feGaussianBlur stdDeviation="5" result="blur" />
-          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-        </filter>
-        <radialGradient id="iowa-fill" cx="50%" cy="55%" r="50%">
-          <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.12" />
-          <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.02" />
-        </radialGradient>
-      </defs>
-
-      {/* Iowa state outline */}
-      <path
-        d="M 24,22 L 268,15 L 278,40 L 270,54 L 278,73 L 283,94 L 281,165 L 190,171 L 97,168 L 24,164 L 9,141 L 11,101 L 13,61 L 19,37 Z"
-        fill="url(#iowa-fill)"
-        stroke="rgba(245,158,11,0.65)"
-        strokeWidth="1.5"
-        filter="url(#glow-state)"
-      />
-
-      {/* Des Moines — capital, main pulse */}
-      <circle cx="155" cy="131" r="4" fill="#f59e0b" filter="url(#glow-dot)" />
-      <circle cx="155" cy="131" r="9" fill="none" stroke="#f59e0b" strokeWidth="1.2" opacity="0.6">
-        <animate attributeName="r" values="9;20;9" dur="2.5s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.6;0;0.6" dur="2.5s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="155" cy="131" r="16" fill="none" stroke="#f59e0b" strokeWidth="0.8" opacity="0.3">
-        <animate attributeName="r" values="16;28;16" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0.3;0;0.3" dur="2.5s" begin="0.5s" repeatCount="indefinite" />
-      </circle>
-
-      {/* Cedar Rapids */}
-      <circle cx="220" cy="99" r="2.5" fill="#f59e0b" opacity="0.75" filter="url(#glow-dot)" />
-      {/* Davenport */}
-      <circle cx="270" cy="116" r="2.5" fill="#f59e0b" opacity="0.75" filter="url(#glow-dot)" />
-      {/* Sioux City */}
-      <circle cx="28" cy="64" r="2.5" fill="#f59e0b" opacity="0.75" filter="url(#glow-dot)" />
-      {/* Waterloo */}
-      <circle cx="200" cy="78" r="2.5" fill="#f59e0b" opacity="0.75" filter="url(#glow-dot)" />
-      {/* Iowa City */}
-      <circle cx="237" cy="119" r="2.5" fill="#f59e0b" opacity="0.75" filter="url(#glow-dot)" />
-      {/* Ames */}
-      <circle cx="155" cy="108" r="2" fill="#f59e0b" opacity="0.5" filter="url(#glow-dot)" />
-    </svg>
-
-    {/* Top label */}
-    <div className="absolute top-4 left-4">
-      <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-amber-500/60">Coverage Area</span>
-    </div>
-
-    {/* Bottom info */}
-    <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+      {/* City list */}
       <div>
-        <span className="block font-outfit font-black text-3xl text-amber-400 leading-none tracking-widest">IOWA</span>
-        <span className="block text-white/30 text-[10px] font-bold uppercase tracking-[0.25em] mt-1">Statewide Service</span>
-      </div>
-      <div className="text-right">
-        <span className="block text-amber-500 font-black text-xl font-outfit">500+</span>
-        <span className="block text-white/30 text-[10px] font-bold uppercase tracking-widest">Projects</span>
+        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/30 block mb-3">Cities we&apos;ve worked in</span>
+        <div className="flex flex-wrap gap-2">
+          {cities.map((city) => (
+            <span
+              key={city}
+              className="text-xs font-bold text-white/50 border border-white/10 rounded-full px-3 py-1 hover:border-amber-500/40 hover:text-amber-400 transition-colors cursor-default"
+            >
+              {city}
+            </span>
+          ))}
+          <span className="text-xs font-bold text-amber-500/60 border border-amber-500/20 rounded-full px-3 py-1">
+            + more
+          </span>
+        </div>
       </div>
     </div>
-
-    {/* Corner amber glow */}
-    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-1/3 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-  </div>
-);
+  );
+};
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -218,10 +177,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Iowa SVG Map */}
+          {/* Coverage Block */}
           <div className="md:col-span-4 flex flex-col gap-4">
             <h4 className="text-white/40 text-[10px] font-bold uppercase tracking-[0.3em]">Coverage Area</h4>
-            <IowaMap />
+            <CoverageBlock />
           </div>
         </div>
 
