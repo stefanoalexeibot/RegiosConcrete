@@ -2,38 +2,47 @@
 
 import { motion } from "framer-motion";
 import { Star, Quote, BadgeCheck } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
   {
-    name: "Sarah Jenkins",
-    role: "Homeowner in Des Moines",
+    name: "Tyler B.",
+    role: "Homeowner · Ames, Iowa",
+    date: "February 2025",
+    photo: "/images/testimonials/client-01.jpg",
+    content: "Héctor and his crew poured our new driveway and it came out perfect. Clean edges, great finish, and they cleaned up after themselves. Couldn't ask for more.",
+    stars: 5,
+  },
+  {
+    name: "Jake & Kara M.",
+    role: "Homeowners · Cedar Rapids",
+    date: "November 2024",
+    photo: "/images/testimonials/client-02.jpg",
+    content: "We got a stamped patio done for our backyard and everyone who comes over asks about it. Regios Concrete did an amazing job — fair price and super professional.",
+    stars: 5,
+  },
+  {
+    name: "Randy H.",
+    role: "Farm Owner · Des Moines",
     date: "January 2025",
-    avatarColor: "bg-violet-500",
-    content: "The stamped concrete patio Regios built for us is a work of art. Héctor was professional, on time, and the quality is beyond anything we expected.",
+    photo: "/images/testimonials/client-03.jpg",
+    content: "Had them pour a concrete pad for my equipment on the farm. Solid work, showed up on time, and Héctor was great to work with. Will use them again for sure.",
     stars: 5,
   },
   {
-    name: "Michael Ross",
-    role: "Property Manager",
-    date: "October 2024",
-    avatarColor: "bg-emerald-600",
-    content: "We've used Regios for multiple commercial sidewalks. Their attention to levels and drainage is impressive. Reliable and highly recommended.",
-    stars: 5,
-  },
-  {
-    name: "Emily Davis",
-    role: "Interior Designer",
+    name: "Brandon C.",
+    role: "Homeowner · Ankeny",
     date: "March 2025",
-    avatarColor: "bg-rose-500",
-    content: "Regios Concrete understands aesthetics. They helped me design a custom garage floor that perfectly matches the rest of the home's style.",
+    photo: "/images/testimonials/client-04.jpg",
+    content: "Got my garage floor done and the epoxy finish is incredible. The team was fast, professional, and the result is better than I imagined. Highly recommend.",
     stars: 5,
   },
   {
-    name: "David Wilson",
-    role: "Business Owner",
+    name: "Chris W.",
+    role: "Homeowner · Iowa City",
     date: "December 2024",
-    avatarColor: "bg-amber-600",
-    content: "Foundations are everything. Regios delivered exactly what we needed for our warehouse expansion. Fast, solid, and professional.",
+    photo: "/images/testimonials/client-05.jpg",
+    content: "Regios replaced our cracked driveway and added a walkway to the front door. Everything looks brand new. Great communication from start to finish.",
     stars: 5,
   },
 ];
@@ -100,8 +109,14 @@ export default function Testimonials() {
                 &quot;{t.content}&quot;
               </p>
               <div className="flex items-center gap-4">
-                <div className={`w-12 h-12 ${t.avatarColor} rounded-full flex items-center justify-center font-outfit font-black text-white text-lg shadow-lg`}>
-                  {t.name.charAt(0)}
+                <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg flex-shrink-0 border-2 border-white">
+                  <Image
+                    src={t.photo}
+                    alt={t.name}
+                    width={48}
+                    height={48}
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5">
