@@ -50,7 +50,6 @@ function AnimatedCounter({
 
 // ─── Hero slideshow images (landscape only) ───────────────────────────────────
 const heroImages = [
-  "/images/hero_concrete_landscape.png",
   "/images/gallery/driveway-after-05.jpeg",
   "/images/gallery/driveway-after-12.jpeg",
   "/images/gallery/commercial-after-01.jpeg",
