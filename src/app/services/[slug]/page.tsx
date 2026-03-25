@@ -301,25 +301,27 @@ export default async function ServicePage({
             </FadeUp>
 
             {/* Right — Second image in frame */}
-            <ImageWipe className="relative" direction="left">
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
-                <Image
-                  src={service.images[1]}
-                  alt={`${service.title} detail`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/60 to-transparent" />
-              </div>
-              {/* Badge */}
-              <div className="absolute -bottom-5 -left-5 bg-amber-500 text-black font-outfit font-black text-sm px-5 py-3 rounded-2xl shadow-xl shadow-amber-500/30">
+            <div className="relative pb-5 pl-5">
+              <ImageWipe className="relative" direction="left">
+                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden">
+                  <Image
+                    src={service.images[1]}
+                    alt={`${service.title} detail`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/60 to-transparent" />
+                </div>
+                {/* Decorative ring */}
+                <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-white/10 rounded-full" />
+                <div className="absolute -top-2 -right-2 w-16 h-16 border border-amber-500/20 rounded-full" />
+              </ImageWipe>
+              {/* Badge — outside clipPath so it never gets clipped */}
+              <div className="absolute bottom-0 left-0 bg-amber-500 text-black font-outfit font-black text-sm px-5 py-3 rounded-2xl shadow-xl shadow-amber-500/30">
                 Iowa&apos;s #1 Concrete Crew
               </div>
-              {/* Decorative ring */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-white/10 rounded-full" />
-              <div className="absolute -top-2 -right-2 w-16 h-16 border border-amber-500/20 rounded-full" />
-            </ImageWipe>
+            </div>
           </div>
         </div>
       </section>
