@@ -30,7 +30,7 @@ export default function Navbar() {
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="relative z-50">
-            <Link href="/" className="inline-block relative w-44 h-16 md:w-56 md:h-20" data-cursor="hover">
+            <Link href="/" className="inline-block relative w-56 h-20 md:w-72 md:h-24" data-cursor="hover">
               <Image 
                 src="/images/LOGO.png" 
                 alt="Regios Concrete" 
