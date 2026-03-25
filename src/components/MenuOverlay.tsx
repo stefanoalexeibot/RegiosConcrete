@@ -98,7 +98,7 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
           initial="initial"
           animate="animate"
           exit="exit"
-          className="fixed inset-0 z-[100] bg-[#020617] text-white overflow-hidden flex flex-col"
+          className="fixed inset-0 z-[100] bg-[#020617] text-white overflow-y-auto flex flex-col"
         >
           {/* Background Overlay Decor */}
           <div className="absolute inset-0 z-0 bg-[#020617] pointer-events-none transition-colors duration-1000">
@@ -188,13 +188,23 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
               </motion.div>
 
               {/* Contact Information */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1, duration: 0.8 }}
                 exit={{ opacity: 0, x: 20 }}
                 className="flex flex-col gap-10 mt-12 lg:mt-0"
               >
+                {/* Logo above contact info */}
+                <div className="relative w-36 h-12 md:w-48 md:h-16">
+                  <Image
+                    src="/images/LOGO.png"
+                    alt="Regios Concrete"
+                    fill
+                    className="object-contain object-left"
+                  />
+                </div>
+
                 <div>
                   <h4 className="text-white/50 text-xs font-bold uppercase tracking-widest mb-4">Contact Info</h4>
                   <a href="mailto:regiosconcrete@outlook.com" className="block text-xl md:text-2xl font-medium hover:text-amber-500 transition-colors mb-2">

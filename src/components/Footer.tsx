@@ -150,20 +150,23 @@ export default function Footer() {
             {/* Quick service links */}
             <div>
               <h5 className="text-white/40 text-[10px] font-bold uppercase tracking-[0.3em] mb-5">Our Services</h5>
-              <ul className="grid grid-cols-2 gap-3">
+              <ul className="flex flex-col gap-2">
                 {[
-                  { name: "Driveways", href: "/services/driveways" },
-                  { name: "Stamped Concrete", href: "/services/stamped" },
-                  { name: "Patios", href: "/services/patios" },
-                  { name: "Commercial", href: "/services/commercial" },
+                  { name: "Driveways", href: "/services/driveways", num: "01" },
+                  { name: "Stamped Concrete", href: "/services/stamped", num: "02" },
+                  { name: "Patios", href: "/services/patios", num: "03" },
+                  { name: "Commercial", href: "/services/commercial", num: "04" },
                 ].map((s) => (
                   <li key={s.name}>
                     <Link
                       href={s.href}
-                      className="group flex items-center gap-2 text-slate-400 hover:text-amber-500 transition-colors text-sm font-medium"
+                      className="group flex items-center justify-between border-b border-white/5 hover:border-amber-500/40 py-3 transition-all duration-300"
                     >
-                      <span className="w-1 h-1 rounded-full bg-amber-500/40 group-hover:bg-amber-500 transition-colors"></span>
-                      {s.name}
+                      <div className="flex items-center gap-4">
+                        <span className="text-[10px] font-mono text-amber-500/40 group-hover:text-amber-500 transition-colors">{s.num}</span>
+                        <span className="text-white/70 group-hover:text-white font-medium text-sm tracking-wide transition-colors">{s.name}</span>
+                      </div>
+                      <ArrowUpRight className="w-3.5 h-3.5 text-white/20 group-hover:text-amber-500 -translate-x-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                     </Link>
                   </li>
                 ))}
