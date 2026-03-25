@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { ArrowRight, Phone, Award, ShieldCheck, MapPin } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
@@ -48,6 +48,18 @@ function AnimatedCounter({
   );
 }
 
+// ─── Hero slideshow images (landscape only) ───────────────────────────────────
+const heroImages = [
+  "/images/hero_concrete_landscape.png",
+  "/images/gallery/driveway-after-05.jpeg",
+  "/images/gallery/driveway-after-12.jpeg",
+  "/images/gallery/commercial-after-01.jpeg",
+  "/images/gallery/patio-after-03.jpeg",
+  "/images/gallery/driveway-after-06.jpeg",
+  "/images/gallery/stamped-after-01.jpeg",
+  "/images/gallery/commercial-after-04.jpeg",
+];
+
 // ─── Stats data ───────────────────────────────────────────────────────────────
 const stats = [
   { label: "Satisfied Clients", num: 500, suffix: "+", text: null },
@@ -62,6 +74,16 @@ export default function Hero() {
     target: containerRef,
     offset: ["start start", "end start"],
   });
+
+  // ─── Hero slideshow ───────────────────────────────────────────────────────
+  const [imgIndex, setImgIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setImgIndex((i) => (i + 1) % heroImages.length);
+    }, 7000);
+    return () => clearInterval(interval);
+  }, []);
 
   // ─── Gate all animations behind the preloader-complete event ─────────────
   const [isReady, setIsReady] = useState(false);
@@ -94,15 +116,27 @@ export default function Hero() {
       ref={containerRef}
       className="relative min-h-[110vh] flex items-center pt-24 md:pt-32 lg:pt-48 pb-36 md:pb-40 overflow-hidden bg-slate-950"
     >
-      {/* ─── Background ─── */}
+      {/* ─── Background slideshow ─── */}
       <motion.div style={{ y }} className="absolute inset-0 z-0 bg-slate-950">
-        <Image
-          src="/images/hero_concrete_landscape.png"
-          alt="Regios Concrete Hero Showcase"
-          fill
-          priority
-          className="object-cover opacity-90"
-        />
+        <AnimatePresence mode="sync">
+          <motion.div
+            key={imgIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2.5, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={heroImages[imgIndex]}
+              alt="Regios Concrete Hero Showcase"
+              fill
+              priority={imgIndex === 0}
+              className="object-cover object-center opacity-90"
+              sizes="100vw"
+            />
+          </motion.div>
+        </AnimatePresence>
         <div className="absolute inset-0 bg-black/30 z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/35 to-transparent z-10" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/70 via-transparent to-[#020617]/40 z-10" />
