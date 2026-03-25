@@ -10,12 +10,26 @@ import MenuOverlay from "./MenuOverlay";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [useDarkLogo, setUseDarkLogo] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+
+      // Switch to dark logo when navbar is over a light-background section
+      const navbarBottom = 80;
+      const lightSections = document.querySelectorAll(".bg-white");
+      let overLight = false;
+      lightSections.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= navbarBottom && rect.bottom >= 0) {
+          overLight = true;
+        }
+      });
+      setUseDarkLogo(overLight);
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -31,11 +45,11 @@ export default function Navbar() {
             {/* Logo */}
             <div className="relative z-50">
             <Link href="/" className="inline-block relative w-56 h-20 md:w-72 md:h-24" data-cursor="hover">
-              <Image 
-                src="/images/LOGO.png" 
-                alt="Regios Concrete" 
-                fill 
-                className="object-contain object-left"
+              <Image
+                src={useDarkLogo ? "/images/LOGO-dark.png" : "/images/LOGO.png"}
+                alt="Regios Concrete"
+                fill
+                className="object-contain object-left transition-opacity duration-300"
                 priority
               />
             </Link>
