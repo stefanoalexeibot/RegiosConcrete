@@ -179,7 +179,6 @@ export async function generateMetadata({
     openGraph: {
       title: `${service.title} Iowa | Regios Concrete LLC`,
       description: service.tagline,
-      images: [{ url: service.images[0], width: 1200, height: 630, alt: `${service.title} — Regios Concrete Iowa` }],
     },
     alternates: { canonical: canonicalUrl },
   };

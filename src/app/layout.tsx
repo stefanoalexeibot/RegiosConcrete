@@ -47,20 +47,11 @@ export const metadata: Metadata = {
     title: "Regios Concrete LLC | Iowa's #1 Concrete Contractors",
     description:
       "Iowa's top-rated concrete contractors. Driveways, patios, stamped concrete & commercial flatwork across Iowa. 500+ satisfied clients.",
-    images: [
-      {
-        url: "/images/gallery/driveway-after-05.jpeg",
-        width: 1200,
-        height: 630,
-        alt: "Regios Concrete LLC — Iowa's Premier Concrete Contractors",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Regios Concrete LLC | Iowa's #1 Concrete Contractors",
     description: "Iowa's top-rated concrete contractors. Free estimates. Call (515) 721-6852.",
-    images: ["/images/gallery/driveway-after-05.jpeg"],
   },
   alternates: {
     canonical: siteUrl,

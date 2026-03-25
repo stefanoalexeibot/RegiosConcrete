@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Project Gallery | Regios Concrete LLC",
     description: "Browse 85+ real concrete projects across Iowa — driveways, stamped patios, commercial flatwork.",
-    images: [{ url: "/images/gallery/patio-after-03.jpeg", width: 1200, height: 630 }],
   },
   alternates: { canonical: "https://www.regiosconcrete.com/gallery" },
 };
