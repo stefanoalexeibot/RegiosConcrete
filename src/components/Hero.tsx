@@ -220,8 +220,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-base md:text-xl lg:text-2xl text-slate-300 mb-8 md:mb-12 max-w-2xl leading-relaxed font-medium"
           >
-            Build your Home with Regios Concrete from Iowa. We don&apos;t just pour
-            concrete; we build foundations for your future.
+            Build your Home with Regios Concrete from Iowa.
           </motion.p>
 
           {/* Active viewers */}
