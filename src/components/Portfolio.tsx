@@ -15,20 +15,20 @@ const projects = [
     video: null,
   },
   {
-    id: 5,
-    title: "The Vertex Driveway",
-    type: "Residential Concrete",
-    year: "2024",
-    image: "/images/gallery/driveway-after-01.jpeg",
-    video: null,
-  },
-  {
     id: 6,
     title: "Behind the Craft",
     type: "Work in Progress",
     year: "2024",
     image: null,
     video: "/videos/work-showcase-01.mp4",
+  },
+  {
+    id: 5,
+    title: "The Vertex Driveway",
+    type: "Residential Concrete",
+    year: "2024",
+    image: "/images/gallery/driveway-after-01.jpeg",
+    video: null,
   },
   {
     id: 7,
