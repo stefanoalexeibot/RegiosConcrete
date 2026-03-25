@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import NoiseOverlay from "@/components/NoiseOverlay";
 import SmoothScroll from "@/components/SmoothScroll";
 import Preloader from "@/components/Preloader";
+import SocialProofToast from "@/components/SocialProofToast";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -69,6 +70,7 @@ export default function RootLayout({
         className={`${inter.variable} ${outfit.variable} antialiased min-h-screen flex flex-col font-sans relative`}
       >
         <Preloader />
+        <SocialProofToast />
         <SmoothScroll>
           <NoiseOverlay />
           
