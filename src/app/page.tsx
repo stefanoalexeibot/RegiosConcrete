@@ -36,8 +36,11 @@ export default function Home() {
                   <div className="relative z-10 p-3 md:p-4 bg-slate-900 rounded-[2rem] md:rounded-[3.5rem] shadow-2xl rotate-1 md:rotate-2">
                     <div className="w-full overflow-hidden rounded-[1.5rem] md:rounded-[3rem]">
                       <BeforeAfterSlider
-                        beforeSrc="/images/gallery/driveway-before-01.jpeg"
-                        afterSrc="/images/gallery/driveway-after-12.jpeg"
+                        pairs={[
+                          { beforeSrc: "/images/gallery/driveway-before-01.jpeg", afterSrc: "/images/gallery/driveway-after-12.jpeg", label: "Driveway · Des Moines" },
+                          { beforeSrc: "/images/gallery/slab-before-01.jpeg", afterSrc: "/images/gallery/slab-after-01.jpeg", label: "Concrete Slab · Iowa" },
+                          { beforeSrc: "/images/gallery/patio-before-05.jpeg", afterSrc: "/images/gallery/patio-after-48.jpeg", label: "Patio · Cedar Rapids" },
+                        ]}
                       />
                     </div>
                     <div className="absolute -bottom-8 -right-8 md:-bottom-10 md:-right-10 bg-primary p-5 md:p-8 rounded-3xl shadow-2xl border-4 border-white">
