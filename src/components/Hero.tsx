@@ -50,13 +50,13 @@ function AnimatedCounter({
 
 // ─── Hero slideshow images (landscape only) ───────────────────────────────────
 const heroImages = [
-  "/images/gallery/driveway-after-05.jpeg",
-  "/images/gallery/driveway-after-12.jpeg",
-  "/images/gallery/commercial-after-01.jpeg",
-  "/images/gallery/patio-after-03.jpeg",
-  "/images/gallery/driveway-after-06.jpeg",
-  "/images/gallery/stamped-after-01.jpeg",
-  "/images/gallery/commercial-after-04.jpeg",
+  "/images/gallery/stamped-after-03.jpeg",
+  "/images/gallery/patio-after-15.jpeg",
+  "/images/gallery/commercial-after-03.jpeg",
+  "/images/gallery/stamped-after-07.jpeg",
+  "/images/gallery/patio-after-30.jpeg",
+  "/images/gallery/commercial-after-06.jpeg",
+  "/images/gallery/stamped-after-10.jpeg",
 ];
 
 // ─── Stats data ───────────────────────────────────────────────────────────────
