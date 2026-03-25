@@ -86,6 +86,11 @@ export default function Hero() {
 
   // ─── Gate all animations behind the preloader-complete event ─────────────
   const [isReady, setIsReady] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
 
   useEffect(() => {
     const handler = () => setIsReady(true);
@@ -108,7 +113,7 @@ export default function Hero() {
     },
   };
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const y = useTransform(scrollYProgress, [0, 1], isMobile ? ["0%", "0%"] : ["0%", "50%"]);
 
   return (
     <section
@@ -141,22 +146,12 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/70 via-transparent to-[#020617]/40 z-10" />
       </motion.div>
 
-      {/* Ambient blobs */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[120px] z-0 pointer-events-none" />
-      <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-[100px] z-0 pointer-events-none" />
+      {/* Ambient blobs — desktop only (blur filters are expensive on mobile) */}
+      <div className="hidden md:block absolute top-1/4 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[120px] z-0 pointer-events-none" />
+      <div className="hidden md:block absolute bottom-1/4 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-[100px] z-0 pointer-events-none" />
 
-      {/* Floating blobs + perspective grid */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden" style={{ perspective: "1000px" }}>
-        <motion.div
-          animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[20%] left-[10%] w-64 h-64 bg-primary/10 rounded-full blur-[100px]"
-        />
-        <motion.div
-          animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-[20%] right-[10%] w-96 h-96 bg-secondary/10 rounded-full blur-[120px]"
-        />
+      {/* Perspective grid — desktop only */}
+      <div className="hidden md:block absolute inset-0 z-0 pointer-events-none overflow-hidden" style={{ perspective: "1000px" }}>
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
