@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -30,16 +29,6 @@ const services: Record<string, { title: string; headline: string; accent: string
     tagline: "Large-scale flatwork delivered on schedule, built to code, built to last.",
   },
 };
-
-export async function generateImageMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const svc = services[slug];
-  return [{ id: slug, alt: svc ? `${svc.title} — Regios Concrete Iowa` : "Regios Concrete LLC" }];
-}
 
 export default async function Image({
   params,
