@@ -5,6 +5,7 @@ import Process from "@/components/Process";
 import Portfolio from "@/components/Portfolio";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
+import FAQ from "@/components/FAQ";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -100,6 +101,7 @@ export default function Home() {
       </section>
 
       <Testimonials />
+      <FAQ />
       
       <ScrollReveal>
         <Contact />
