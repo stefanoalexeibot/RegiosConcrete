@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Mail, User, CheckCircle2, ArrowRight, ArrowLeft } from "lucide-react";
+import ActiveViewers from "./ActiveViewers";
 
 // ─── Step data ────────────────────────────────────────────────────────────────
 const services = [
@@ -137,6 +138,11 @@ export default function Contact() {
 
           {/* ─── Right col — multi-step form ─── */}
           <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-2xl text-slate-900 relative overflow-hidden">
+
+            {/* Active viewers */}
+            <div className="mb-6">
+              <ActiveViewers variant="light" />
+            </div>
 
             {/* Free badge */}
             <div className="absolute -top-4 -right-4 md:-top-6 md:-right-6 w-20 h-20 md:w-24 md:h-24 bg-secondary rounded-full flex items-center justify-center text-white font-bold leading-none animate-pulse rotate-12 shadow-xl shadow-secondary/30" aria-hidden="true">

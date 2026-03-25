@@ -6,6 +6,7 @@ import { ArrowRight, Phone, Award, ShieldCheck, MapPin } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import MagneticButton from "./MagneticButton";
+import ActiveViewers from "./ActiveViewers";
 
 // ─── AnimatedCounter ──────────────────────────────────────────────────────────
 function AnimatedCounter({
@@ -194,6 +195,16 @@ export default function Hero() {
             Elevate your home with Iowa&apos;s premier concrete artisans. We don&apos;t just pour
             concrete; we build foundations for your future.
           </motion.p>
+
+          {/* Active viewers */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={isReady ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mb-6"
+          >
+            <ActiveViewers variant="dark" />
+          </motion.div>
 
           {/* CTAs */}
           <motion.div
