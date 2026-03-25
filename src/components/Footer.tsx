@@ -100,12 +100,11 @@ export default function Footer() {
           src="/images/gallery/patio-after-03.jpeg"
           alt=""
           fill
-          className="object-cover object-center opacity-30"
+          className="object-cover object-center opacity-60"
           aria-hidden="true"
         />
-        {/* Gradiente negro — igual que el Hero */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30 z-10" />
         {/* Glow amber abajo */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-amber-500/10 rounded-[100%] blur-[120px] pointer-events-none z-10" />
 
