@@ -220,7 +220,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-base md:text-xl lg:text-2xl text-slate-300 mb-8 md:mb-12 max-w-2xl leading-relaxed font-medium"
           >
-            Elevate your home with Iowa&apos;s premier concrete artisans. We don&apos;t just pour
+            Transform your property with Iowa&apos;s premier concrete artisans. We don&apos;t just pour
             concrete; we build foundations for your future.
           </motion.p>
 

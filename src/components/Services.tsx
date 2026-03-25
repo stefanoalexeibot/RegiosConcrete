@@ -66,10 +66,10 @@ const TiltCard = ({ children, className }: { children: React.ReactNode, classNam
 
 const services = [
   {
-    title: "Driveways",
+    title: "Sidewalk",
     slug: "driveways",
     size: "col-span-1 row-span-1 md:col-span-2 md:row-span-2",
-    description: "Military-grade concrete driveways designed for Iowa winters.",
+    description: "Military-grade concrete sidewalks designed for Iowa winters.",
     image: "/images/gallery/driveway-after-01.jpeg",
     features: ["Heavy Duty", "Permit Ready"],
   },
@@ -82,12 +82,12 @@ const services = [
     features: ["Custom Styles"],
   },
   {
-    title: "Patios",
+    title: "Extension Driveways",
     slug: "patios",
     size: "col-span-1 row-span-1 md:row-span-2",
-    description: "Premium outdoor living spaces.",
+    description: "Premium driveway extensions built to last.",
     image: "/images/gallery/patio-after-01.jpeg",
-    features: ["Entertainment Ready"],
+    features: ["Custom Design"],
   },
   {
     title: "Commercial",

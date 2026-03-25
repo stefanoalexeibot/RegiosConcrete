@@ -8,19 +8,19 @@ import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
 const services = {
   driveways: {
-    title: "Concrete Driveways",
-    headline: "Military-Grade.",
-    headlineAccent: "Iowa-Ready.",
-    tagline: "Built to survive Iowa winters and outlast every driveway on your block.",
+    title: "Concrete Sidewalks",
+    headline: "Built to Last.",
+    headlineAccent: "Step by Step.",
+    tagline: "Safe, durable sidewalks engineered for Iowa's freeze-thaw cycles.",
     description:
-      "Your driveway takes the hardest punishment of any surface on your property — Iowa winters, heavy vehicles, and constant use. We engineer driveways that don't just look stunning on day one, but stand strong for decades.",
+      "Your sidewalk is the first impression of your property — and in Iowa winters, it takes serious punishment. We engineer concrete sidewalks that don't just look clean on day one, but stay solid and safe for decades.",
     features: [
       { num: "01", title: "Fiber-Reinforced Mix", desc: "Polypropylene fibers added to every pour for superior crack resistance." },
       { num: "02", title: "Expansion Joints", desc: "Strategically placed to prevent cracking from Iowa freeze-thaw cycles." },
       { num: "03", title: "Permit Ready", desc: "We handle all city permits and code compliance for your peace of mind." },
       { num: "04", title: "Sealed Finish", desc: "Premium sealer applied to protect against stains, salt, and UV damage." },
-      { num: "05", title: "Custom Edging", desc: "Decorative borders, exposed aggregate, and broom finishes available." },
-      { num: "06", title: "10-Year Guarantee", desc: "Every driveway backed by our industry-leading workmanship warranty." },
+      { num: "05", title: "ADA Compliant", desc: "Proper slope and width to meet accessibility standards where required." },
+      { num: "06", title: "10-Year Guarantee", desc: "Every sidewalk backed by our industry-leading workmanship warranty." },
     ],
     images: [
       "/images/gallery/driveway-after-01.jpeg",
@@ -66,19 +66,19 @@ const services = {
     ],
   },
   patios: {
-    title: "Outdoor Patios",
-    headline: "Premium",
-    headlineAccent: "Outdoor Living.",
-    tagline: "Turn your backyard into the best room in the house.",
+    title: "Extension Driveways",
+    headline: "More Space.",
+    headlineAccent: "More Value.",
+    tagline: "Expand your driveway with a seamless, heavy-duty concrete extension.",
     description:
-      "A well-designed patio extends your living space and adds real value to your home. We design and pour patios that become the heart of your outdoor life — built for Iowa weather and crafted to impress.",
+      "Need more room to park or maneuver? A concrete driveway extension is one of the highest-ROI investments for your property. We design and pour extensions that match your existing concrete and hold up to Iowa winters for decades.",
     features: [
-      { num: "01", title: "Entertainment Ready", desc: "Engineered for outdoor kitchens, fire pits, furniture, and gatherings." },
-      { num: "02", title: "Custom Shapes", desc: "Curved edges, inlaid patterns, and multi-level designs available." },
-      { num: "03", title: "Drainage Engineering", desc: "Proper slope calculations prevent pooling and water damage." },
-      { num: "04", title: "Stamped Options", desc: "Upgrade any patio with decorative stamping and integrated color." },
-      { num: "05", title: "Durable Finish", desc: "Broom, exposed aggregate, or polished finishes for style and grip." },
-      { num: "06", title: "Lighting Ready", desc: "Conduit installation for low-voltage landscape lighting systems." },
+      { num: "01", title: "Seamless Match", desc: "We match your existing concrete color and finish for a clean, unified look." },
+      { num: "02", title: "Heavy Load Design", desc: "Engineered for trucks, SUVs, and multiple vehicles side by side." },
+      { num: "03", title: "Proper Drainage", desc: "Slope calculations ensure water flows away from your home and garage." },
+      { num: "04", title: "Expansion Joints", desc: "Strategically placed to prevent cracking through Iowa freeze-thaw cycles." },
+      { num: "05", title: "Stamped Options", desc: "Upgrade any extension with decorative stamping and integrated color." },
+      { num: "06", title: "10-Year Guarantee", desc: "Every extension backed by our industry-leading workmanship warranty." },
     ],
     images: [
       "/images/gallery/patio-after-01.jpeg",
