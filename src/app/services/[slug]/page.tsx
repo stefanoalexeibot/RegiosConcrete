@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Phone, Star } from "lucide-react";
 import type { Metadata } from "next";
 import { PageCurtain, HeroFadeUp, FadeUp, ImageWipe } from "@/components/ServicePageTransition";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
 const services = {
   driveways: {
@@ -325,6 +326,26 @@ export default async function ServicePage({
           </FadeUp>
         </div>
       </section>
+
+      {/* ─── BEFORE & AFTER ─── */}
+      {(slug === "driveways" || slug === "patios") && (
+        <section className="py-20 md:py-32 bg-[#030b1a]">
+          <div className="container mx-auto px-4 md:px-6">
+            <FadeUp className="mb-10 md:mb-14">
+              <span className="text-amber-500 font-bold tracking-widest uppercase text-xs">The Transformation</span>
+              <h2 className="font-outfit text-3xl sm:text-5xl font-black text-white tracking-tighter mt-3">
+                Before <span className="text-white/30">&</span> After
+              </h2>
+            </FadeUp>
+            <FadeUp delay={0.1}>
+              <BeforeAfterSlider
+                beforeSrc={slug === "driveways" ? "/images/gallery/driveway-before-01.jpeg" : "/images/gallery/patio-before-05.jpeg"}
+                afterSrc={slug === "driveways" ? "/images/gallery/driveway-after-12.jpeg" : "/images/gallery/patio-after-48.jpeg"}
+              />
+            </FadeUp>
+          </div>
+        </section>
+      )}
 
       {/* ─── GALLERY ─── */}
       <section className="py-20 md:py-32">

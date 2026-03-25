@@ -12,13 +12,15 @@ const projects = [
     type: "Luxury Driveway",
     year: "2024",
     image: "/images/gallery/driveway-after-06.jpeg",
+    video: null,
   },
   {
     id: 2,
     title: "Apex Commercial",
     type: "Structural Foundation",
     year: "2023",
-    image: "/images/gallery/patio-after-06.jpeg",
+    image: "/images/gallery/commercial-after-01.jpeg",
+    video: null,
   },
   {
     id: 3,
@@ -26,6 +28,7 @@ const projects = [
     type: "Decorative Patio",
     year: "2024",
     image: "/images/gallery/patio-after-07.jpeg",
+    video: null,
   },
   {
     id: 4,
@@ -33,14 +36,24 @@ const projects = [
     type: "Polished Interior",
     year: "2023",
     image: "/images/gallery/patio-after-08.jpeg",
+    video: null,
   },
   {
     id: 5,
     title: "The Vertex Driveway",
     type: "Residential Concrete",
     year: "2024",
-    image: "/images/gallery/patio-after-27.jpeg",
-  }
+    image: "/images/gallery/driveway-after-01.jpeg",
+    video: null,
+  },
+  {
+    id: 6,
+    title: "Behind the Craft",
+    type: "Work in Progress",
+    year: "2024",
+    image: null,
+    video: "/videos/work-showcase-01.mp4",
+  },
 ];
 
 export default function Portfolio() {
@@ -51,7 +64,7 @@ export default function Portfolio() {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const index = Math.min(
@@ -64,7 +77,7 @@ export default function Portfolio() {
   return (
     <section
       ref={targetRef}
-      className="relative h-[400vh] bg-[#020617]"
+      className="relative h-[500vh] bg-[#020617]"
       id="portfolio"
     >
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
@@ -97,7 +110,7 @@ export default function Portfolio() {
               key={index}
               className="group relative w-[80vw] md:w-[60vw] lg:w-[45vw] aspect-[4/3] sm:aspect-[16/9] overflow-hidden rounded-3xl"
             >
-              {/* Image Container with Parallax Effect inside card */}
+              {/* Media Container */}
               <motion.div
                 initial={{ clipPath: "inset(100% 0 0 0)", filter: "brightness(0.5)" }}
                 whileInView={{ clipPath: "inset(0% 0 0 0)", filter: "brightness(1)" }}
@@ -106,21 +119,39 @@ export default function Portfolio() {
                 className="relative w-full h-[60vh] md:h-[70vh] rounded-2xl overflow-hidden mb-6 group"
                 data-cursor="view"
               >
-                <motion.div
-                  initial={{ scale: 1.3 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  className="absolute inset-0 w-full h-full"
-                >
-                  <Image
-                    src={project.image}
-                    alt={`${project.title} — ${project.type}, ${project.year}`}
-                    fill
-                    className="object-cover transition-transform duration-[2s] group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </motion.div>
+                {project.video ? (
+                  <>
+                    <video
+                      src={project.video}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
+                    />
+                    {/* Play badge */}
+                    <div className="absolute top-6 right-6 z-20 flex items-center gap-2 bg-black/50 backdrop-blur-md border border-white/20 rounded-full px-4 py-2">
+                      <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                      <span className="text-white text-xs font-bold uppercase tracking-widest">Live Work</span>
+                    </div>
+                  </>
+                ) : (
+                  <motion.div
+                    initial={{ scale: 1.3 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    className="absolute inset-0 w-full h-full"
+                  >
+                    <Image
+                      src={project.image!}
+                      alt={`${project.title} — ${project.type}, ${project.year}`}
+                      fill
+                      className="object-cover transition-transform duration-[2s] group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </motion.div>
+                )}
                 <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
               </motion.div>
 
