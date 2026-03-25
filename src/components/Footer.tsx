@@ -115,6 +115,7 @@ export default function Footer() {
                   { name: "Stamped Concrete", href: "/services/stamped", num: "02" },
                   { name: "Patios", href: "/services/patios", num: "03" },
                   { name: "Commercial", href: "/services/commercial", num: "04" },
+                  { name: "Service Areas", href: "/areas", num: "05" },
                 ].map((s) => (
                   <li key={s.name}>
                     <Link

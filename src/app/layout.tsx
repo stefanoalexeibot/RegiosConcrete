@@ -19,9 +19,57 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://www.regiosconcrete.com";
+
 export const metadata: Metadata = {
-  title: "Regios Concrete LLC | Ultra-Premium Concrete Services",
-  description: "Iowa's premier concrete artisans. Specialized in high-end residential and commercial flatwork, stamping, and foundations.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Regios Concrete LLC | Iowa's #1 Concrete Contractors",
+    template: "%s | Regios Concrete LLC",
+  },
+  description:
+    "Iowa's top-rated concrete contractors. Driveways, patios, stamped concrete & commercial flatwork in Des Moines, Cedar Rapids, Ames & across Iowa. 500+ satisfied clients. Free estimates.",
+  keywords: [
+    "concrete contractors Iowa",
+    "concrete driveway Des Moines",
+    "stamped concrete Iowa",
+    "concrete patio Cedar Rapids",
+    "commercial concrete Iowa",
+    "concrete contractor Ames Iowa",
+    "concrete company Iowa",
+    "Regios Concrete",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "Regios Concrete LLC",
+    title: "Regios Concrete LLC | Iowa's #1 Concrete Contractors",
+    description:
+      "Iowa's top-rated concrete contractors. Driveways, patios, stamped concrete & commercial flatwork across Iowa. 500+ satisfied clients.",
+    images: [
+      {
+        url: "/images/gallery/driveway-after-05.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Regios Concrete LLC — Iowa's Premier Concrete Contractors",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Regios Concrete LLC | Iowa's #1 Concrete Contractors",
+    description: "Iowa's top-rated concrete contractors. Free estimates. Call (515) 721-6852.",
+    images: ["/images/gallery/driveway-after-05.jpeg"],
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
 };
 
 const localBusinessSchema = {

@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import GalleryGrid from "@/components/GalleryGrid";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Project Gallery",
+  description:
+    "Browse 85+ real concrete projects completed across Iowa by Regios Concrete LLC — driveways, stamped patios, commercial flatwork, and more. See the results for yourself.",
+  openGraph: {
+    title: "Project Gallery | Regios Concrete LLC",
+    description: "Browse 85+ real concrete projects across Iowa — driveways, stamped patios, commercial flatwork.",
+    images: [{ url: "/images/gallery/patio-after-03.jpeg", width: 1200, height: 630 }],
+  },
+  alternates: { canonical: "https://www.regiosconcrete.com/gallery" },
+};
 
 export default function GalleryPage() {
   return (

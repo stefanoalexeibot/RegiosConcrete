@@ -17,6 +17,7 @@ const navLinks = [
   { name: "Gallery", href: "/gallery", bgImage: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?q=80&w=2070&auto=format&fit=crop" },
   { name: "Portfolio", href: "/#portfolio", bgImage: "https://images.unsplash.com/photo-1516216628859-9bccecad13fc?q=80&w=2070&auto=format&fit=crop" },
   { name: "Process", href: "/#process", bgImage: "https://images.unsplash.com/photo-1558442086-8ea19a79cd4d?q=80&w=2070&auto=format&fit=crop" },
+  { name: "Service Areas", href: "/areas", bgImage: "https://images.unsplash.com/photo-1533227268428-f9ed0900e0a5?q=80&w=2070&auto=format&fit=crop" },
   { name: "Contact", href: "/#contact", bgImage: "https://images.unsplash.com/photo-1533227268428-f9ed0900e0a5?q=80&w=2070&auto=format&fit=crop" },
 ];
 

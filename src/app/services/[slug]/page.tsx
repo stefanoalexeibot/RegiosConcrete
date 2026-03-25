@@ -131,6 +131,37 @@ export function generateStaticParams() {
   return Object.keys(services).map((slug) => ({ slug }));
 }
 
+const serviceKeywords: Record<string, string[]> = {
+  driveways: [
+    "concrete driveway Iowa",
+    "concrete driveway Des Moines",
+    "concrete driveway installation Iowa",
+    "driveway contractors Iowa",
+    "residential concrete Iowa",
+  ],
+  patios: [
+    "concrete patio Iowa",
+    "outdoor patio contractor Iowa",
+    "concrete patio Des Moines",
+    "patio installation Iowa",
+    "backyard concrete Iowa",
+  ],
+  stamped: [
+    "stamped concrete Iowa",
+    "decorative concrete Iowa",
+    "stamped concrete patio Des Moines",
+    "stamped concrete contractor Iowa",
+    "colored concrete Iowa",
+  ],
+  commercial: [
+    "commercial concrete Iowa",
+    "commercial concrete contractor Des Moines",
+    "commercial flatwork Iowa",
+    "industrial concrete Iowa",
+    "warehouse concrete floor Iowa",
+  ],
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -139,9 +170,18 @@ export async function generateMetadata({
   const { slug } = await params;
   const service = services[slug as Slug];
   if (!service) return {};
+  const keywords = serviceKeywords[slug] ?? [];
+  const canonicalUrl = `https://www.regiosconcrete.com/services/${slug}`;
   return {
-    title: `${service.title} | Regios Concrete LLC`,
-    description: service.description,
+    title: `${service.title} in Iowa`,
+    description: `${service.tagline} Regios Concrete LLC serves Des Moines, Cedar Rapids, Ames & all of Iowa. Free estimates — call (515) 721-6852.`,
+    keywords,
+    openGraph: {
+      title: `${service.title} Iowa | Regios Concrete LLC`,
+      description: service.tagline,
+      images: [{ url: service.images[0], width: 1200, height: 630, alt: `${service.title} — Regios Concrete Iowa` }],
+    },
+    alternates: { canonical: canonicalUrl },
   };
 }
 
