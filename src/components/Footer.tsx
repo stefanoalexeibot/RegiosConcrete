@@ -135,9 +135,14 @@ export default function Footer() {
           {/* Brand + Services */}
           <div className="md:col-span-5 flex flex-col gap-10">
             <div>
-              <h4 className="font-outfit text-3xl font-black mb-3 tracking-tighter">
-                REGIOS <span className="text-amber-500 italic">CONCRETE</span>
-              </h4>
+              <div className="relative w-48 h-16 md:w-64 md:h-20 mb-4">
+                <Image
+                  src="/images/LOGO.png"
+                  alt="Regios Concrete"
+                  fill
+                  className="object-contain object-left"
+                />
+              </div>
               <p className="text-slate-400 max-w-sm leading-relaxed font-medium">
                 Iowa&apos;s premier concrete artisans. We combine military precision with artistic vision to build work that lasts generations.
               </p>

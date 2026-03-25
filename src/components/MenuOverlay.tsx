@@ -154,7 +154,7 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
           </div>
 
           {/* Menu Main Content */}
-          <div className="flex-1 container mx-auto px-4 md:px-6 flex flex-col justify-center relative z-10 pb-20">
+          <div className="flex-1 container mx-auto px-4 md:px-6 flex flex-col justify-center relative z-10 pb-4">
             <div className="flex flex-col lg:flex-row justify-between lg:items-end h-full w-full max-w-6xl mx-auto gap-12 lg:gap-0 mt-10 md:mt-20">
               
               {/* Navigation Links */}
@@ -244,6 +244,21 @@ export default function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
               </motion.div>
 
             </div>
+          </div>
+
+          {/* Menu Footer */}
+          <div className="container mx-auto px-4 md:px-6 py-5 border-t border-white/10 flex justify-between items-center relative z-10">
+            <div className="relative w-28 h-10 md:w-40 md:h-14">
+              <Image
+                src="/images/LOGO.png"
+                alt="Regios Concrete"
+                fill
+                className="object-contain object-left opacity-60"
+              />
+            </div>
+            <p className="text-white/30 text-[10px] font-bold uppercase tracking-[0.25em]">
+              Iowa&apos;s Premier Concrete Artisans
+            </p>
           </div>
         </motion.div>
       )}
