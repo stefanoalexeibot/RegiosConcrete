@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(ls -la /c/Users/brand/Downloads/RegiosConcrete/*.*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(grep \"\\\\.jpeg$\")",
+      "Bash(cp \"C:/Users/brand/Downloads/WhatsApp Image 2026-03-24 at 10.17.53 PM.jpeg\" \"C:/Users/brand/Downloads/RegiosConcrete/public/images/gallery/slab-before-01.jpeg\")",
+      "Bash(cp \"C:/Users/brand/Downloads/WhatsApp Image 2026-03-24 at 10.17.54 PM.jpeg\" \"C:/Users/brand/Downloads/RegiosConcrete/public/images/gallery/slab-after-01.jpeg\")",
+      "Bash(del:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

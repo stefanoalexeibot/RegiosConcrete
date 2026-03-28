@@ -7,9 +7,32 @@ import { motion, AnimatePresence } from "framer-motion";
 type Category = "all" | "driveways" | "patios" | "stamped" | "commercial";
 
 const allImages: { src: string; category: Exclude<Category, "all"> }[] = [
-  // Driveways
+  // --- PROJECT: FOUNDATION & EXCAVATION ---
+  { src: "/images/gallery/patio-before-02.jpeg", category: "patios" }, // Bobcat Excavation
+  { src: "/images/gallery/patio-before-06.jpeg", category: "patios" }, // Preparation detail
+
+  // --- PROJECT: STAMPED DECK PATIO (Before -> During -> After) ---
+  { src: "/images/gallery/patio-before-05.jpeg", category: "stamped" }, // Gravel base
+  { src: "/images/gallery/patio-before-04.jpeg", category: "stamped" }, // Rebar/Mesh
+  { src: "/images/gallery/stamped-after-01.jpeg", category: "stamped" }, // Stamping process (blue molds)
+  { src: "/images/gallery/stamped-after-02.jpeg", category: "stamped" }, // Stamped finished
+  { src: "/images/gallery/stamped-after-04.jpeg", category: "stamped" }, // Stamped alternative view
+
+  // --- PROJECT: WHITE SHED SLAB (Before -> After) ---
+  { src: "/images/gallery/driveway-before-01.jpeg", category: "patios" }, // Path leading to shed (Before)
+  { src: "/images/gallery/patio-after-03.jpeg", category: "patios" },  // Rebar for shed slab
+  { src: "/images/gallery/patio-after-04.jpeg", category: "patios" },  // Finished shed slab
+  { src: "/images/gallery/patio-after-05.jpeg", category: "patios" },  // Shed slab alt
+
+  // --- PROJECT: BRICK HOUSE PATIO ---
+  { src: "/images/gallery/patio-before-01.jpeg", category: "patios" }, // AC units area (Before)
+  { src: "/images/gallery/patio-after-01.jpeg", category: "patios" },  // Finished brick house patio
+
+  // --- PROJECT: LONG NARROW DRIVEWAY/PATH ---
   { src: "/images/gallery/driveway-after-01.jpeg", category: "driveways" },
   { src: "/images/gallery/driveway-after-02.jpeg", category: "driveways" },
+
+  // --- ADDITIONAL DRIVEWAYS ---
   { src: "/images/gallery/driveway-after-03.jpeg", category: "driveways" },
   { src: "/images/gallery/driveway-after-04.jpeg", category: "driveways" },
   { src: "/images/gallery/driveway-after-05.jpeg", category: "driveways" },
@@ -21,12 +44,9 @@ const allImages: { src: string; category: Exclude<Category, "all"> }[] = [
   { src: "/images/gallery/driveway-after-11.jpeg", category: "driveways" },
   { src: "/images/gallery/driveway-after-12.jpeg", category: "driveways" },
   { src: "/images/gallery/driveway-after-13.jpeg", category: "driveways" },
-  // Patios
-  { src: "/images/gallery/patio-after-01.jpeg", category: "patios" },
+
+  // --- ADDITIONAL PATIOS ---
   { src: "/images/gallery/patio-after-02.jpeg", category: "patios" },
-  { src: "/images/gallery/patio-after-03.jpeg", category: "patios" },
-  { src: "/images/gallery/patio-after-04.jpeg", category: "patios" },
-  { src: "/images/gallery/patio-after-05.jpeg", category: "patios" },
   { src: "/images/gallery/patio-after-06.jpeg", category: "patios" },
   { src: "/images/gallery/patio-after-07.jpeg", category: "patios" },
   { src: "/images/gallery/patio-after-08.jpeg", category: "patios" },
@@ -72,11 +92,9 @@ const allImages: { src: string; category: Exclude<Category, "all"> }[] = [
   { src: "/images/gallery/patio-after-48.jpeg", category: "patios" },
   { src: "/images/gallery/patio-after-49.jpeg", category: "patios" },
   { src: "/images/gallery/patio-after-50.jpeg", category: "patios" },
-  // Stamped
-  { src: "/images/gallery/stamped-after-01.jpeg", category: "stamped" },
-  { src: "/images/gallery/stamped-after-02.jpeg", category: "stamped" },
+
+  // --- ADDITIONAL STAMPED ---
   { src: "/images/gallery/stamped-after-03.jpeg", category: "stamped" },
-  { src: "/images/gallery/stamped-after-04.jpeg", category: "stamped" },
   { src: "/images/gallery/stamped-after-05.jpeg", category: "stamped" },
   { src: "/images/gallery/stamped-after-06.jpeg", category: "stamped" },
   { src: "/images/gallery/stamped-after-07.jpeg", category: "stamped" },
@@ -86,7 +104,8 @@ const allImages: { src: string; category: Exclude<Category, "all"> }[] = [
   { src: "/images/gallery/stamped-after-11.jpeg", category: "stamped" },
   { src: "/images/gallery/stamped-after-12.jpeg", category: "stamped" },
   { src: "/images/gallery/stamped-after-13.jpeg", category: "stamped" },
-  // Commercial
+
+  // --- PROJECT: COMMERCIAL SLABS ---
   { src: "/images/gallery/commercial-after-01.jpeg", category: "commercial" },
   { src: "/images/gallery/commercial-after-02.jpeg", category: "commercial" },
   { src: "/images/gallery/commercial-after-03.jpeg", category: "commercial" },
