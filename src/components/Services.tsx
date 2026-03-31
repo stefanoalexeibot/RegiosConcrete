@@ -66,36 +66,36 @@ const TiltCard = ({ children, className }: { children: React.ReactNode, classNam
 
 const services = [
   {
-    title: "Sidewalk",
+    title: "Driveways",
     slug: "driveways",
     size: "col-span-1 row-span-1 md:col-span-2 md:row-span-2",
-    description: "Military-grade concrete sidewalks designed for Iowa winters.",
-    image: "/images/gallery/driveway-after-01.jpeg",
-    features: ["Heavy Duty", "Permit Ready"],
+    description: "Military-grade concrete driveways designed for Iowa's toughest winters.",
+    image: "/images/gallery/driveway-after-12.jpeg",
+    features: ["Heavy Duty", "Permit Ready", "10-Year Guarantee"],
   },
   {
     title: "Stamped",
     slug: "stamped",
     size: "col-span-1 row-span-1",
-    description: "Exquisite decorative patterns.",
+    description: "Exquisite decorative patterns that replicate stone, brick, and slate.",
     image: "/images/gallery/stamped-after-01.jpeg",
-    features: ["Custom Styles"],
+    features: ["Custom Styles", "Integrated Color"],
   },
   {
-    title: "Extension Driveways",
+    title: "Patios",
     slug: "patios",
     size: "col-span-1 row-span-1 md:row-span-2",
-    description: "Premium driveway extensions built to last.",
-    image: "/images/gallery/patio-after-01.jpeg",
-    features: ["Custom Design"],
+    description: "Premium backyard patios and extensions built for luxury and longevity.",
+    image: "/images/gallery/patio-after-48.jpeg",
+    features: ["Custom Design", "Perfect Drainage"],
   },
   {
     title: "Commercial",
     slug: "commercial",
     size: "col-span-1 row-span-1",
-    description: "Military-grade structural concrete.",
+    description: "Structural concrete slabs and flatwork for industrial and retail spaces.",
     image: "/images/gallery/commercial-after-01.jpeg",
-    features: ["Extreme Durability"],
+    features: ["Extreme Durability", "Built to Code"],
   },
 ];
 
