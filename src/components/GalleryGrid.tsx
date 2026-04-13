@@ -21,8 +21,6 @@ const allImages: GalleryItem[] = [
   { before: "/images/gallery/driveway-after-13.jpeg", after: "/images/gallery/driveway-after-12.jpeg", category: "driveways", type: "pair" },
   { before: "/images/gallery/slab-before-01.jpeg", after: "/images/gallery/slab-after-01.jpeg", category: "patios", type: "pair" },
   { before: "/images/gallery/patio-after-16.jpeg", after: "/images/gallery/patio-after-20.jpeg", category: "patios", type: "pair" },
-  { before: "/images/gallery/stamped-after-09.jpeg", after: "/images/gallery/stamped-after-13.jpeg", category: "stamped", type: "pair" },
-  { before: "/images/gallery/driveway-before-01.jpeg", after: "/images/gallery/patio-after-24.jpeg", category: "patios", type: "pair" },
 
   // Commercial Afters (Singles)
   { src: "/images/gallery/commercial-after-01.jpeg", category: "commercial", type: "single" },

@@ -80,8 +80,6 @@ export default function Home() {
                           { beforeSrc: "/images/gallery/driveway-after-13.jpeg", afterSrc: "/images/gallery/driveway-after-12.jpeg", label: "Precision Driveway" },
                           { beforeSrc: "/images/gallery/slab-before-01.jpeg", afterSrc: "/images/gallery/slab-after-01.jpeg", label: "Concrete Slab Project" },
                           { beforeSrc: "/images/gallery/patio-after-16.jpeg", afterSrc: "/images/gallery/patio-after-20.jpeg", label: "Patio Transformation" },
-                          { beforeSrc: "/images/gallery/stamped-after-09.jpeg", afterSrc: "/images/gallery/stamped-after-13.jpeg", label: "Poolside Stamped Concrete" },
-                          { beforeSrc: "/images/gallery/driveway-before-01.jpeg", afterSrc: "/images/gallery/patio-after-24.jpeg", label: "Custom Side Path" },
                         ]}
                       />
                     </div>
