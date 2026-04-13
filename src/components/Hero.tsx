@@ -50,17 +50,14 @@ function AnimatedCounter({
 
 // ─── Hero slideshow images (landscape only) ───────────────────────────────────
 const heroImages = [
-  "/images/hero-images/hero-1.jpeg",
-  "/images/hero-images/hero-2.jpeg",
-  "/images/hero-images/hero-3.jpeg",
-  "/images/hero-images/hero-4.jpeg",
-  "/images/hero-images/hero-5.jpeg",
-  "/images/hero-images/hero-6.jpeg",
-  "/images/hero-images/hero-7.jpeg",
-  "/images/hero-images/hero-8.jpeg",
-  "/images/hero-images/hero-9.jpeg",
-  "/images/hero-images/hero-10.jpeg",
-  "/images/hero-images/hero-11.jpeg",
+  "/images/imagenesdelhero/ANTES1.jpeg",
+  "/images/imagenesdelhero/DESP1.jpeg",
+  "/images/imagenesdelhero/ANTES2.jpeg",
+  "/images/imagenesdelhero/DESP2.jpeg",
+  "/images/imagenesdelhero/ANTES3.jpeg",
+  "/images/imagenesdelhero/DESP3.jpeg",
+  "/images/imagenesdelhero/ANTES4.jpeg",
+  "/images/imagenesdelhero/DESP4.jpeg",
 ];
 
 // ─── Stats data ───────────────────────────────────────────────────────────────
