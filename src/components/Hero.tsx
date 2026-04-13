@@ -154,18 +154,7 @@ export default function Hero() {
       <div className="hidden md:block absolute top-1/4 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[120px] z-0 pointer-events-none" />
       <div className="hidden md:block absolute bottom-1/4 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-[100px] z-0 pointer-events-none" />
 
-      {/* Perspective grid — desktop only */}
-      <div className="hidden md:block absolute inset-0 z-0 pointer-events-none overflow-hidden" style={{ perspective: "1000px" }}>
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
-            backgroundSize: "100px 100px",
-            transform: "rotateX(60deg) translateY(-200px)",
-          }}
-        />
-      </div>
+
 
       {/* ─── Main content ─── */}
       <div className="container mx-auto px-4 md:px-6 relative z-10">

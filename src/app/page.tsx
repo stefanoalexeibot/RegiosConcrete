@@ -72,9 +72,14 @@ export default function Home() {
                     <div className="w-full overflow-hidden rounded-[1.5rem] md:rounded-[3rem]">
                       <BeforeAfterSlider
                         pairs={[
-                          { beforeSrc: "/images/gallery/driveway-before-01.jpeg", afterSrc: "/images/gallery/driveway-after-12.jpeg", label: "Driveway · Des Moines" },
-                          { beforeSrc: "/images/gallery/slab-before-01.jpeg", afterSrc: "/images/gallery/slab-after-01.jpeg", label: "Concrete Slab · Iowa" },
-                          { beforeSrc: "/images/gallery/patio-before-05.jpeg", afterSrc: "/images/gallery/patio-after-48.jpeg", label: "Patio · Cedar Rapids" },
+                          { beforeSrc: "/images/gallery/driveway-after-07.jpeg", afterSrc: "/images/gallery/driveway-after-08.jpeg", label: "Driveway Transformation" },
+                          { beforeSrc: "/images/gallery/stamped-after-04.jpeg", afterSrc: "/images/gallery/stamped-after-03.jpeg", label: "Stamped Concrete" },
+                          { beforeSrc: "/images/gallery/patio-after-17.jpeg", afterSrc: "/images/gallery/patio-after-18.jpeg", label: "Patio Restoration" },
+                          { beforeSrc: "/images/gallery/patio-after-27.jpeg", afterSrc: "/images/gallery/patio-after-29.jpeg", label: "Custom Backyard" },
+                          { beforeSrc: "/images/gallery/patio-after-31.jpeg", afterSrc: "/images/gallery/patio-after-30.jpeg", label: "Backyard Upgrade" },
+                          { beforeSrc: "/images/gallery/driveway-after-13.jpeg", afterSrc: "/images/gallery/driveway-after-12.jpeg", label: "Precision Driveway" },
+                          { beforeSrc: "/images/gallery/slab-before-01.jpeg", afterSrc: "/images/gallery/slab-after-01.jpeg", label: "Concrete Slab Project" },
+                          { beforeSrc: "/images/gallery/patio-after-16.jpeg", afterSrc: "/images/gallery/patio-after-20.jpeg", label: "Patio Transformation" },
                         ]}
                       />
                     </div>
