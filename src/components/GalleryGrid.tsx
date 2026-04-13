@@ -21,6 +21,8 @@ const allImages: GalleryItem[] = [
   { before: "/images/gallery/driveway-after-13.jpeg", after: "/images/gallery/driveway-after-12.jpeg", category: "driveways", type: "pair" },
   { before: "/images/gallery/slab-before-01.jpeg", after: "/images/gallery/slab-after-01.jpeg", category: "patios", type: "pair" },
   { before: "/images/gallery/patio-after-16.jpeg", after: "/images/gallery/patio-after-20.jpeg", category: "patios", type: "pair" },
+  { before: "/images/gallery/stamped-after-09.jpeg", after: "/images/gallery/stamped-after-13.jpeg", category: "stamped", type: "pair" },
+  { before: "/images/gallery/driveway-before-01.jpeg", after: "/images/gallery/patio-after-24.jpeg", category: "patios", type: "pair" },
 
   // Commercial Afters (Singles)
   { src: "/images/gallery/commercial-after-01.jpeg", category: "commercial", type: "single" },
@@ -33,7 +35,6 @@ const allImages: GalleryItem[] = [
   { src: "/images/gallery/commercial-after-08.jpeg", category: "commercial", type: "single" },
 
   // Driveway Afters (Filtered Singles)
-  { src: "/images/gallery/driveway-after-01.jpeg", category: "driveways", type: "single" },
   { src: "/images/gallery/driveway-after-02.jpeg", category: "driveways", type: "single" },
   { src: "/images/gallery/driveway-after-03.jpeg", category: "driveways", type: "single" },
   { src: "/images/gallery/driveway-after-04.jpeg", category: "driveways", type: "single" },
@@ -51,19 +52,13 @@ const allImages: GalleryItem[] = [
   { src: "/images/gallery/patio-after-05.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-06.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-07.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-08.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-09.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-10.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-11.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-12.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-13.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-14.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-15.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-19.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-21.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-22.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-23.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-24.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-25.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-26.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-28.jpeg", category: "patios", type: "single" },
@@ -81,9 +76,7 @@ const allImages: GalleryItem[] = [
   { src: "/images/gallery/patio-after-43.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-44.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-45.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-46.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-47.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-48.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-49.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-50.jpeg", category: "patios", type: "single" },
 
@@ -94,11 +87,9 @@ const allImages: GalleryItem[] = [
   { src: "/images/gallery/stamped-after-06.jpeg", category: "stamped", type: "single" },
   { src: "/images/gallery/stamped-after-07.jpeg", category: "stamped", type: "single" },
   { src: "/images/gallery/stamped-after-08.jpeg", category: "stamped", type: "single" },
-  { src: "/images/gallery/stamped-after-09.jpeg", category: "stamped", type: "single" },
   { src: "/images/gallery/stamped-after-10.jpeg", category: "stamped", type: "single" },
   { src: "/images/gallery/stamped-after-11.jpeg", category: "stamped", type: "single" },
   { src: "/images/gallery/stamped-after-12.jpeg", category: "stamped", type: "single" },
-  { src: "/images/gallery/stamped-after-13.jpeg", category: "stamped", type: "single" },
 ];
 
 const InteractiveCard = ({ item }: { item: GalleryItem }) => {
