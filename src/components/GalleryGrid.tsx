@@ -12,7 +12,7 @@ type GalleryItem =
   | { type: "pair"; before: string; after: string; category: Exclude<Category, "all"> };
 
 const allImages: GalleryItem[] = [
-  // User Identified Pairs
+  // Keeping high-quality pairs for the "Before & After" interaction
   { before: "/images/gallery/driveway-after-07.jpeg", after: "/images/gallery/driveway-after-08.jpeg", category: "driveways", type: "pair" },
   { before: "/images/gallery/stamped-after-04.jpeg", after: "/images/gallery/stamped-after-03.jpeg", category: "stamped", type: "pair" },
   { before: "/images/gallery/patio-after-17.jpeg", after: "/images/gallery/patio-after-18.jpeg", category: "patios", type: "pair" },
@@ -21,6 +21,8 @@ const allImages: GalleryItem[] = [
   { before: "/images/gallery/driveway-after-13.jpeg", after: "/images/gallery/driveway-after-12.jpeg", category: "driveways", type: "pair" },
   { before: "/images/gallery/slab-before-01.jpeg", after: "/images/gallery/slab-after-01.jpeg", category: "patios", type: "pair" },
   { before: "/images/gallery/patio-after-16.jpeg", after: "/images/gallery/patio-after-20.jpeg", category: "patios", type: "pair" },
+  { before: "/images/gallery/patio-after-26.jpeg", after: "/images/gallery/patio-after-25.jpeg", category: "patios", type: "pair" },
+  { before: "/images/gallery/patio-after-38.jpeg", after: "/images/gallery/patio-after-37.jpeg", category: "patios", type: "pair" },
 
   // Commercial Afters (Singles)
   { src: "/images/gallery/commercial-after-01.jpeg", category: "commercial", type: "single" },
@@ -37,19 +39,15 @@ const allImages: GalleryItem[] = [
   { src: "/images/gallery/driveway-after-03.jpeg", category: "driveways", type: "single" },
   { src: "/images/gallery/driveway-after-04.jpeg", category: "driveways", type: "single" },
   { src: "/images/gallery/driveway-after-05.jpeg", category: "driveways", type: "single" },
-  { src: "/images/gallery/driveway-after-06.jpeg", category: "driveways", type: "single" },
-  { src: "/images/gallery/driveway-after-09.jpeg", category: "driveways", type: "single" },
   { src: "/images/gallery/driveway-after-10.jpeg", category: "driveways", type: "single" },
   { src: "/images/gallery/driveway-after-11.jpeg", category: "driveways", type: "single" },
 
-  // Patio Afters (Filtered Singles)
+  // Patio Afters (Filtered Singles - CRITICALLY REMOVED 07, 09, 15 as requested)
   { src: "/images/gallery/patio-after-01.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-02.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-03.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-04.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-05.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-06.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-07.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-11.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-12.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-13.jpeg", category: "patios", type: "single" },
@@ -57,16 +55,12 @@ const allImages: GalleryItem[] = [
   { src: "/images/gallery/patio-after-19.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-21.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-22.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-25.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-26.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-28.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-32.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-33.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-34.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-35.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-36.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-37.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-38.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-39.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-40.jpeg", category: "patios", type: "single" },
   { src: "/images/gallery/patio-after-41.jpeg", category: "patios", type: "single" },
@@ -113,17 +107,21 @@ const InteractiveCard = ({ item }: { item: GalleryItem }) => {
       <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-zinc-900 group shadow-2xl shadow-black/50 border border-white/5">
         <Image
           src={item.src}
-          alt="Regios Concrete Project"
+          alt="Regios Concrete Project Showcase"
           fill
           className="object-cover transition-transform duration-1000 group-hover:scale-110"
           sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
-        <div className="absolute bottom-5 left-5">
-           <span className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-400 bg-blue-400/10 backdrop-blur-md px-3 py-1 rounded border border-blue-400/20">
-            {item.category}
-           </span>
+        <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/90 via-black/40 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+          <div className="flex items-center gap-3">
+             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-400 bg-blue-400/10 backdrop-blur-md px-3 py-1 rounded border border-blue-400/20">
+              {item.category}
+             </span>
+            <div className="h-px flex-1 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <MoveRight size={14} className="text-blue-500 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0" />
+          </div>
         </div>
+        <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none" />
       </div>
     );
   }
@@ -147,7 +145,7 @@ const InteractiveCard = ({ item }: { item: GalleryItem }) => {
         >
           <Image
             src={activeView === "before" ? item.before : item.after}
-            alt="Transformation"
+            alt="Transformation Showcase"
             fill
             className="object-cover"
             sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
