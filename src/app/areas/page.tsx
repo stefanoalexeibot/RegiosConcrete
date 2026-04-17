@@ -5,7 +5,7 @@ import { MapPin, Phone, ArrowRight, CheckCircle2 } from "lucide-react";
 export const metadata: Metadata = {
   title: "Service Areas — Iowa Concrete Contractors",
   description:
-    "Regios Concrete LLC serves all of Iowa — Des Moines, Cedar Rapids, Iowa City, Ames, Davenport, Sioux City & more. Top-rated concrete driveways, patios & commercial flatwork. Free estimates.",
+    "Regios Concrete LLC serves all of Iowa — Des Moines, Cedar Rapids, Iowa City, Ames, Davenport, Sioux City & more. Top-rated concrete sidewalks, patios & commercial flatwork. Free estimates.",
   keywords: [
     "concrete contractor Des Moines Iowa",
     "concrete contractor Cedar Rapids Iowa",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Iowa Concrete Contractors — Service Areas | Regios Concrete LLC",
     description:
-      "Serving all of Iowa. Driveways, patios, stamped concrete & commercial flatwork in Des Moines, Cedar Rapids, Ames & beyond.",
+      "Serving all of Iowa. Sidewalks, patios, stamped concrete & commercial flatwork in Des Moines, Cedar Rapids, Ames & beyond.",
     images: [{ url: "/images/gallery/commercial-after-01.jpeg", width: 1200, height: 630 }],
   },
   alternates: { canonical: "https://www.regiosconcrete.com/areas" },
@@ -30,15 +30,15 @@ const primaryCities = [
     city: "Des Moines",
     county: "Polk County",
     slug: "des-moines",
-    services: ["Concrete Driveways", "Stamped Patios", "Commercial Flatwork"],
+    services: ["Concrete Sidewalks", "Stamped Patios", "Commercial Flatwork"],
     description:
-      "Iowa's capital city is our home base. We've completed 200+ projects across Des Moines — from Beaverdale driveways to Ankeny commercial pads.",
+      "Iowa's capital city is our home base. We've completed 200+ projects across Des Moines — from Beaverdale sidewalks to Ankeny commercial pads.",
   },
   {
     city: "Cedar Rapids",
     county: "Linn County",
     slug: "cedar-rapids",
-    services: ["Concrete Driveways", "Outdoor Patios", "Stamped Concrete"],
+    services: ["Concrete Sidewalks", "Outdoor Patios", "Stamped Concrete"],
     description:
       "Iowa's second-largest city. We serve all Cedar Rapids neighborhoods including NE, SW, and Marion with same-crew precision work.",
   },
@@ -54,7 +54,7 @@ const primaryCities = [
     city: "Ames",
     county: "Story County",
     slug: "ames",
-    services: ["Driveways", "Garage Aprons", "Commercial Concrete"],
+    services: ["Sidewalks", "Garage Aprons", "Commercial Concrete"],
     description:
       "Serving Ames homeowners and commercial clients around Iowa State University. Fast turnaround, zero compromise on quality.",
   },
@@ -62,7 +62,7 @@ const primaryCities = [
     city: "Davenport",
     county: "Scott County",
     slug: "davenport",
-    services: ["Concrete Driveways", "Stamped Concrete", "Patios"],
+    services: ["Concrete Sidewalks", "Stamped Concrete", "Patios"],
     description:
       "Quad Cities area coverage. We serve Davenport, Bettendorf, and surrounding Scott County with our full concrete service lineup.",
   },
@@ -70,7 +70,7 @@ const primaryCities = [
     city: "Sioux City",
     county: "Woodbury County",
     slug: "sioux-city",
-    services: ["Driveways", "Patios", "Commercial Flatwork"],
+    services: ["Sidewalks", "Patios", "Commercial Flatwork"],
     description:
       "Western Iowa coverage. Sioux City and surrounding communities served by our experienced crew with the same Iowa-standard craftsmanship.",
   },
@@ -86,7 +86,7 @@ const additionalCities = [
 ];
 
 const services = [
-  { label: "Concrete Driveways", href: "/services/driveways" },
+  { label: "Concrete Sidewalks", href: "/services/sidewalks" },
   { label: "Outdoor Patios", href: "/services/patios" },
   { label: "Stamped Concrete", href: "/services/stamped" },
   { label: "Commercial Flatwork", href: "/services/commercial" },
@@ -253,10 +253,10 @@ export default function AreasPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-slate-400 text-base leading-relaxed">
               <div>
                 <h3 className="font-outfit font-black text-white text-xl mb-3">
-                  Concrete Driveways Across Iowa
+                  Concrete Sidewalks Across Iowa
                 </h3>
                 <p>
-                  Regios Concrete LLC has poured over 500 concrete driveways throughout Iowa. Our fiber-reinforced mix and properly placed expansion joints are engineered specifically for Iowa&apos;s freeze-thaw cycles — the #1 cause of driveway failure in the midwest.
+                  Regios Concrete LLC has poured over 500 concrete sidewalks throughout Iowa. Our fiber-reinforced mix and properly placed expansion joints are engineered specifically for Iowa&apos;s freeze-thaw cycles — the #1 cause of sidewalk failure in the midwest.
                 </p>
               </div>
               <div>
@@ -280,7 +280,7 @@ export default function AreasPage() {
                   Iowa City &amp; Johnson County
                 </h3>
                 <p>
-                  University towns demand precision. We&apos;ve completed dozens of projects in Iowa City, Coralville, and North Liberty — residential driveways, stamped patios, and multi-family concrete work. Same crew, same quality, every time.
+                  University towns demand precision. We&apos;ve completed dozens of projects in Iowa City, Coralville, and North Liberty — residential sidewalks, stamped patios, and multi-family concrete work. Same crew, same quality, every time.
                 </p>
               </div>
             </div>

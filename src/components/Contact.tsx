@@ -7,7 +7,7 @@ import ActiveViewers from "./ActiveViewers";
 
 // ─── Step data ────────────────────────────────────────────────────────────────
 const services = [
-  { id: "driveway", label: "Driveway", icon: "🚗", desc: "New pour or replacement" },
+  { id: "sidewalk", label: "Sidewalk", icon: "🚶", desc: "New pour or replacement" },
   { id: "patio", label: "Patio", icon: "🏡", desc: "Backyard & outdoor spaces" },
   { id: "stamped", label: "Stamped Concrete", icon: "✦", desc: "Decorative patterns & textures" },
   { id: "commercial", label: "Commercial", icon: "🏗️", desc: "Business & large-scale projects" },

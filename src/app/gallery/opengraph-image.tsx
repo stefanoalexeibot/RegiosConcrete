@@ -76,7 +76,7 @@ export default function Image() {
               marginTop: 16,
             }}
           >
-            85+ concrete projects across Iowa — driveways, stamped patios, commercial flatwork &amp; more.
+            85+ concrete projects across Iowa — sidewalks, stamped patios, commercial flatwork &amp; more.
           </span>
         </div>
 

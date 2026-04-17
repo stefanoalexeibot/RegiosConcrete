@@ -111,7 +111,7 @@ export default function Footer() {
               <h5 className="text-white/40 text-[10px] font-bold uppercase tracking-[0.3em] mb-5">Our Services</h5>
               <ul className="flex flex-col gap-2">
                 {[
-                  { name: "Driveways", href: "/services/driveways", num: "01" },
+                  { name: "Sidewalks", href: "/services/sidewalks", num: "01" },
                   { name: "Stamped Concrete", href: "/services/stamped", num: "02" },
                   { name: "Patios", href: "/services/patios", num: "03" },
                   { name: "Commercial", href: "/services/commercial", num: "04" },

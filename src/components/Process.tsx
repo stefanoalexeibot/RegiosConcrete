@@ -14,7 +14,7 @@ const steps = [
   },
   {
     title: "Custom Planning",
-    description: "We select the perfect mix and finish, from standard driveways to exquisite stamped designs.",
+    description: "We select the perfect mix and finish, from standard sidewalks to exquisite stamped designs.",
     icon: FileText,
     color: "bg-primary",
     duration: "1–3 days",

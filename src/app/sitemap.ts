@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${siteUrl}/services/driveways`,
+      url: `${siteUrl}/services/sidewalks`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.85,

@@ -7,20 +7,20 @@ import { PageCurtain, HeroFadeUp, FadeUp, ImageWipe } from "@/components/Service
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
 const services = {
-  driveways: {
-    title: "Concrete Driveways",
+  sidewalks: {
+    title: "Concrete Sidewalks",
     headline: "Built for Iowa.",
-    headlineAccent: "Driven by Quality.",
-    tagline: "Heavy-duty concrete driveways engineered for maximum load and life.",
+    headlineAccent: "Walk with Quality.",
+    tagline: "Heavy-duty concrete sidewalks engineered for maximum durability and life.",
     description:
-      "A driveway is more than a place to park — it's the foundation of your home's curb appeal. We engineering driveways that don't just look perfect on day one, but stay solid through Iowa's brutal freeze-thaw cycles for decades.",
+      "A sidewalk is more than a path — it's the foundation of your home's accessibility. We engineer sidewalks that don't just look perfect on day one, but stay solid through Iowa's brutal freeze-thaw cycles for decades.",
     features: [
       { num: "01", title: "Reinforced Pour", desc: "4,000+ PSI concrete mix with rebar reinforcement for maximum strength." },
       { num: "02", title: "Precision Grading", desc: "Advanced laser grading to ensure perfect water runoff away from structures." },
       { num: "03", title: "Expansion Joints", desc: "Strategically placed to prevent cracking from thermal movement." },
       { num: "04", title: "Premium Sealer", desc: "Industrial-grade sealer applied to protect against salt and staining." },
       { num: "05", title: "City Compliance", desc: "We handle all permits and inspections to meet local code requirements." },
-      { num: "06", title: "10-Year Guarantee", desc: "Every driveway backed by our solid workmanship warranty." },
+      { num: "06", title: "10-Year Guarantee", desc: "Every sidewalk backed by our solid workmanship warranty." },
     ],
     images: [
       "/images/gallery/driveway-after-12.jpeg",
@@ -31,7 +31,7 @@ const services = {
       "/images/gallery/driveway-after-05.jpeg",
     ],
     stats: [
-      { val: "500+", label: "Driveways Poured" },
+      { val: "500+", label: "Sidewalks Poured" },
       { val: "10yr", label: "Guarantee" },
       { val: "5.0", label: "Star Rating" },
     ],
@@ -132,11 +132,11 @@ export function generateStaticParams() {
 }
 
 const serviceKeywords: Record<string, string[]> = {
-  driveways: [
-    "concrete driveway Iowa",
-    "concrete driveway Des Moines",
-    "concrete driveway installation Iowa",
-    "driveway contractors Iowa",
+  sidewalks: [
+    "concrete sidewalk Iowa",
+    "concrete sidewalk Des Moines",
+    "concrete sidewalk installation Iowa",
+    "sidewalk contractors Iowa",
     "residential concrete Iowa",
   ],
   patios: [
@@ -369,7 +369,7 @@ export default async function ServicePage({
       </section>
 
       {/* ─── BEFORE & AFTER ─── */}
-      {(slug === "driveways" || slug === "patios") && (
+      {(slug === "sidewalks" || slug === "patios") && (
         <section className="py-20 md:py-32 bg-[#030b1a]">
           <div className="container mx-auto px-4 md:px-6">
             <FadeUp className="mb-10 md:mb-14">
@@ -380,8 +380,8 @@ export default async function ServicePage({
             </FadeUp>
             <FadeUp delay={0.1}>
               <BeforeAfterSlider
-                beforeSrc={slug === "driveways" ? "/images/gallery/driveway-before-01.jpeg" : "/images/gallery/patio-before-05.jpeg"}
-                afterSrc={slug === "driveways" ? "/images/gallery/driveway-after-12.jpeg" : "/images/gallery/patio-after-48.jpeg"}
+                beforeSrc={slug === "sidewalks" ? "/images/gallery/driveway-before-01.jpeg" : "/images/gallery/patio-before-05.jpeg"}
+                afterSrc={slug === "sidewalks" ? "/images/gallery/driveway-after-12.jpeg" : "/images/gallery/patio-after-48.jpeg"}
               />
             </FadeUp>
           </div>

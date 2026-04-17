@@ -6,12 +6,12 @@ import { CheckCircle2, Clock } from "lucide-react";
 
 const notifications = [
   { name: "Carlos M.", city: "Des Moines", service: "Stamped Concrete Patio", time: "2 min ago" },
-  { name: "Jennifer R.", city: "Ames", service: "Driveway Replacement", time: "5 min ago" },
+  { name: "Jennifer R.", city: "Ames", service: "Sidewalk Replacement", time: "5 min ago" },
   { name: "Mike T.", city: "Cedar Rapids", service: "Commercial Concrete", time: "8 min ago" },
   { name: "Sandra L.", city: "Iowa City", service: "Backyard Patio", time: "12 min ago" },
-  { name: "David K.", city: "Ankeny", service: "Stamped Driveway", time: "15 min ago" },
+  { name: "David K.", city: "Ankeny", service: "Stamped Sidewalk", time: "15 min ago" },
   { name: "Rosa V.", city: "Sioux City", service: "Patio & Walkway", time: "3 min ago" },
-  { name: "Tom B.", city: "Waterloo", service: "Driveway Pour", time: "7 min ago" },
+  { name: "Tom B.", city: "Waterloo", service: "Sidewalk Pour", time: "7 min ago" },
   { name: "Ana G.", city: "Council Bluffs", service: "Decorative Concrete", time: "20 min ago" },
 ];
 

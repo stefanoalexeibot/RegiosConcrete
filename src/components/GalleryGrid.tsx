@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ArrowRight, Zap, MoveRight } from "lucide-react";
 
-type Category = "all" | "driveways" | "patios" | "stamped" | "commercial";
+type Category = "all" | "sidewalks" | "patios" | "stamped" | "commercial";
 
 type GalleryItem =
   | { type: "single"; src: string; category: Exclude<Category, "all"> }
@@ -13,12 +13,12 @@ type GalleryItem =
 
 const allImages: GalleryItem[] = [
   // Keeping high-quality pairs for the "Before & After" interaction
-  { before: "/images/gallery/driveway-after-07.jpeg", after: "/images/gallery/driveway-after-08.jpeg", category: "driveways", type: "pair" },
+  { before: "/images/gallery/driveway-after-07.jpeg", after: "/images/gallery/driveway-after-08.jpeg", category: "sidewalks", type: "pair" },
   { before: "/images/gallery/stamped-after-04.jpeg", after: "/images/gallery/stamped-after-03.jpeg", category: "stamped", type: "pair" },
   { before: "/images/gallery/patio-after-17.jpeg", after: "/images/gallery/patio-after-18.jpeg", category: "patios", type: "pair" },
   { before: "/images/gallery/patio-after-27.jpeg", after: "/images/gallery/patio-after-29.jpeg", category: "patios", type: "pair" },
   { before: "/images/gallery/patio-after-31.jpeg", after: "/images/gallery/patio-after-30.jpeg", category: "patios", type: "pair" },
-  { before: "/images/gallery/driveway-after-13.jpeg", after: "/images/gallery/driveway-after-12.jpeg", category: "driveways", type: "pair" },
+  { before: "/images/gallery/driveway-after-13.jpeg", after: "/images/gallery/driveway-after-12.jpeg", category: "sidewalks", type: "pair" },
   { before: "/images/gallery/slab-before-01.jpeg", after: "/images/gallery/slab-after-01.jpeg", category: "patios", type: "pair" },
   { before: "/images/gallery/patio-after-16.jpeg", after: "/images/gallery/patio-after-20.jpeg", category: "patios", type: "pair" },
   { before: "/images/gallery/patio-after-26.jpeg", after: "/images/gallery/patio-after-25.jpeg", category: "patios", type: "pair" },
@@ -34,13 +34,13 @@ const allImages: GalleryItem[] = [
   { src: "/images/gallery/commercial-after-07.jpeg", category: "commercial", type: "single" },
   { src: "/images/gallery/commercial-after-08.jpeg", category: "commercial", type: "single" },
 
-  // Driveway Afters (Filtered Singles)
-  { src: "/images/gallery/driveway-after-02.jpeg", category: "driveways", type: "single" },
-  { src: "/images/gallery/driveway-after-03.jpeg", category: "driveways", type: "single" },
-  { src: "/images/gallery/driveway-after-04.jpeg", category: "driveways", type: "single" },
-  { src: "/images/gallery/driveway-after-05.jpeg", category: "driveways", type: "single" },
-  { src: "/images/gallery/driveway-after-10.jpeg", category: "driveways", type: "single" },
-  { src: "/images/gallery/driveway-after-11.jpeg", category: "driveways", type: "single" },
+  // Sidewalk Afters (Filtered Singles)
+  { src: "/images/gallery/driveway-after-02.jpeg", category: "sidewalks", type: "single" },
+  { src: "/images/gallery/driveway-after-03.jpeg", category: "sidewalks", type: "single" },
+  { src: "/images/gallery/driveway-after-04.jpeg", category: "sidewalks", type: "single" },
+  { src: "/images/gallery/driveway-after-05.jpeg", category: "sidewalks", type: "single" },
+  { src: "/images/gallery/driveway-after-10.jpeg", category: "sidewalks", type: "single" },
+  { src: "/images/gallery/driveway-after-11.jpeg", category: "sidewalks", type: "single" },
 
   // Patio Afters (Filtered Singles - CRITICALLY REMOVED 07, 09, 15 as requested)
   { src: "/images/gallery/patio-after-01.jpeg", category: "patios", type: "single" },
@@ -187,7 +187,7 @@ export default function GalleryGrid() {
 
   const filters: { label: string; value: Category; count: number }[] = [
     { label: "All Work", value: "all", count: allImages.length },
-    { label: "Driveways", value: "driveways", count: allImages.filter(i => i.category === "driveways").length },
+    { label: "Sidewalks", value: "sidewalks", count: allImages.filter(i => i.category === "sidewalks").length },
     { label: "Patios", value: "patios", count: allImages.filter(i => i.category === "patios").length },
     { label: "Stamped", value: "stamped", count: allImages.filter(i => i.category === "stamped").length },
     { label: "Commercial", value: "commercial", count: allImages.filter(i => i.category === "commercial").length },

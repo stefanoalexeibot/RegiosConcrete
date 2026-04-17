@@ -10,7 +10,7 @@ const testimonials = [
     role: "Homeowner · Ames, Iowa",
     date: "February 2025",
     photo: "/images/testimonials/client-01.jpg",
-    content: "Héctor and his crew poured our new driveway and it came out perfect. Clean edges, great finish, and they cleaned up after themselves. Couldn't ask for more.",
+    content: "Héctor and his crew poured our new sidewalk and it came out perfect. Clean edges, great finish, and they cleaned up after themselves. Couldn't ask for more.",
     stars: 5,
   },
   {
@@ -42,7 +42,7 @@ const testimonials = [
     role: "Homeowner · Iowa City",
     date: "December 2024",
     photo: "/images/testimonials/client-05.jpg",
-    content: "Regios replaced our cracked driveway and added a walkway to the front door. Everything looks brand new. Great communication from start to finish.",
+    content: "Regios replaced our cracked sidewalk and added a walkway to the front door. Everything looks brand new. Great communication from start to finish.",
     stars: 5,
   },
 ];

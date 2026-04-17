@@ -22,7 +22,7 @@ const navLinks = [
 ];
 
 const serviceLinks = [
-  { name: "Driveways", href: "/services/driveways" },
+  { name: "Sidewalks", href: "/services/sidewalks" },
   { name: "Stamped Concrete", href: "/services/stamped" },
   { name: "Patios", href: "/services/patios" },
   { name: "Commercial", href: "/services/commercial" },

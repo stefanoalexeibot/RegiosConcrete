@@ -18,7 +18,7 @@ import {
   Search
 } from 'lucide-react';
 
-type Category = "driveways" | "patios" | "stamped" | "commercial";
+type Category = "sidewalks" | "patios" | "stamped" | "commercial";
 
 type GalleryItem =
   | { type: "single"; src: string; category: Category }
@@ -44,7 +44,7 @@ export default function CuratorClient({ initialFiles, initialConfig }: CuratorPr
 
   // Actions
   const addSingle = (file: string) => {
-    const category: Category = file.includes('driveway') ? 'driveways' : 
+    const category: Category = file.includes('driveway') ? 'sidewalks' : 
                                file.includes('patio') ? 'patios' : 
                                file.includes('stamped') ? 'stamped' : 
                                file.includes('commercial') ? 'commercial' : 'patios';
@@ -65,7 +65,7 @@ export default function CuratorClient({ initialFiles, initialConfig }: CuratorPr
         return;
       }
       
-      const category: Category = file.includes('driveway') ? 'driveways' : 
+      const category: Category = file.includes('driveway') ? 'sidewalks' : 
                                  file.includes('patio') ? 'patios' : 
                                  file.includes('stamped') ? 'stamped' : 
                                  file.includes('commercial') ? 'commercial' : 'patios';
@@ -255,7 +255,7 @@ export default function CuratorClient({ initialFiles, initialConfig }: CuratorPr
                           <div>
                              <span className="text-[9px] font-black text-blue-500 uppercase tracking-widest">{item.type === 'pair' ? 'Transformation Pair' : 'Stand-alone Scene'}</span>
                              <div className="flex gap-2 mt-1">
-                                {(['driveways', 'patios', 'stamped', 'commercial'] as Category[]).map(cat => (
+                                {(['sidewalks', 'patios', 'stamped', 'commercial'] as Category[]).map(cat => (
                                   <button 
                                     key={cat}
                                     onClick={() => updateCategory(index, cat)}

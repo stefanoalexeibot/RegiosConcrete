@@ -110,7 +110,7 @@ export default function Image() {
               marginTop: 8,
             }}
           >
-            Iowa&apos;s premier concrete artisans. Driveways, patios, stamped concrete &amp; commercial flatwork.
+            Iowa&apos;s premier concrete artisans. Sidewalks, patios, stamped concrete &amp; commercial flatwork.
           </span>
         </div>
 

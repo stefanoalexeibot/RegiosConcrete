@@ -20,7 +20,7 @@ These terms apply to all visitors, clients, and others who access or use our web
     title: "Services Provided",
     body: `Regios Concrete LLC provides concrete contractor services in the state of Iowa, including but not limited to:
 
-• Concrete driveway installation and replacement
+• Concrete sidewalk installation and replacement
 • Outdoor patio construction
 • Stamped and decorative concrete
 • Commercial flatwork and foundations

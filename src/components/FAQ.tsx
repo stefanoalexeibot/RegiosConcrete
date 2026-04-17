@@ -6,7 +6,7 @@ import { Plus } from "lucide-react";
 
 const faqs = [
   {
-    q: "How long does a concrete driveway or patio take?",
+    q: "How long does a concrete sidewalk or patio take?",
     a: "Most residential projects take 1–3 days of active work. After the pour, concrete needs 24–48 hours before light foot traffic and 7 days before vehicle traffic. Full cure is 28 days, though it reaches ~80% strength in the first week.",
   },
   {
@@ -18,8 +18,8 @@ const faqs = [
     a: "We work spring through late fall. Concrete should not be poured when temperatures drop below 40°F consistently, as it affects the cure. We schedule projects accordingly and will let you know the best window for your area.",
   },
   {
-    q: "How much does a concrete driveway cost?",
-    a: "Pricing depends on size, thickness, finish, and site conditions. As a general range, residential driveways run $6–$12 per square foot. Stamped or decorative concrete is higher. Contact us for an accurate quote — we don't believe in one-size-fits-all pricing.",
+    q: "How much does a concrete sidewalk cost?",
+    a: "Pricing depends on size, thickness, finish, and site conditions. As a general range, residential sidewalks run $6–$12 per square foot. Stamped or decorative concrete is higher. Contact us for an accurate quote — we don't believe in one-size-fits-all pricing.",
   },
   {
     q: "What's the difference between stamped and regular concrete?",

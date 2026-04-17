@@ -4,11 +4,11 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const services: Record<string, { title: string; headline: string; accent: string; tagline: string }> = {
-  driveways: {
-    title: "Concrete Driveways",
+  sidewalks: {
+    title: "Concrete Sidewalks",
     headline: "Military-Grade.",
     accent: "Iowa-Ready.",
-    tagline: "Built to survive Iowa winters and outlast every driveway on your block.",
+    tagline: "Built to survive Iowa winters and outlast every sidewalk on your block.",
   },
   patios: {
     title: "Outdoor Patios",
@@ -36,7 +36,7 @@ export default async function Image({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const svc = services[slug] ?? services.driveways;
+  const svc = services[slug] ?? services.sidewalks;
 
   return new ImageResponse(
     (

@@ -24,7 +24,7 @@ const projects = [
   },
   {
     id: 5,
-    title: "The Vertex Driveway",
+    title: "Legacy Sidewalk",
     type: "Residential Concrete",
     year: "2024",
     image: "/images/gallery/driveway-after-01.jpeg",

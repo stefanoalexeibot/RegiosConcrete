@@ -17,10 +17,10 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "How long does a concrete driveway or patio take?", "acceptedAnswer": { "@type": "Answer", "text": "Most residential projects take 1–3 days of active work. After the pour, concrete needs 24–48 hours before light foot traffic and 7 days before vehicle traffic. Full cure is 28 days." } },
+    { "@type": "Question", "name": "How long does a concrete sidewalk or patio take?", "acceptedAnswer": { "@type": "Answer", "text": "Most residential projects take 1–3 days of active work. After the pour, concrete needs 24–48 hours before light foot traffic and 7 days before vehicle traffic. Full cure is 28 days." } },
     { "@type": "Question", "name": "Do you offer free estimates?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — always. Héctor will visit your property, assess the project, and give you a detailed written quote at no cost and with zero obligation." } },
     { "@type": "Question", "name": "Do you work year-round in Iowa?", "acceptedAnswer": { "@type": "Answer", "text": "We work spring through late fall. Concrete should not be poured when temperatures drop below 40°F consistently, as it affects the cure." } },
-    { "@type": "Question", "name": "How much does a concrete driveway cost?", "acceptedAnswer": { "@type": "Answer", "text": "Pricing depends on size, thickness, finish, and site conditions. As a general range, residential driveways run $6–$12 per square foot. Contact us for an accurate quote." } },
+    { "@type": "Question", "name": "How much does a concrete sidewalk cost?", "acceptedAnswer": { "@type": "Answer", "text": "Pricing depends on size, thickness, finish, and site conditions. As a general range, residential sidewalks run $6–$12 per square foot. Contact us for an accurate quote." } },
     { "@type": "Question", "name": "Is there a warranty on your work?", "acceptedAnswer": { "@type": "Answer", "text": "We stand behind everything we pour with a 10-year workmanship guarantee. If a defect results from our workmanship, we will make it right." } },
     { "@type": "Question", "name": "How do I maintain my new concrete?", "acceptedAnswer": { "@type": "Answer", "text": "Seal it every 2–3 years to protect against moisture and staining. Avoid de-icing salts the first winter. Clean spills promptly." } },
   ],
@@ -37,11 +37,11 @@ const reviewSchema = {
     "bestRating": "5",
   },
   "review": [
-    { "@type": "Review", "author": { "@type": "Person", "name": "Tyler B." }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "Héctor and his crew poured our new driveway and it came out perfect. Clean edges, great finish, and they cleaned up after themselves.", "datePublished": "2025-02-01" },
+    { "@type": "Review", "author": { "@type": "Person", "name": "Tyler B." }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "Héctor and his crew poured our new sidewalk and it came out perfect. Clean edges, great finish, and they cleaned up after themselves.", "datePublished": "2025-02-01" },
     { "@type": "Review", "author": { "@type": "Person", "name": "Jake & Kara M." }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "We got a stamped patio done for our backyard and everyone who comes over asks about it. Fair price and super professional.", "datePublished": "2024-11-01" },
     { "@type": "Review", "author": { "@type": "Person", "name": "Randy H." }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "Had them pour a concrete pad for my equipment on the farm. Solid work, showed up on time, and Héctor was great to work with.", "datePublished": "2025-01-01" },
     { "@type": "Review", "author": { "@type": "Person", "name": "Brandon C." }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "Got my garage floor done and the epoxy finish is incredible. The team was fast, professional, and the result is better than I imagined.", "datePublished": "2025-03-01" },
-    { "@type": "Review", "author": { "@type": "Person", "name": "Chris W." }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "Regios replaced our cracked driveway and added a walkway to the front door. Everything looks brand new. Great communication from start to finish.", "datePublished": "2024-12-01" },
+    { "@type": "Review", "author": { "@type": "Person", "name": "Chris W." }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "Regios replaced our cracked sidewalk and added a walkway to the front door. Everything looks brand new. Great communication from start to finish.", "datePublished": "2024-12-01" },
   ],
 };
 
@@ -72,12 +72,12 @@ export default function Home() {
                     <div className="w-full overflow-hidden rounded-[1.5rem] md:rounded-[3rem]">
                       <BeforeAfterSlider
                         pairs={[
-                          { beforeSrc: "/images/gallery/driveway-after-07.jpeg", afterSrc: "/images/gallery/driveway-after-08.jpeg", label: "Driveway Transformation" },
+                          { beforeSrc: "/images/gallery/driveway-after-07.jpeg", afterSrc: "/images/gallery/driveway-after-08.jpeg", label: "Sidewalk Transformation" },
                           { beforeSrc: "/images/gallery/stamped-after-04.jpeg", afterSrc: "/images/gallery/stamped-after-03.jpeg", label: "Stamped Concrete" },
                           { beforeSrc: "/images/gallery/patio-after-17.jpeg", afterSrc: "/images/gallery/patio-after-18.jpeg", label: "Patio Restoration" },
                           { beforeSrc: "/images/gallery/patio-after-27.jpeg", afterSrc: "/images/gallery/patio-after-29.jpeg", label: "Custom Backyard" },
                           { beforeSrc: "/images/gallery/patio-after-31.jpeg", afterSrc: "/images/gallery/patio-after-30.jpeg", label: "Backyard Upgrade" },
-                          { beforeSrc: "/images/gallery/driveway-after-13.jpeg", afterSrc: "/images/gallery/driveway-after-12.jpeg", label: "Precision Driveway" },
+                          { beforeSrc: "/images/gallery/driveway-after-13.jpeg", afterSrc: "/images/gallery/driveway-after-12.jpeg", label: "Precision Sidewalk" },
                           { beforeSrc: "/images/gallery/slab-before-01.jpeg", afterSrc: "/images/gallery/slab-after-01.jpeg", label: "Concrete Slab Project" },
                           { beforeSrc: "/images/gallery/patio-after-16.jpeg", afterSrc: "/images/gallery/patio-after-20.jpeg", label: "Patio Transformation" },
                         ]}
