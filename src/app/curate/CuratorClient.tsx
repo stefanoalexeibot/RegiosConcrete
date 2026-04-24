@@ -18,7 +18,7 @@ import {
   Search
 } from 'lucide-react';
 
-type Category = "sidewalks" | "patios" | "stamped" | "commercial";
+type Category = "sidewalks" | "garages" | "stamped" | "commercial";
 
 type GalleryItem =
   | { type: "single"; src: string; category: Category }
@@ -45,9 +45,9 @@ export default function CuratorClient({ initialFiles, initialConfig }: CuratorPr
   // Actions
   const addSingle = (file: string) => {
     const category: Category = file.includes('driveway') ? 'sidewalks' : 
-                               file.includes('patio') ? 'patios' : 
+                               file.includes('patio') ? 'garages' : 
                                file.includes('stamped') ? 'stamped' : 
-                               file.includes('commercial') ? 'commercial' : 'patios';
+                               file.includes('commercial') ? 'commercial' : 'garages';
     
     setItems(prev => [...prev, {
       type: 'single',
@@ -66,9 +66,9 @@ export default function CuratorClient({ initialFiles, initialConfig }: CuratorPr
       }
       
       const category: Category = file.includes('driveway') ? 'sidewalks' : 
-                                 file.includes('patio') ? 'patios' : 
+                                 file.includes('patio') ? 'garages' : 
                                  file.includes('stamped') ? 'stamped' : 
-                                 file.includes('commercial') ? 'commercial' : 'patios';
+                                 file.includes('commercial') ? 'commercial' : 'garages';
       
       setItems(prev => [...prev, {
         type: 'pair',
@@ -255,7 +255,7 @@ export default function CuratorClient({ initialFiles, initialConfig }: CuratorPr
                           <div>
                              <span className="text-[9px] font-black text-blue-500 uppercase tracking-widest">{item.type === 'pair' ? 'Transformation Pair' : 'Stand-alone Scene'}</span>
                              <div className="flex gap-2 mt-1">
-                                {(['sidewalks', 'patios', 'stamped', 'commercial'] as Category[]).map(cat => (
+                                {(['sidewalks', 'garages', 'stamped', 'commercial'] as Category[]).map(cat => (
                                   <button 
                                     key={cat}
                                     onClick={() => updateCategory(index, cat)}

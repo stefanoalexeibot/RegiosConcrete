@@ -5,24 +5,27 @@ import Image from "next/image";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ArrowRight, Zap, MoveRight } from "lucide-react";
 
-type Category = "all" | "sidewalks" | "patios" | "stamped" | "commercial";
+type Category = "all" | "sidewalks" | "garages" | "stamped" | "commercial";
 
 type GalleryItem =
   | { type: "single"; src: string; category: Exclude<Category, "all"> }
   | { type: "pair"; before: string; after: string; category: Exclude<Category, "all"> };
 
 const allImages: GalleryItem[] = [
-  // Keeping high-quality pairs for the "Before & After" interaction
-  { before: "/images/gallery/driveway-after-07.jpeg", after: "/images/gallery/driveway-after-08.jpeg", category: "sidewalks", type: "pair" },
+  { src: "/images/gallery/patio-after-33.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-03.jpeg", category: "garages", type: "single" },
+  { before: "/images/gallery/patio-before-01.jpeg", after: "/images/gallery/patio-after-01.jpeg", category: "garages", type: "pair" },
+  { before: "/images/gallery/driveway-before-02.jpeg", after: "/images/gallery/driveway-after-11.jpeg", category: "sidewalks", type: "pair" },
+  { before: "/images/gallery/patio-before-07.jpeg", after: "/images/gallery/patio-after-50.jpeg", category: "garages", type: "pair" },
+  { before: "/images/gallery/patio-before-05.jpeg", after: "/images/gallery/patio-after-48.jpeg", category: "garages", type: "pair" },
+  { before: "/images/gallery/slab-before-01.jpeg", after: "/images/gallery/slab-after-01.jpeg", category: "garages", type: "pair" },
+
   { before: "/images/gallery/stamped-after-04.jpeg", after: "/images/gallery/stamped-after-03.jpeg", category: "stamped", type: "pair" },
-  { before: "/images/gallery/patio-after-17.jpeg", after: "/images/gallery/patio-after-18.jpeg", category: "patios", type: "pair" },
-  { before: "/images/gallery/patio-after-27.jpeg", after: "/images/gallery/patio-after-29.jpeg", category: "patios", type: "pair" },
-  { before: "/images/gallery/patio-after-31.jpeg", after: "/images/gallery/patio-after-30.jpeg", category: "patios", type: "pair" },
-  { before: "/images/gallery/driveway-after-13.jpeg", after: "/images/gallery/driveway-after-12.jpeg", category: "sidewalks", type: "pair" },
-  { before: "/images/gallery/slab-before-01.jpeg", after: "/images/gallery/slab-after-01.jpeg", category: "patios", type: "pair" },
-  { before: "/images/gallery/patio-after-16.jpeg", after: "/images/gallery/patio-after-20.jpeg", category: "patios", type: "pair" },
-  { before: "/images/gallery/patio-after-26.jpeg", after: "/images/gallery/patio-after-25.jpeg", category: "patios", type: "pair" },
-  { before: "/images/gallery/patio-after-38.jpeg", after: "/images/gallery/patio-after-37.jpeg", category: "patios", type: "pair" },
+  { before: "/images/gallery/patio-after-27.jpeg", after: "/images/gallery/patio-after-29.jpeg", category: "garages", type: "pair" },
+  { before: "/images/gallery/patio-after-31.jpeg", after: "/images/gallery/patio-after-30.jpeg", category: "garages", type: "pair" },
+  { before: "/images/gallery/patio-after-16.jpeg", after: "/images/gallery/patio-after-20.jpeg", category: "garages", type: "pair" },
+
+  { before: "/images/gallery/patio-after-38.jpeg", after: "/images/gallery/patio-after-37.jpeg", category: "garages", type: "pair" },
 
   // Commercial Afters (Singles)
   { src: "/images/gallery/commercial-after-01.jpeg", category: "commercial", type: "single" },
@@ -38,39 +41,34 @@ const allImages: GalleryItem[] = [
   { src: "/images/gallery/driveway-after-02.jpeg", category: "sidewalks", type: "single" },
   { src: "/images/gallery/driveway-after-03.jpeg", category: "sidewalks", type: "single" },
   { src: "/images/gallery/driveway-after-04.jpeg", category: "sidewalks", type: "single" },
-  { src: "/images/gallery/driveway-after-05.jpeg", category: "sidewalks", type: "single" },
   { src: "/images/gallery/driveway-after-10.jpeg", category: "sidewalks", type: "single" },
-  { src: "/images/gallery/driveway-after-11.jpeg", category: "sidewalks", type: "single" },
 
   // Patio Afters (Filtered Singles - CRITICALLY REMOVED 07, 09, 15 as requested)
-  { src: "/images/gallery/patio-after-01.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-02.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-03.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-04.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-05.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-11.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-12.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-13.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-14.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-19.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-21.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-22.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-28.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-32.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-33.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-34.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-35.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-36.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-39.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-40.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-41.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-42.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-43.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-44.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-45.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-47.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-49.jpeg", category: "patios", type: "single" },
-  { src: "/images/gallery/patio-after-50.jpeg", category: "patios", type: "single" },
+
+  { src: "/images/gallery/patio-after-02.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-04.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-05.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-11.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-12.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-13.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-14.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-19.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-21.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-22.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-28.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-32.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-34.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-35.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-36.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-39.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-40.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-41.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-42.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-43.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-44.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-45.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-47.jpeg", category: "garages", type: "single" },
+  { src: "/images/gallery/patio-after-49.jpeg", category: "garages", type: "single" },
 
   // Stamped Afters (Filtered Singles)
   { src: "/images/gallery/stamped-after-01.jpeg", category: "stamped", type: "single" },
@@ -114,9 +112,7 @@ const InteractiveCard = ({ item }: { item: GalleryItem }) => {
         />
         <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/90 via-black/40 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
           <div className="flex items-center gap-3">
-             <span className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-400 bg-blue-400/10 backdrop-blur-md px-3 py-1 rounded border border-blue-400/20">
-              {item.category}
-             </span>
+            {/* Category label removed */}
             <div className="h-px flex-1 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             <MoveRight size={14} className="text-blue-500 opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0" />
           </div>
@@ -166,7 +162,7 @@ const InteractiveCard = ({ item }: { item: GalleryItem }) => {
 
       <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/90 via-black/40 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500">
         <div className="flex items-center gap-3 text-white">
-          <span className="text-[10px] font-black uppercase tracking-[0.2em]">{item.category}</span>
+          {/* Category label removed */}
           <div className="h-px flex-1 bg-white/20" />
           <MoveRight size={14} className="text-blue-500" />
         </div>
@@ -188,7 +184,7 @@ export default function GalleryGrid() {
   const filters: { label: string; value: Category; count: number }[] = [
     { label: "All Work", value: "all", count: allImages.length },
     { label: "Sidewalks", value: "sidewalks", count: allImages.filter(i => i.category === "sidewalks").length },
-    { label: "Patios", value: "patios", count: allImages.filter(i => i.category === "patios").length },
+    { label: "Garages", value: "garages", count: allImages.filter(i => i.category === "garages").length },
     { label: "Stamped", value: "stamped", count: allImages.filter(i => i.category === "stamped").length },
     { label: "Commercial", value: "commercial", count: allImages.filter(i => i.category === "commercial").length },
   ];

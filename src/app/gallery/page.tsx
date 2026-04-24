@@ -6,10 +6,10 @@ import { ArrowLeft } from "lucide-react";
 export const metadata: Metadata = {
   title: "Project Gallery",
   description:
-    "Browse 85+ real concrete projects completed across Iowa by Regios Concrete LLC — sidewalks, stamped patios, commercial flatwork, and more. See the results for yourself.",
+    "Browse 85+ real concrete projects completed across Iowa by Regios Concrete LLC — sidewalks, garages, stamped concrete, commercial flatwork, and more. See the results for yourself.",
   openGraph: {
     title: "Project Gallery | Regios Concrete LLC",
-    description: "Browse 85+ real concrete projects across Iowa — sidewalks, stamped patios, commercial flatwork.",
+    description: "Browse 85+ real concrete projects across Iowa — sidewalks, garages, stamped concrete, and commercial flatwork.",
   },
   alternates: { canonical: "https://www.regiosconcrete.com/gallery" },
 };
@@ -40,7 +40,7 @@ export default function GalleryPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-600 italic">Results.</span>
             </h2>
             <p className="mt-8 text-xl text-slate-400 max-w-2xl font-medium leading-relaxed">
-              Explore our recent projects across Iowa. From stamped patios to military-grade sidewalks, our craftsmanship speaks for itself.
+              Explore our recent projects across Iowa. From reinforced garage slabs to military-grade sidewalks, our craftsmanship speaks for itself.
             </p>
           </div>
         </div>

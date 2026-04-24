@@ -5,7 +5,7 @@ import { MapPin, Phone, ArrowRight, CheckCircle2 } from "lucide-react";
 export const metadata: Metadata = {
   title: "Service Areas — Iowa Concrete Contractors",
   description:
-    "Regios Concrete LLC serves all of Iowa — Des Moines, Cedar Rapids, Iowa City, Ames, Davenport, Sioux City & more. Top-rated concrete sidewalks, patios & commercial flatwork. Free estimates.",
+    "Regios Concrete LLC serves all of Iowa — Des Moines, Cedar Rapids, Iowa City, Ames, Davenport, Sioux City & more. Top-rated concrete sidewalks, garages & commercial flatwork. Free estimates.",
   keywords: [
     "concrete contractor Des Moines Iowa",
     "concrete contractor Cedar Rapids Iowa",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Iowa Concrete Contractors — Service Areas | Regios Concrete LLC",
     description:
-      "Serving all of Iowa. Sidewalks, patios, stamped concrete & commercial flatwork in Des Moines, Cedar Rapids, Ames & beyond.",
+      "Serving all of Iowa. Sidewalks, garages, stamped concrete & commercial flatwork in Des Moines, Cedar Rapids, Ames & beyond.",
     images: [{ url: "/images/gallery/commercial-after-01.jpeg", width: 1200, height: 630 }],
   },
   alternates: { canonical: "https://www.regiosconcrete.com/areas" },
@@ -30,7 +30,7 @@ const primaryCities = [
     city: "Des Moines",
     county: "Polk County",
     slug: "des-moines",
-    services: ["Concrete Sidewalks", "Stamped Patios", "Commercial Flatwork"],
+    services: ["Concrete Sidewalks", "Garage Slabs", "Commercial Flatwork"],
     description:
       "Iowa's capital city is our home base. We've completed 200+ projects across Des Moines — from Beaverdale sidewalks to Ankeny commercial pads.",
   },
@@ -38,7 +38,7 @@ const primaryCities = [
     city: "Cedar Rapids",
     county: "Linn County",
     slug: "cedar-rapids",
-    services: ["Concrete Sidewalks", "Outdoor Patios", "Stamped Concrete"],
+    services: ["Concrete Sidewalks", "Garage Floors", "Stamped Concrete"],
     description:
       "Iowa's second-largest city. We serve all Cedar Rapids neighborhoods including NE, SW, and Marion with same-crew precision work.",
   },
@@ -46,7 +46,7 @@ const primaryCities = [
     city: "Iowa City",
     county: "Johnson County",
     slug: "iowa-city",
-    services: ["Residential Concrete", "Patio Installation", "Sidewalks"],
+    services: ["Residential Concrete", "Garage Construction", "Sidewalks"],
     description:
       "Home of the Hawkeyes and some of Iowa's most demanding homeowners. We deliver university-town quality on every project.",
   },
@@ -62,7 +62,7 @@ const primaryCities = [
     city: "Davenport",
     county: "Scott County",
     slug: "davenport",
-    services: ["Concrete Sidewalks", "Stamped Concrete", "Patios"],
+    services: ["Concrete Sidewalks", "Stamped Concrete", "Garage Slabs"],
     description:
       "Quad Cities area coverage. We serve Davenport, Bettendorf, and surrounding Scott County with our full concrete service lineup.",
   },
@@ -70,7 +70,7 @@ const primaryCities = [
     city: "Sioux City",
     county: "Woodbury County",
     slug: "sioux-city",
-    services: ["Sidewalks", "Patios", "Commercial Flatwork"],
+    services: ["Sidewalks", "Garage Slabs", "Commercial Flatwork"],
     description:
       "Western Iowa coverage. Sioux City and surrounding communities served by our experienced crew with the same Iowa-standard craftsmanship.",
   },
@@ -87,7 +87,7 @@ const additionalCities = [
 
 const services = [
   { label: "Concrete Sidewalks", href: "/services/sidewalks" },
-  { label: "Outdoor Patios", href: "/services/patios" },
+  { label: "Garage Slabs", href: "/services/garages" },
   { label: "Stamped Concrete", href: "/services/stamped" },
   { label: "Commercial Flatwork", href: "/services/commercial" },
 ];
@@ -261,10 +261,10 @@ export default function AreasPage() {
               </div>
               <div>
                 <h3 className="font-outfit font-black text-white text-xl mb-3">
-                  Stamped Patios in Des Moines &amp; Beyond
+                  Garage Slabs in Des Moines &amp; Beyond
                 </h3>
                 <p>
-                  Stamped concrete is one of the most requested upgrades for Iowa homeowners. We offer 50+ pattern styles and UV-stable color systems that stay vibrant through hot Iowa summers and harsh winters — at a fraction of natural stone cost.
+                  Garage slabs and workshop floors are one of the most requested upgrades for Iowa homeowners. We offer heavy-duty reinforced mix and smooth finishes that stay durable through hot Iowa summers and harsh winters — built to support your vehicles and equipment for life.
                 </p>
               </div>
               <div>
@@ -280,7 +280,7 @@ export default function AreasPage() {
                   Iowa City &amp; Johnson County
                 </h3>
                 <p>
-                  University towns demand precision. We&apos;ve completed dozens of projects in Iowa City, Coralville, and North Liberty — residential sidewalks, stamped patios, and multi-family concrete work. Same crew, same quality, every time.
+                  University towns demand precision. We&apos;ve completed dozens of projects in Iowa City, Coralville, and North Liberty — residential sidewalks, garage slabs, and multi-family concrete work. Same crew, same quality, every time.
                 </p>
               </div>
             </div>

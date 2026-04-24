@@ -111,11 +111,12 @@ export default function Footer() {
               <h5 className="text-white/40 text-[10px] font-bold uppercase tracking-[0.3em] mb-5">Our Services</h5>
               <ul className="flex flex-col gap-2">
                 {[
-                  { name: "Sidewalks", href: "/services/sidewalks", num: "01" },
-                  { name: "Stamped Concrete", href: "/services/stamped", num: "02" },
-                  { name: "Patios", href: "/services/patios", num: "03" },
-                  { name: "Commercial", href: "/services/commercial", num: "04" },
-                  { name: "Service Areas", href: "/areas", num: "05" },
+                  { name: "Driveways", href: "/gallery", num: "01" },
+                  { name: "Sidewalks", href: "/services/sidewalks", num: "02" },
+                  { name: "Patios", href: "/gallery", num: "03" },
+                  { name: "Stamped Concrete", href: "/services/stamped", num: "04" },
+                  { name: "Garage Floors", href: "/services/garages", num: "05" },
+                  { name: "Repairs & More", href: "/#contact", num: "06" },
                 ].map((s) => (
                   <li key={s.name}>
                     <Link

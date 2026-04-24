@@ -29,12 +29,12 @@ export const metadata: Metadata = {
     template: "%s | Regios Concrete LLC",
   },
   description:
-    "Iowa's top-rated concrete contractors. Sidewalks, patios, stamped concrete & commercial flatwork in Des Moines, Cedar Rapids, Ames & across Iowa. 500+ satisfied clients. Free estimates.",
+    "Iowa's top-rated concrete contractors. Sidewalks, garages, stamped concrete & commercial flatwork in Des Moines, Cedar Rapids, Ames & across Iowa. 500+ satisfied clients. Free estimates.",
   keywords: [
     "concrete contractors Iowa",
     "concrete sidewalk Des Moines",
     "stamped concrete Iowa",
-    "concrete patio Cedar Rapids",
+    "concrete garage floor Cedar Rapids",
     "commercial concrete Iowa",
     "concrete contractor Ames Iowa",
     "concrete company Iowa",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "Regios Concrete LLC",
     title: "Regios Concrete LLC | Iowa's #1 Concrete Contractors",
     description:
-      "Iowa's top-rated concrete contractors. Sidewalks, patios, stamped concrete & commercial flatwork across Iowa. 500+ satisfied clients.",
+      "Iowa's top-rated concrete contractors. Sidewalks, garages, stamped concrete & commercial flatwork across Iowa. 500+ satisfied clients.",
   },
   twitter: {
     card: "summary_large_image",
@@ -86,7 +86,7 @@ const localBusinessSchema = {
     "itemListElement": [
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sidewalk Installation" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Stamped Concrete" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Patio Construction" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Garage Slabs" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Concrete" } }
     ]
   },

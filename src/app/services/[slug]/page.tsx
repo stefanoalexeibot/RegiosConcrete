@@ -65,20 +65,20 @@ const services = {
       { val: "5.0", label: "Star Rating" },
     ],
   },
-  patios: {
-    title: "Concrete Patios",
-    headline: "Outdoor Luxury.",
-    headlineAccent: "Iowa Made.",
-    tagline: "Premium patios and backyard extensions designed for the ultimate home oasis.",
+  garages: {
+    title: "Garage Slabs",
+    headline: "Solid Support.",
+    headlineAccent: "Garage Floors.",
+    tagline: "Heavy-duty garage slabs and workshop foundations designed for performance.",
     description:
-      "Your backyard should be your sanctuary. We specialize in custom concrete patios that combine beauty with extreme durability. Whether you want a clean minimalist slab or a sprawling entertainment space, we bring your vision to life.",
+      "Your garage floor needs to handle more than just parking. We specialize in industrial-grade garage slabs that withstand heavy vehicles, tool loads, and daily wear while maintaining a clean, professional finish.",
     features: [
-      { num: "01", title: "Custom Layouts", desc: "We design the shape and size to perfectly complement your landscape." },
-      { num: "02", title: "Perfect Leveling", desc: "Ensuring comfortable furniture placement and zero water pooling." },
-      { num: "03", title: "Drainage Focus", desc: "Integrated grading to keep water away from your foundation." },
-      { num: "04", title: "Color Options", desc: "Integrated colors and stains available for a high-end custom look." },
-      { num: "05", title: "Heavy Load Base", desc: "Gravel and compaction that prevents settling and cracking." },
-      { num: "06", title: "Low Maintenance", desc: "Sealed finish that stays beautiful with just a simple hose-down." },
+      { num: "01", title: "Heavy Load Base", desc: "Heavily compacted gravel and rebar grid for zero settling." },
+      { num: "02", title: "High-PSI Mix", desc: "Engineered concrete mix designed for heavy vehicle loads." },
+      { num: "03", title: "Vapor Barrier", desc: "Moisture management to protect your tools and storage." },
+      { num: "04", title: "Smooth Finish", desc: "Precision power trowel finish for an easy-to-clean surface." },
+      { num: "05", title: "Epoxy Ready", desc: "Perfect surface profile for future epoxy or polyaspartic coatings." },
+      { num: "06", title: "Apron Included", desc: "Transition slabs for seamless entry and drainage." },
     ],
     images: [
       "/images/gallery/patio-after-48.jpeg",
@@ -89,8 +89,8 @@ const services = {
       "/images/gallery/patio-after-05.jpeg",
     ],
     stats: [
-      { val: "300+", label: "Patios Created" },
-      { val: "∞", label: "Design Options" },
+      { val: "200+", label: "Garages Poured" },
+      { val: "Heavy", label: "Duty Load" },
       { val: "5.0", label: "Star Rating" },
     ],
   },
@@ -139,12 +139,12 @@ const serviceKeywords: Record<string, string[]> = {
     "sidewalk contractors Iowa",
     "residential concrete Iowa",
   ],
-  patios: [
-    "concrete patio Iowa",
-    "outdoor patio contractor Iowa",
-    "concrete patio Des Moines",
-    "patio installation Iowa",
-    "backyard concrete Iowa",
+  garages: [
+    "garage slab Iowa",
+    "concrete garage floor Iowa",
+    "concrete garage contractor Des Moines",
+    "garage foundation Iowa",
+    "workshop concrete Iowa",
   ],
   stamped: [
     "stamped concrete Iowa",
@@ -369,7 +369,7 @@ export default async function ServicePage({
       </section>
 
       {/* ─── BEFORE & AFTER ─── */}
-      {(slug === "sidewalks" || slug === "patios") && (
+      {(slug === "sidewalks" || slug === "garages") && (
         <section className="py-20 md:py-32 bg-[#030b1a]">
           <div className="container mx-auto px-4 md:px-6">
             <FadeUp className="mb-10 md:mb-14">

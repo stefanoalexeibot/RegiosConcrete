@@ -72,13 +72,12 @@ export default function Home() {
                     <div className="w-full overflow-hidden rounded-[1.5rem] md:rounded-[3rem]">
                       <BeforeAfterSlider
                         pairs={[
-                          { beforeSrc: "/images/gallery/driveway-after-07.jpeg", afterSrc: "/images/gallery/driveway-after-08.jpeg", label: "Sidewalk Transformation" },
+                          { beforeSrc: "/images/gallery/slab-before-01.jpeg", afterSrc: "/images/gallery/slab-after-01.jpeg", label: "Garage Slab Transformation" },
+                          { beforeSrc: "/images/gallery/driveway-before-01.jpeg", afterSrc: "/images/gallery/driveway-after-01.jpeg", label: "Sidewalk Project" },
+                          { beforeSrc: "/images/gallery/patio-before-01.jpeg", afterSrc: "/images/gallery/patio-after-01.jpeg", label: "Patio Restoration" },
                           { beforeSrc: "/images/gallery/stamped-after-04.jpeg", afterSrc: "/images/gallery/stamped-after-03.jpeg", label: "Stamped Concrete" },
-                          { beforeSrc: "/images/gallery/patio-after-17.jpeg", afterSrc: "/images/gallery/patio-after-18.jpeg", label: "Patio Restoration" },
                           { beforeSrc: "/images/gallery/patio-after-27.jpeg", afterSrc: "/images/gallery/patio-after-29.jpeg", label: "Custom Backyard" },
                           { beforeSrc: "/images/gallery/patio-after-31.jpeg", afterSrc: "/images/gallery/patio-after-30.jpeg", label: "Backyard Upgrade" },
-                          { beforeSrc: "/images/gallery/driveway-after-13.jpeg", afterSrc: "/images/gallery/driveway-after-12.jpeg", label: "Precision Sidewalk" },
-                          { beforeSrc: "/images/gallery/slab-before-01.jpeg", afterSrc: "/images/gallery/slab-after-01.jpeg", label: "Concrete Slab Project" },
                           { beforeSrc: "/images/gallery/patio-after-16.jpeg", afterSrc: "/images/gallery/patio-after-20.jpeg", label: "Patio Transformation" },
                         ]}
                       />

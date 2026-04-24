@@ -22,10 +22,12 @@ const navLinks = [
 ];
 
 const serviceLinks = [
+  { name: "Driveways", href: "/gallery" },
   { name: "Sidewalks", href: "/services/sidewalks" },
+  { name: "Patios", href: "/gallery" },
   { name: "Stamped Concrete", href: "/services/stamped" },
-  { name: "Patios", href: "/services/patios" },
-  { name: "Commercial", href: "/services/commercial" },
+  { name: "Garage Floors", href: "/services/garages" },
+  { name: "Repairs & More", href: "/#contact" },
 ];
 
 const menuVariants = {

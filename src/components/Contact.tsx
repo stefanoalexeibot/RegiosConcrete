@@ -7,12 +7,12 @@ import ActiveViewers from "./ActiveViewers";
 
 // ─── Step data ────────────────────────────────────────────────────────────────
 const services = [
-  { id: "sidewalk", label: "Sidewalk", icon: "🚶", desc: "New pour or replacement" },
+  { id: "driveway", label: "Driveway", icon: "🚗", desc: "New pour or replacement" },
+  { id: "sidewalk", label: "Sidewalk", icon: "🚶", desc: "Paths and walkways" },
   { id: "patio", label: "Patio", icon: "🏡", desc: "Backyard & outdoor spaces" },
-  { id: "stamped", label: "Stamped Concrete", icon: "✦", desc: "Decorative patterns & textures" },
-  { id: "commercial", label: "Commercial", icon: "🏗️", desc: "Business & large-scale projects" },
-  { id: "repair", label: "Repair", icon: "🔧", desc: "Crack & surface restoration" },
-  { id: "other", label: "Other", icon: "💬", desc: "Tell us what you need" },
+  { id: "stamped", label: "Stamped Concrete", icon: "✦", desc: "Decorative patterns" },
+  { id: "garage", label: "Garage Floor", icon: "🏎️", desc: "Heavy-duty slab floors" },
+  { id: "repair", label: "Repairs & More", icon: "🔧", desc: "Restoration & custom work" },
 ];
 
 const sizes = [

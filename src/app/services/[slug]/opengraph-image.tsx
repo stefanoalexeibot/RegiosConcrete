@@ -10,11 +10,11 @@ const services: Record<string, { title: string; headline: string; accent: string
     accent: "Iowa-Ready.",
     tagline: "Built to survive Iowa winters and outlast every sidewalk on your block.",
   },
-  patios: {
-    title: "Outdoor Patios",
-    headline: "Premium",
-    accent: "Outdoor Living.",
-    tagline: "Turn your backyard into the best room in the house.",
+  garages: {
+    title: "Garage Slabs",
+    headline: "Solid Support.",
+    accent: "Garage Floors.",
+    tagline: "Heavy-duty slabs and workshop foundations designed for performance.",
   },
   stamped: {
     title: "Stamped Concrete",

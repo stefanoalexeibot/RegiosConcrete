@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
-      url: `${siteUrl}/services/patios`,
+      url: `${siteUrl}/services/garages`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.85,

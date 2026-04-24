@@ -82,12 +82,12 @@ const services = [
     features: ["Custom Styles", "Integrated Color"],
   },
   {
-    title: "Patios",
-    slug: "patios",
+    title: "Garage Floors",
+    slug: "garages",
     size: "col-span-1 row-span-1 md:row-span-2",
-    description: "Premium backyard patios and extensions built for luxury and longevity.",
+    description: "Premium garage slabs and workshop extensions built for heavy loads and durability.",
     image: "/images/gallery/patio-after-48.jpeg",
-    features: ["Custom Design", "Perfect Drainage"],
+    features: ["Heavy Duty", "Reinforced"],
   },
   {
     title: "Commercial",
