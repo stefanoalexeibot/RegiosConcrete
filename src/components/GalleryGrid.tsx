@@ -12,11 +12,11 @@ type GalleryItem =
   | { type: "pair"; before: string; after: string; category: Exclude<Category, "all"> };
 
 const allImages: GalleryItem[] = [
-  { src: "/images/gallery/patio-after-33.jpeg", category: "garages", type: "single" },
+  { before: "/images/gallery/patio-after-38.jpeg", after: "/images/gallery/patio-after-37.jpeg", category: "garages", type: "pair" },
   { src: "/images/gallery/patio-after-03.jpeg", category: "garages", type: "single" },
-  { before: "/images/gallery/patio-before-01.jpeg", after: "/images/gallery/patio-after-01.jpeg", category: "garages", type: "pair" },
-  { before: "/images/gallery/driveway-before-02.jpeg", after: "/images/gallery/driveway-after-11.jpeg", category: "sidewalks", type: "pair" },
   { before: "/images/gallery/patio-before-07.jpeg", after: "/images/gallery/patio-after-50.jpeg", category: "garages", type: "pair" },
+  
+  { before: "/images/gallery/driveway-before-02.jpeg", after: "/images/gallery/driveway-after-11.jpeg", category: "sidewalks", type: "pair" },
   { before: "/images/gallery/patio-before-05.jpeg", after: "/images/gallery/patio-after-48.jpeg", category: "garages", type: "pair" },
   { before: "/images/gallery/slab-before-01.jpeg", after: "/images/gallery/slab-after-01.jpeg", category: "garages", type: "pair" },
 
@@ -25,17 +25,10 @@ const allImages: GalleryItem[] = [
   { before: "/images/gallery/patio-after-31.jpeg", after: "/images/gallery/patio-after-30.jpeg", category: "garages", type: "pair" },
   { before: "/images/gallery/patio-after-16.jpeg", after: "/images/gallery/patio-after-20.jpeg", category: "garages", type: "pair" },
 
-  { before: "/images/gallery/patio-after-38.jpeg", after: "/images/gallery/patio-after-37.jpeg", category: "garages", type: "pair" },
-
   // Commercial Afters (Singles)
   { src: "/images/gallery/commercial-after-01.jpeg", category: "commercial", type: "single" },
-  { src: "/images/gallery/commercial-after-02.jpeg", category: "commercial", type: "single" },
   { src: "/images/gallery/commercial-after-03.jpeg", category: "commercial", type: "single" },
-  { src: "/images/gallery/commercial-after-04.jpeg", category: "commercial", type: "single" },
-  { src: "/images/gallery/commercial-after-05.jpeg", category: "commercial", type: "single" },
   { src: "/images/gallery/commercial-after-06.jpeg", category: "commercial", type: "single" },
-  { src: "/images/gallery/commercial-after-07.jpeg", category: "commercial", type: "single" },
-  { src: "/images/gallery/commercial-after-08.jpeg", category: "commercial", type: "single" },
 
   // Sidewalk Afters (Filtered Singles)
   { src: "/images/gallery/driveway-after-02.jpeg", category: "sidewalks", type: "single" },
